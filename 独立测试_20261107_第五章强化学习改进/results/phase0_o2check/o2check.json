@@ -1,0 +1,36 @@
+{
+ "odd_node": [
+  5,
+  8
+ ],
+ "odd_edge": [
+  3,
+  5,
+  8,
+  10
+ ],
+ "expected_node": [
+  5,
+  8
+ ],
+ "expected_edge": [
+  3,
+  5,
+  8,
+  10
+ ],
+ "mixed_or_neither": {
+  "x": {},
+  "ea": {},
+  "xa": {},
+  "eaa": {}
+ },
+ "algebraic_odd": [],
+ "o2_max_equivariance_error": 0.0,
+ "thesis_actor_chirality": {
+  "omega_asym_median": 0.4527168497443199,
+  "omega_scale_median": 0.32415732741355896,
+  "omega_even_part_mean": 0.11010770344524183
+ },
+ "passed": true
+}

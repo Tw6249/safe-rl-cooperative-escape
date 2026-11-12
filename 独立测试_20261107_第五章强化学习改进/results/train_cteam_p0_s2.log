@@ -1,0 +1,62 @@
+it  -1 initial policy | VAL 0.194 t=13.60714285714286
+it   0 steps   10589 succ 0.42 ret +0.749 kl 0.0028 proj 0.1455 interv 0.1936 gp 0.0 roll 658s it 660s
+it   1 steps   20801 succ 0.42 ret +0.728 kl 0.0028 proj 0.1416 interv 0.1769 gp 0.0 roll 600s it 603s
+it   2 steps   31202 succ 0.54 ret +0.741 kl 0.0019 proj 0.1271 interv 0.1717 gp 0.0 roll 569s it 572s
+it   3 steps   41697 succ 0.29 ret +0.421 kl 0.0026 proj 0.1332 interv 0.1817 gp 0.0 roll 590s it 592s
+it   4 steps   51535 succ 0.50 ret +0.763 kl 0.0031 proj 0.1288 interv 0.1722 gp 0.0 roll 556s it 559s
+it   5 steps   61314 succ 0.50 ret +0.814 kl 0.0033 proj 0.1433 interv 0.1826 gp 0.0 roll 532s it 534s
+it   6 steps   71768 succ 0.25 ret +0.444 kl 0.0032 proj 0.1462 interv 0.2008 gp 0.0 roll 663s it 665s
+it   7 steps   82366 succ 0.58 ret +0.911 kl 0.0029 proj 0.1307 interv 0.1869 gp 0.0 roll 602s it 604s | VAL 0.444 t=13.80625
+it   8 steps   91932 succ 0.50 ret +0.827 kl 0.0030 proj 0.1261 interv 0.1774 gp 0.0 roll 588s it 590s
+it   9 steps  102208 succ 0.42 ret +0.766 kl 0.0024 proj 0.1191 interv 0.1707 gp 0.0 roll 659s it 661s
+it  10 steps  111805 succ 0.50 ret +0.878 kl 0.0035 proj 0.1099 interv 0.1556 gp 0.0 roll 548s it 550s
+it  11 steps  120918 succ 0.58 ret +1.065 kl 0.0029 proj 0.0965 interv 0.1464 gp 0.0 roll 563s it 565s
+it  12 steps  129947 succ 0.58 ret +1.071 kl 0.0033 proj 0.0936 interv 0.1557 gp 0.0 roll 563s it 565s
+it  13 steps  139538 succ 0.62 ret +1.136 kl 0.0033 proj 0.1096 interv 0.1753 gp 0.0 roll 650s it 653s
+it  14 steps  147309 succ 0.79 ret +1.415 kl 0.0035 proj 0.0954 interv 0.1451 gp 0.0 roll 473s it 476s
+it  15 steps  155298 succ 0.75 ret +1.366 kl 0.0031 proj 0.0840 interv 0.1364 gp 0.0 roll 477s it 480s | VAL 0.972 t=14.04
+it  16 steps  162698 succ 0.67 ret +1.308 kl 0.0026 proj 0.0978 interv 0.1413 gp 0.0 roll 453s it 456s
+it  17 steps  171446 succ 0.62 ret +1.169 kl 0.0026 proj 0.0963 interv 0.1558 gp 0.0 roll 532s it 534s
+it  18 steps  179430 succ 0.71 ret +1.338 kl 0.0024 proj 0.0671 interv 0.1202 gp 0.0 roll 495s it 498s
+it  19 steps  187867 succ 0.75 ret +1.337 kl 0.0039 proj 0.0796 interv 0.1411 gp 0.0 roll 577s it 580s
+it  20 steps  195377 succ 0.92 ret +1.572 kl 0.0046 proj 0.0773 interv 0.1367 gp 0.0 roll 457s it 460s
+it  21 steps  202659 succ 0.83 ret +1.503 kl 0.0039 proj 0.0809 interv 0.1322 gp 0.0 roll 464s it 466s
+it  22 steps  210966 succ 0.71 ret +1.330 kl 0.0029 proj 0.0777 interv 0.1385 gp 0.0 roll 553s it 555s
+it  23 steps  218516 succ 0.79 ret +1.441 kl 0.0037 proj 0.0516 interv 0.1078 gp 0.0 roll 391s it 394s | VAL 1.000 t=13.305555555555554
+it  24 steps  227338 succ 0.58 ret +1.178 kl 0.0034 proj 0.0760 interv 0.1487 gp 0.0 roll 540s it 542s
+it  25 steps  236065 succ 0.62 ret +1.229 kl 0.0031 proj 0.0830 interv 0.1493 gp 0.0 roll 603s it 606s
+it  26 steps  243937 succ 0.75 ret +1.388 kl 0.0027 proj 0.0619 interv 0.1245 gp 0.0 roll 556s it 559s
+it  27 steps  251849 succ 0.75 ret +1.379 kl 0.0029 proj 0.0588 interv 0.1215 gp 0.0 roll 563s it 566s
+it  28 steps  260299 succ 0.62 ret +1.238 kl 0.0033 proj 0.0737 interv 0.1410 gp 0.0 roll 621s it 624s
+it  29 steps  268275 succ 0.71 ret +1.347 kl 0.0027 proj 0.0664 interv 0.1259 gp 0.0 roll 513s it 515s
+it  30 steps  276540 succ 0.71 ret +1.332 kl 0.0030 proj 0.0664 interv 0.1356 gp 0.0 roll 492s it 493s
+it  31 steps  284459 succ 0.79 ret +1.426 kl 0.0031 proj 0.0609 interv 0.1217 gp 0.0 roll 430s it 432s | VAL 1.000 t=11.7125
+it  32 steps  291852 succ 0.79 ret +1.458 kl 0.0038 proj 0.0541 interv 0.1145 gp 0.0 roll 402s it 404s
+it  33 steps  300887 succ 0.58 ret +1.161 kl 0.0026 proj 0.0435 interv 0.1113 gp 0.0 roll 485s it 487s
+it  34 steps  308637 succ 0.83 ret +1.484 kl 0.0038 proj 0.0644 interv 0.1266 gp 0.0 roll 437s it 439s
+it  35 steps  315382 succ 0.75 ret +1.437 kl 0.0035 proj 0.0444 interv 0.1016 gp 0.0 roll 386s it 388s
+it  36 steps  323084 succ 0.71 ret +1.349 kl 0.0034 proj 0.0504 interv 0.1174 gp 0.0 roll 454s it 456s
+it  37 steps  330300 succ 0.83 ret +1.504 kl 0.0041 proj 0.0497 interv 0.1109 gp 0.0 roll 424s it 426s
+it  38 steps  336720 succ 0.92 ret +1.630 kl 0.0050 proj 0.0629 interv 0.1258 gp 0.0 roll 334s it 336s
+it  39 steps  344418 succ 0.71 ret +1.304 kl 0.0035 proj 0.0677 interv 0.1358 gp 0.0 roll 376s it 378s | VAL 1.000 t=11.41527777777778
+it  40 steps  351887 succ 0.75 ret +1.413 kl 0.0037 proj 0.0518 interv 0.1165 gp 0.0 roll 375s it 377s
+it  41 steps  358184 succ 0.83 ret +1.548 kl 0.0051 proj 0.0527 interv 0.1093 gp 0.0 roll 317s it 319s
+it  42 steps  365957 succ 0.71 ret +1.352 kl 0.0041 proj 0.0435 interv 0.1113 gp 0.0 roll 402s it 404s
+it  43 steps  372357 succ 0.88 ret +1.590 kl 0.0054 proj 0.0490 interv 0.1108 gp 0.0 roll 356s it 358s
+it  44 steps  379782 succ 0.75 ret +1.416 kl 0.0042 proj 0.0533 interv 0.1202 gp 0.0 roll 354s it 356s
+it  45 steps  386526 succ 0.79 ret +1.485 kl 0.0051 proj 0.0545 interv 0.1136 gp 0.0 roll 372s it 374s
+it  46 steps  393705 succ 0.75 ret +1.422 kl 0.0043 proj 0.0469 interv 0.1107 gp 0.0 roll 370s it 372s
+it  47 steps  400571 succ 0.83 ret +1.520 kl 0.0042 proj 0.0460 interv 0.1054 gp 0.0 roll 364s it 366s | VAL 1.000 t=10.520833333333336
+it  48 steps  408600 succ 0.71 ret +1.344 kl 0.0050 proj 0.0599 interv 0.1308 gp 0.0 roll 455s it 457s
+it  49 steps  414787 succ 0.96 ret +1.686 kl 0.0059 proj 0.0435 interv 0.0988 gp 0.0 roll 323s it 325s
+it  50 steps  423071 succ 0.67 ret +1.285 kl 0.0040 proj 0.0349 interv 0.1011 gp 0.0 roll 428s it 430s
+it  51 steps  430276 succ 0.79 ret +1.464 kl 0.0048 proj 0.0366 interv 0.1013 gp 0.0 roll 366s it 368s
+it  52 steps  437400 succ 0.88 ret +1.559 kl 0.0072 proj 0.0576 interv 0.1173 gp 0.0 roll 387s it 389s
+it  53 steps  443000 succ 1.00 ret +1.751 kl 0.0054 proj 0.0416 interv 0.1020 gp 0.0 roll 314s it 316s
+it  54 steps  450880 succ 0.79 ret +1.431 kl 0.0045 proj 0.0482 interv 0.1170 gp 0.0 roll 412s it 414s
+it  55 steps  457797 succ 0.83 ret +1.527 kl 0.0047 proj 0.0389 interv 0.0961 gp 0.0 roll 386s it 387s | VAL 0.806 t=11.425862068965518
+it  56 steps  463581 succ 0.96 ret +1.696 kl 0.0052 proj 0.0429 interv 0.0966 gp 0.0 roll 301s it 303s
+it  57 steps  470387 succ 0.88 ret +1.567 kl 0.0057 proj 0.0413 interv 0.1033 gp 0.0 roll 341s it 343s
+it  58 steps  477700 succ 0.79 ret +1.462 kl 0.0051 proj 0.0526 interv 0.1160 gp 0.0 roll 370s it 371s
+it  59 steps  484821 succ 0.79 ret +1.463 kl 0.0037 proj 0.0350 interv 0.0966 gp 0.0 roll 291s it 293s | VAL 1.000 t=11.408333333333333
+DONE 60 484821 (0.9894791666666667, 47)

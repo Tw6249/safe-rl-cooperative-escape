@@ -1,0 +1,124 @@
+{
+  "variant": "full",
+  "seed": 20261107,
+  "critic": "team",
+  "proj": 0.0,
+  "hp": {
+    "variants": {
+      "full": {
+        "gate": "mu",
+        "rounds": 2
+      },
+      "geom": {
+        "gate": "int",
+        "rounds": 2
+      },
+      "static": {
+        "gate": "int",
+        "rounds": 0
+      },
+      "full_int": {
+        "gate": "int",
+        "rounds": 2
+      }
+    },
+    "episodes_per_iter": 24,
+    "tmax": 500,
+    "val_tmax": 600,
+    "budget_steps": 960000,
+    "val_every": 8,
+    "gamma": 0.995,
+    "lam": 0.95,
+    "lr": 0.001,
+    "epochs": 5,
+    "minibatches": 8,
+    "clip": 0.2,
+    "target_kl": 0.03,
+    "vf_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "std0": 0.4,
+    "gate_mask": 0.01,
+    "reward": {
+      "progress": 1.0,
+      "time": 0.001,
+      "stall": 0.02,
+      "success": 1.0,
+      "eps_p": 0.1,
+      "eps_u": 0.05,
+      "stall_u": 0.005,
+      "stall_steps": 60,
+      "success_tol": 0.01
+    },
+    "val": {
+      "n": 8,
+      "n_local": 24,
+      "n_perm": 12,
+      "fracs": [
+        0.6
+      ],
+      "tag": "v"
+    }
+  },
+  "workers": 2,
+  "budget": 480000,
+  "iter_episodes": 24,
+  "val_seed": 20261102,
+  "val_scenes": [
+    "H8v_local0_f60_s20261102",
+    "H8v_local1_f60_s20261102",
+    "H8v_local2_f60_s20261102",
+    "H8v_local3_f60_s20261102",
+    "H8v_local4_f60_s20261102",
+    "H8v_local5_f60_s20261102",
+    "H8v_local6_f60_s20261102",
+    "H8v_local7_f60_s20261102",
+    "H8v_local8_f60_s20261102",
+    "H8v_local9_f60_s20261102",
+    "H8v_local10_f60_s20261102",
+    "H8v_local11_f60_s20261102",
+    "H8v_local12_f60_s20261102",
+    "H8v_local13_f60_s20261102",
+    "H8v_local14_f60_s20261102",
+    "H8v_local15_f60_s20261102",
+    "H8v_local16_f60_s20261102",
+    "H8v_local17_f60_s20261102",
+    "H8v_local18_f60_s20261102",
+    "H8v_local19_f60_s20261102",
+    "H8v_local20_f60_s20261102",
+    "H8v_local21_f60_s20261102",
+    "H8v_local22_f60_s20261102",
+    "H8v_local23_f60_s20261102",
+    "H8v_perm0_f60_s20261102",
+    "H8v_perm1_f60_s20261102",
+    "H8v_perm2_f60_s20261102",
+    "H8v_perm3_f60_s20261102",
+    "H8v_perm4_f60_s20261102",
+    "H8v_perm5_f60_s20261102",
+    "H8v_perm6_f60_s20261102",
+    "H8v_perm7_f60_s20261102",
+    "H8v_perm8_f60_s20261102",
+    "H8v_perm9_f60_s20261102",
+    "H8v_perm10_f60_s20261102",
+    "H8v_perm11_f60_s20261102"
+  ],
+  "val_redrawn": 3,
+  "source_sha256": {
+    "train_ext.py": "ccfc1591a6971cd3f07a435c0931ced4a8c19972fcf5bf844a64c94d7a7b9afa",
+    "paths.py": "8cebe91ff9a1d773aa8a216fee5165cfb11cfaf022b0e5ff8b543ff9dd18bf69",
+    "train_ppo.py": "1c0256c89b7c3e620283f75bfe1e2dcad9d61f6a35e3911fe24dfdba22dd7ea4",
+    "sarl_env.py": "1c31d5e8b9cdeae6f3bdebcf577ddd1d13328498b031536338aece95644fcdf8",
+    "sarl_policy.py": "660eb8d421f8a1acc7471315db7b2e18afdc90dd0f10c1c98e586a6cf7d755db",
+    "sysperf.py": "34f2c8eb60114594dc28a7be6cbe486377589273530f908ec1b781e7d68a57d7"
+  },
+  "device": "cuda",
+  "python": "3.13.5 | packaged by Anaconda, Inc. | (main, Jun 12 2025, 16:37:03) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.3.5",
+  "torch": "2.10.0+cu126",
+  "started": "2026-11-07 03:43:46",
+  "smoke": false,
+  "process_settings": {
+    "throttling_disabled": true,
+    "below_normal": true
+  }
+}

@@ -1,0 +1,58 @@
+it  -1 initial policy | VAL 0.194 t=13.60714285714286
+it   0 steps   10023 succ 0.42 ret +0.612 kl 0.0032 proj 0.1324 interv 0.1693 gp 0.0 roll 564s it 567s
+it   1 steps   20520 succ 0.25 ret +0.351 kl 0.0028 proj 0.1335 interv 0.1797 gp 0.0 roll 607s it 610s
+it   2 steps   30914 succ 0.42 ret +0.670 kl 0.0031 proj 0.1357 interv 0.1850 gp 0.0 roll 540s it 543s
+it   3 steps   40241 succ 0.46 ret +0.606 kl 0.0029 proj 0.1402 interv 0.1823 gp 0.0 roll 505s it 507s
+it   4 steps   50189 succ 0.58 ret +1.054 kl 0.0028 proj 0.1361 interv 0.1906 gp 0.0 roll 531s it 533s
+it   5 steps   59884 succ 0.33 ret +0.516 kl 0.0026 proj 0.1348 interv 0.1810 gp 0.0 roll 574s it 576s
+it   6 steps   68671 succ 0.54 ret +0.921 kl 0.0029 proj 0.1342 interv 0.1758 gp 0.0 roll 489s it 491s
+it   7 steps   78995 succ 0.38 ret +0.686 kl 0.0019 proj 0.1254 interv 0.1850 gp 0.0 roll 573s it 576s | VAL 0.472 t=14.270588235294118
+it   8 steps   88604 succ 0.50 ret +0.902 kl 0.0031 proj 0.1183 interv 0.1736 gp 0.0 roll 567s it 570s
+it   9 steps   98169 succ 0.62 ret +1.056 kl 0.0020 proj 0.0995 interv 0.1561 gp 0.0 roll 507s it 509s
+it  10 steps  108678 succ 0.29 ret +0.499 kl 0.0027 proj 0.1111 interv 0.1736 gp 0.0 roll 592s it 594s
+it  11 steps  118028 succ 0.46 ret +0.716 kl 0.0028 proj 0.1158 interv 0.1698 gp 0.0 roll 571s it 574s
+it  12 steps  127318 succ 0.54 ret +0.886 kl 0.0030 proj 0.1091 interv 0.1597 gp 0.0 roll 526s it 528s
+it  13 steps  136887 succ 0.50 ret +0.921 kl 0.0025 proj 0.1059 interv 0.1543 gp 0.0 roll 588s it 590s
+it  14 steps  146721 succ 0.46 ret +0.834 kl 0.0038 proj 0.1063 interv 0.1675 gp 0.0 roll 617s it 619s
+it  15 steps  156906 succ 0.42 ret +0.630 kl 0.0037 proj 0.1220 interv 0.1898 gp 0.0 roll 649s it 651s | VAL 0.611 t=16.28181818181818
+it  16 steps  165661 succ 0.54 ret +0.994 kl 0.0030 proj 0.0841 interv 0.1411 gp 0.0 roll 494s it 496s
+it  17 steps  173364 succ 0.83 ret +1.444 kl 0.0037 proj 0.0922 interv 0.1410 gp 0.0 roll 411s it 413s
+it  18 steps  182854 succ 0.46 ret +0.835 kl 0.0032 proj 0.0881 interv 0.1466 gp 0.0 roll 604s it 606s
+it  19 steps  191282 succ 0.67 ret +1.214 kl 0.0025 proj 0.0957 interv 0.1541 gp 0.0 roll 461s it 463s
+it  20 steps  200373 succ 0.62 ret +1.190 kl 0.0032 proj 0.0891 interv 0.1556 gp 0.0 roll 591s it 593s
+it  21 steps  210232 succ 0.42 ret +0.948 kl 0.0035 proj 0.0955 interv 0.1646 gp 0.0 roll 578s it 581s
+it  22 steps  220362 succ 0.46 ret +0.947 kl 0.0025 proj 0.0847 interv 0.1591 gp 0.0 roll 587s it 590s
+it  23 steps  229207 succ 0.58 ret +1.166 kl 0.0028 proj 0.0790 interv 0.1519 gp 0.0 roll 520s it 523s | VAL 0.972 t=11.852857142857141
+it  24 steps  236953 succ 0.79 ret +1.435 kl 0.0036 proj 0.0695 interv 0.1332 gp 0.0 roll 535s it 538s
+it  25 steps  244432 succ 0.75 ret +1.412 kl 0.0038 proj 0.0592 interv 0.1276 gp 0.0 roll 442s it 444s
+it  26 steps  251620 succ 0.83 ret +1.506 kl 0.0042 proj 0.0783 interv 0.1421 gp 0.0 roll 517s it 520s
+it  27 steps  258164 succ 0.92 ret +1.623 kl 0.0044 proj 0.0696 interv 0.1218 gp 0.0 roll 453s it 456s
+it  28 steps  267056 succ 0.50 ret +1.090 kl 0.0035 proj 0.0610 interv 0.1306 gp 0.0 roll 638s it 643s
+it  29 steps  275965 succ 0.58 ret +1.173 kl 0.0033 proj 0.0701 interv 0.1409 gp 0.0 roll 612s it 615s
+it  30 steps  283605 succ 0.79 ret +1.442 kl 0.0041 proj 0.0689 interv 0.1391 gp 0.0 roll 478s it 480s
+it  31 steps  293054 succ 0.54 ret +1.097 kl 0.0041 proj 0.0663 interv 0.1410 gp 0.0 roll 574s it 575s | VAL 0.972 t=12.222857142857142
+it  32 steps  300710 succ 0.71 ret +1.347 kl 0.0041 proj 0.0534 interv 0.1221 gp 0.0 roll 417s it 418s
+it  33 steps  309419 succ 0.58 ret +1.121 kl 0.0040 proj 0.0673 interv 0.1366 gp 0.0 roll 482s it 484s
+it  34 steps  318603 succ 0.46 ret +0.928 kl 0.0038 proj 0.0785 interv 0.1549 gp 0.0 roll 506s it 507s
+it  35 steps  327393 succ 0.62 ret +1.200 kl 0.0040 proj 0.0726 interv 0.1473 gp 0.0 roll 485s it 487s
+it  36 steps  335260 succ 0.75 ret +1.385 kl 0.0039 proj 0.0580 interv 0.1286 gp 0.0 roll 394s it 396s
+it  37 steps  343719 succ 0.62 ret +1.102 kl 0.0040 proj 0.0640 interv 0.1445 gp 0.0 roll 481s it 483s
+it  38 steps  350988 succ 0.79 ret +1.443 kl 0.0043 proj 0.0691 interv 0.1400 gp 0.0 roll 353s it 355s
+it  39 steps  359999 succ 0.50 ret +1.074 kl 0.0043 proj 0.0526 interv 0.1268 gp 0.0 roll 435s it 437s | VAL 1.000 t=11.647222222222222
+it  40 steps  366682 succ 0.83 ret +1.528 kl 0.0044 proj 0.0673 interv 0.1321 gp 0.0 roll 330s it 332s
+it  41 steps  374449 succ 0.79 ret +1.443 kl 0.0048 proj 0.0644 interv 0.1356 gp 0.0 roll 394s it 396s
+it  42 steps  382114 succ 0.67 ret +1.312 kl 0.0039 proj 0.0636 interv 0.1333 gp 0.0 roll 363s it 365s
+it  43 steps  390629 succ 0.71 ret +1.316 kl 0.0044 proj 0.0626 interv 0.1312 gp 0.0 roll 414s it 416s
+it  44 steps  398790 succ 0.79 ret +1.416 kl 0.0048 proj 0.0687 interv 0.1417 gp 0.0 roll 412s it 413s
+it  45 steps  406764 succ 0.71 ret +1.339 kl 0.0048 proj 0.0536 interv 0.1252 gp 0.0 roll 439s it 441s
+it  46 steps  414502 succ 0.79 ret +1.439 kl 0.0054 proj 0.0473 interv 0.1178 gp 0.0 roll 360s it 362s
+it  47 steps  421764 succ 0.79 ret +1.455 kl 0.0058 proj 0.0453 interv 0.1114 gp 0.0 roll 386s it 388s | VAL 0.917 t=11.653030303030304
+it  48 steps  429123 succ 0.83 ret +1.491 kl 0.0048 proj 0.0613 interv 0.1334 gp 0.0 roll 387s it 389s
+it  49 steps  436266 succ 0.83 ret +1.503 kl 0.0045 proj 0.0497 interv 0.1099 gp 0.0 roll 369s it 371s
+it  50 steps  444447 succ 0.54 ret +1.145 kl 0.0053 proj 0.0475 interv 0.1263 gp 0.0 roll 434s it 436s
+it  51 steps  452770 succ 0.62 ret +1.229 kl 0.0037 proj 0.0516 interv 0.1297 gp 0.0 roll 440s it 442s
+it  52 steps  461018 succ 0.62 ret +1.231 kl 0.0057 proj 0.0494 interv 0.1216 gp 0.0 roll 415s it 417s
+it  53 steps  468956 succ 0.67 ret +1.281 kl 0.0053 proj 0.0562 interv 0.1288 gp 0.0 roll 448s it 450s
+it  54 steps  476702 succ 0.67 ret +1.292 kl 0.0056 proj 0.0427 interv 0.1169 gp 0.0 roll 408s it 410s
+it  55 steps  484737 succ 0.62 ret +1.235 kl 0.0057 proj 0.0437 interv 0.1232 gp 0.0 roll 398s it 400s | VAL 0.806 t=10.432758620689652
+DONE 56 484737 (0.9883527777777777, 39)

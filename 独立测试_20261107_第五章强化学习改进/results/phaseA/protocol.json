@@ -1,0 +1,2822 @@
+{
+ "plan": "phaseA",
+ "seeds": {
+  "E1n": 20261109,
+  "E2n": 20261110,
+  "F05": 20261105
+ },
+ "jobs": [
+  {
+   "set": "E2n",
+   "scene": "H25_local0_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local0_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local0_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local1_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local1_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local1_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local2_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local2_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local2_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local3_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local3_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local3_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local0_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local0_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local1_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local1_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local2_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local2_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local3_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H25_local3_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local0_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local0_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local0_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local1_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local1_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local1_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local2_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local2_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local2_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local3_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local3_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local3_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_perm0_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_perm0_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_perm0_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_perm1_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_perm1_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_perm1_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local0_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local0_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local1_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local1_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local2_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local2_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local3_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_local3_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_perm0_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_perm0_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_perm1_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H20_perm1_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local0_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local0_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local0_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local1_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local1_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local1_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local2_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local2_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local2_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local3_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local3_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local3_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_perm0_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_perm0_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_perm0_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_perm1_s20261110",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_perm1_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_perm1_s20261110",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local0_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local0_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local1_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local1_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local2_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local2_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local3_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_local3_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_perm0_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_perm0_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_perm1_s20261110",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E2n",
+   "scene": "H12_perm1_s20261110",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local0_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local0_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local0_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local10_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local10_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local10_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local11_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local11_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local11_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local12_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local12_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local12_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local13_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local13_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local13_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local14_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local14_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local14_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local15_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local15_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local15_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local16_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local16_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local16_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local17_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local17_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local17_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local18_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local18_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local18_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local19_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local19_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local19_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local1_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local1_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local1_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local2_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local2_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local2_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local3_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local3_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local3_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local4_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local4_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local4_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local5_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local5_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local5_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local6_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local6_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local6_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local7_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local7_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local7_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local8_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local8_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local8_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local9_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local9_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local9_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm0_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm0_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm0_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm10_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm10_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm10_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm11_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm11_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm11_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm1_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm1_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm1_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm2_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm2_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm2_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm3_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm3_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm3_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm4_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm4_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm4_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm5_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm5_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm5_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm6_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm6_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm6_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm7_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm7_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm7_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm8_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm8_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm8_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm9_f60_s20261109",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm9_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm9_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local0_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local0_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local10_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local10_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local11_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local11_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local12_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local12_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local13_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local13_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local14_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local14_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local15_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local15_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local16_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local16_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local17_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local17_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local18_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local18_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local19_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local19_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local1_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local1_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local2_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local2_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local3_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local3_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local4_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local4_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local5_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local5_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local6_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local6_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local7_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local7_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local8_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local8_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local9_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local9_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm0_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm0_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm10_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm10_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm11_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm11_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm1_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm1_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm2_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm2_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm3_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm3_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm4_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm4_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm5_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm5_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm6_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm6_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm7_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm7_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm8_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm8_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm9_f60_s20261109",
+   "mirror": true,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm9_f60_s20261109",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local0_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local10_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local11_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local12_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local13_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local14_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local15_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local16_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local17_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local18_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local19_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local1_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local2_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local3_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local4_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local5_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local6_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local7_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local8_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_local9_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm0_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm10_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm11_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm1_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm2_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm3_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm4_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm5_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm6_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm7_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm8_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "E1n",
+   "scene": "H8n_perm9_f60_s20261109",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": true,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "SYM",
+   "scene": "S4_rhombus",
+   "group": "myopic",
+   "label": "myopic",
+   "tag": "myopic_B8",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "SYM",
+   "scene": "S4_rhombus",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "SYM",
+   "scene": "S4_rhombus",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "SYM",
+   "scene": "S4_rhombus",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "SYM",
+   "scene": "S2_headon",
+   "group": "myopic",
+   "label": "myopic",
+   "tag": "myopic_B8",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "SYM",
+   "scene": "S2_headon",
+   "mirror": false,
+   "ckpt": null,
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "SYM",
+   "scene": "S2_headon",
+   "group": "rl",
+   "label": "thesis",
+   "tag": "thesis_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  },
+  {
+   "set": "SYM",
+   "scene": "S2_headon",
+   "group": "rl_o2",
+   "label": "thesis_o2",
+   "tag": "thesis_o2_B8",
+   "mirror": false,
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+   "gate": "mu",
+   "envelope": true
+  }
+ ],
+ "source_sha256": {
+  "eval_ext.py": "63ea20c839147f962e76abec787c42f4808e0eb30c97a29d0c96b87c7d83ea98",
+  "exp_common.py": "5189c247ff0aa258780f942ba4e5483ff3574b3446d8c6adcaa340b735fc5df4",
+  "paths.py": "8cebe91ff9a1d773aa8a216fee5165cfb11cfaf022b0e5ff8b543ff9dd18bf69",
+  "evaluate.py": "15ff76dd8122ebf1ad642a701d2414ecac910e9ea05317c67488289c276e149a",
+  "sarl_env.py": "1c31d5e8b9cdeae6f3bdebcf577ddd1d13328498b031536338aece95644fcdf8",
+  "sarl_policy.py": "660eb8d421f8a1acc7471315db7b2e18afdc90dd0f10c1c98e586a6cf7d755db",
+  "sysperf.py": "34f2c8eb60114594dc28a7be6cbe486377589273530f908ec1b781e7d68a57d7",
+  "eval_env.py": "65752a8c644dd4b1ea6a7cd655384b0aab19977276108614808a93bf434fe467",
+  "ckpt:C:\\Users\\TanWei\\Desktop\\phd-thesis\\02_章节代码\\第五章_安全强化学习与协同脱困\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt": "cf5758465402370fdf61b9840f1afa1f2ff9a4f2880f6f9115bf7a329a6bdb72"
+ },
+ "rounds": 8,
+ "horizon": 60.0,
+ "eps_g": 0.05,
+ "python": "3.13.5 | packaged by Anaconda, Inc. | (main, Jun 12 2025, 16:37:03) [MSC v.1929 64 bit (AMD64)]",
+ "platform": "Windows-11-10.0.26200-SP0",
+ "numpy": "2.3.5",
+ "scipy": "1.17.1",
+ "cvxpy": "1.8.1",
+ "torch": "2.10.0+cu126",
+ "process_settings": {
+  "throttling_disabled": true,
+  "below_normal": true
+ },
+ "workers": 4,
+ "started": "2026-11-07 03:43:43"
+}

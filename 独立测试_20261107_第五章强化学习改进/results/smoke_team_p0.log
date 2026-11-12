@@ -1,0 +1,4 @@
+it  -1 initial policy | VAL 0.000 t=None
+it   0 steps    9250 succ 0.54 ret +0.952 kl 0.0031 proj 0.1444 interv 0.1708 gp 0.0 roll 113s it 114s
+it   1 steps   19987 succ 0.38 ret +0.609 kl 0.0022 proj 0.1343 interv 0.1815 gp 0.0 roll 137s it 139s
+DONE 2 19987 (-0.03, -1)
