@@ -1,0 +1,11 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{Adapted External-Method Comparison on 96 New Tasks. Non-Safe-Arrivals Receive 60 Seconds in Mean Completion Time; Audit Failure Is Not Necessarily a Physical Collision.}\label{tab:external}
+\begin{tabularx}{\textwidth}{@{}Xccccc@{}}\toprule
+Method & Replicate & $N=8$ Safe & Cross-Scale Safe & Failed-Audit Runs & Mean Completion/s\\\midrule
+EGP-NPA & 1 & 64/64 & 29/32 & 0/96 & 13.67 \\
+EGP-NPA & 2 & 64/64 & 28/32 & 0/96 & 13.67 \\
+DGPPO (task-adapted) & 1 & 0/64 & 0/32 & 96/96 & 60.00 \\
+DGPPO (task-adapted) & 2 & 0/64 & 0/32 & 96/96 & 60.00 \\
+\bottomrule\end{tabularx}
+\end{table*}

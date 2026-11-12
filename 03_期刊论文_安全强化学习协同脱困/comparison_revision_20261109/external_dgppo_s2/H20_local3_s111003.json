@@ -1,0 +1,22 @@
+{
+  "scene": "H20_local3_s111003",
+  "status": "horizon_reached",
+  "failure": null,
+  "steps": 1200,
+  "duration": 60.0,
+  "arrival": null,
+  "holding_duration": null,
+  "final_max_err": 12.564464950576449,
+  "config": {
+    "dt": 0.05,
+    "horizon": 60.0,
+    "goal_tolerance": 0.01,
+    "hold_seconds": 1.0,
+    "stalled_speed": 1e-06,
+    "stalled_seconds": 5.0
+  },
+  "n": 20,
+  "lambda_required": 9.651,
+  "method": "official_dgppo_adapted",
+  "audit_status": "pending_independent_audit"
+}

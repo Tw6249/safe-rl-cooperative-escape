@@ -1,0 +1,17 @@
+{
+  "scene": "H8_perm8_f60_s20261103",
+  "bench": "E1",
+  "n": 8,
+  "frac": 0.6,
+  "tag": "rl_mappo_lag",
+  "status": "arrived",
+  "arrival": 7.4,
+  "steps": 167,
+  "step_cuts": 0,
+  "audit_segments": 167,
+  "audit_failed": 162,
+  "audit_min_distance": 0.02182283580909632,
+  "audit_min_lambda2": 7.319209816868119,
+  "final_max_err": 0.004345854367493219,
+  "wall_s": 1.53
+}

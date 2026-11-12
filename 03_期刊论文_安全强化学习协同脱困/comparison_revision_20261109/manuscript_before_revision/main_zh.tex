@@ -1,0 +1,36 @@
+\documentclass{cjas_journal}
+
+\TitleZH{耦合安全约束下多机器人协同脱困的包络等变图强化学习与邻域近端分配控制}
+\AuthorsZH{谭\quad 为，\quad 陈\quad 鑫$^{\ast}$}
+\AffilZH{中国地质大学（武汉）人工智能与自动化学院，湖北 武汉 430074；复杂系统先进控制与智能自动化湖北省重点实验室，湖北 武汉 430074}
+
+\AbstractZH{针对机间避碰与全局代数连通保持耦合安全约束下多机器人系统在密集对称交会中易陷入非目标几何死锁、外围静止邻居阻挡通道以及学习残差引发终点稳态悬停的问题，本文提出一种包络等变图策略与邻域近端分配（Envelope Equivariant Graph Policy with Neighborhood Proximal Allocation, EGP-NPA）协同控制方法。首先，构造七机器人对称接触构型的精确有理数二阶 Karush–Kuhn–Tucker（KKT）严格局部极小证书，从代数上证明即便全员可动且存在满足全程避碰与谱连通下界的显式安全可达路径，任何强制总位置误差单调不增（$\dot{W}\le 0$）的短视控制障碍函数（CBF）滤波器均被正定拉格朗日 Hessian 与球面二次能量壁垒锁死，并定量揭示“待互换节点侧向破对称标称驱动”与“外围静止邻居经由动态配额让渡协同退让”两项脱困充要物理条件。其次，构建满足平面特殊正交群 $\mathrm{SO}(2)$ 旋转、平移与节点置换等变的一跳消息传递图神经网络（GNN）残差标称策略，证明手性旋转偏置对破除镜像共线死锁的结构必要性；接入基于反对称边记录与闭邻域块二次规划的邻域近端分配（NPA）安全护盾，导出接触边界上动态碰撞份额转移驱动外围静止邻居同向退让的显式严格正闭式解，并阐明在策略损失中惩罚法向滤波修正量反而抑制退让动力的代数机理；进一步提出仅依赖一跳目标距离的闭邻域完成包络，证明其在终点邻域将零阶成对排斥偏置一阶压制为 $\mathcal{O}(\lVert\boldsymbol{e}_k\rVert_2)$ 并精确恢复目标零速平衡点。最后，基于小规模短轮数（$N\in\{6,\dots,10\}, B=2$）多智能体近端策略优化（MAPPO）训练与大规模多轮（$N\in\{12,20,25\}, B=8$）零样本部署，EGP-NPA 在 $96$ 组密集三角晶格互换与全排列基准及 $48$ 组独立盲测实例上实现 $100\%$ 安全达标与零违约，跨规模安全达标率显著优于护盾投影一致性安全强化学习（$53.1\%$）、去中心化静态 CBF 护盾图策略（$3.1\%$）、原始—对偶拉格朗日安全强化学习（$0\%$ 无违约达标）、切向环流启发式（$40.6\%$）与短视比例吸引滤波（$15.6\%$），并通过固定权重因果消融及 \texttt{MuJoCo} 二阶全向底盘虚拟物理闭环实验验证了方法的有效性与物理可通行性边界。}
+
+\KeywordsZH{多机器人系统；控制障碍函数；代数连通度；安全强化学习；等变图神经网络；几何死锁；邻域近端分配}
+\CLCCode{TP242; TP273}
+
+\TitleEN{Envelope Equivariant Graph Reinforcement Learning and Neighborhood Proximal Allocation for Cooperative Deadlock Resolution of Multi-Robot Systems Under Coupled Safety Constraints}
+\AuthorsEN{TAN Wei,\quad CHEN Xin$^{\ast}$}
+\AffilEN{School of Artificial Intelligence and Automation, China University of Geosciences, Wuhan 430074, China; Hubei Key Laboratory of Advanced Control and Intelligent Automation for Complex Systems, Wuhan 430074, China}
+
+\AbstractEN{To address non-target geometric deadlocks, channel blockage by outer stationary neighbors, and terminal steady-state hovering induced by learned residuals in multi-robot systems subject to coupled inter-robot collision avoidance and global algebraic connectivity constraints, this paper proposes an Envelope Equivariant Graph Policy with Neighborhood Proximal Allocation (EGP-NPA) cooperative control framework. First, an exact rational second-order Karush--Kuhn--Tucker (KKT) certificate is constructed on a seven-robot symmetric contact configuration, proving algebraically that even when all robots are mobile and an explicit collision-free, spectrally connected path exists, any myopic Control Barrier Function (CBF) safety filter enforcing monotone error descent ($\dot{W}\le 0$) is trapped by a positive-definite Lagrangian Hessian over the critical cone and a finite-radius quadratic energy barrier. This certificate identifies two necessary and sufficient physical conditions for deadlock resolution: lateral symmetry-breaking nominal drive from swapping robots and dynamic quota-driven yielding from outer stationary neighbors. Second, a planar $\mathrm{SO}(2)$ rotation-, translation-, and permutation-equivariant one-hop message-passing Graph Neural Network (GNN) residual nominal policy is constructed, proving the structural necessity of chiral rotational bias over $\mathrm{O}(2)$ reflection equivariance. Coupled with a closed-neighborhood block NPA safety shield with antisymmetric edge-ledger local settlement, we derive the explicit positive closed-form solution for pairwise quota transfer and stationary neighbor yielding velocity on contact boundaries, and prove why penalizing normal filter intervention suppresses cooperative yielding. Furthermore, a stateless one-hop closed-neighborhood completion envelope is proposed to suppress zero-order pairwise repulsive biases to $\mathcal{O}(\lVert\boldsymbol{e}_k\rVert_2)$ near the goal and restore the zero-velocity target equilibrium. Finally, trained via Multi-Agent Proximal Policy Optimization (MAPPO) on small teams ($N\in\{6,\dots,10\}, B=2$) and deployed zero-shot to larger teams ($N\in\{12,20,25\}, B=8$), EGP-NPA achieves $100\%$ safe arrival and zero safety violations across $96$ dense triangular-lattice swap/permutation benchmarks and $48$ independent holdout instances, outperforming shield-consistent safe MARL ($53.1\%$), decentralized static-CBF shielded GNN ($3.1\%$), primal-dual MAPPO-Lagrangian ($0\%$ violation-free arrival), tangential circulation heuristics ($40.6\%$), and myopic CBF filtering ($15.6\%$). Controlled fixed-weight ablations and second-order \texttt{MuJoCo} virtual-physical simulations with online division-free spectral estimation further validate each module and characterize the safety-margin versus channel-passability trade-off.}
+
+\KeywordsEN{multi-robot systems; control barrier functions; algebraic connectivity; safe reinforcement learning; equivariant graph neural networks; geometric deadlock; neighborhood proximal allocation}
+
+\FirstPageFootnote{收稿日期：2026-11-09.\quad 基金项目：国家自然科学基金资助项目.\quad 作者简介：谭为，博士研究生，主要研究方向为多机器人系统分布式估计、安全控制与强化学习；陈鑫（通信作者），教授，博士生导师，主要研究方向为复杂系统控制、多智能体协同与智能机器人，E-mail: chenxin@cug.edu.cn.}
+
+\begin{document}
+\makejournaltitle
+
+\input{sections_zh/01_introduction}
+\input{sections_zh/02_preliminaries}
+\input{sections_zh/03_obstruction}
+\input{sections_zh/04_method}
+\input{sections_zh/05_experiments}
+\input{sections_zh/06_conclusion}
+
+\bibliographystyle{unsrtnat}
+\footnotesize
+\bibliography{references_zh}
+
+\end{document}

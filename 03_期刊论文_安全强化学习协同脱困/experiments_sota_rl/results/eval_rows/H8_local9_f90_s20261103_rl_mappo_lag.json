@@ -1,0 +1,17 @@
+{
+  "scene": "H8_local9_f90_s20261103",
+  "bench": "E1",
+  "n": 8,
+  "frac": 0.9,
+  "tag": "rl_mappo_lag",
+  "status": "arrived",
+  "arrival": 3.8,
+  "steps": 95,
+  "step_cuts": 0,
+  "audit_segments": 95,
+  "audit_failed": 93,
+  "audit_min_distance": 0.26345310833894237,
+  "audit_min_lambda2": 7.319575468756375,
+  "final_max_err": 0.003894585964922729,
+  "wall_s": 0.8
+}

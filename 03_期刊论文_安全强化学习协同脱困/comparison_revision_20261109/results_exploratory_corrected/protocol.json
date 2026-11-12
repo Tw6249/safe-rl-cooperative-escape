@@ -1,0 +1,9 @@
+{
+  "identity": "Historical exploratory Lagrangian PPO; not a published-method reproduction",
+  "checkpoint_sha256": "b868291fbccb69a6db6fb1bb706b6627af207175b85f91b4d382eccc1cf8d3d6",
+  "changes": [
+    "Elapsed 1.0 s holding criterion",
+    "No workspace position clipping"
+  ],
+  "training": "unchanged; does not satisfy its training cost limit"
+}

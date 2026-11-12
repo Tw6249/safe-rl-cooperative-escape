@@ -1,0 +1,13 @@
+# Python virtual environments and bytecode caches
+.venv_dgppo/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Migration duplicate backup and upstream nested git metadata
+迁移残留备份_20261111/
+.git_upstream/
+
+# OS metadata
+.DS_Store
+Thumbs.db

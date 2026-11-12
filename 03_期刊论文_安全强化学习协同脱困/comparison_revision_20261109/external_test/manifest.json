@@ -1,0 +1,10 @@
+{
+  "count": 96,
+  "task_seed_streams": [
+    111002,
+    111003,
+    111004
+  ],
+  "selection": "Final-budget model for both methods; this test does not select checkpoints or hyperparameters",
+  "sha256": "b2c0e11ba9bce9c5bd831286cbf5f6dc821b22338e4287d6d1b4eb22d83963ba"
+}

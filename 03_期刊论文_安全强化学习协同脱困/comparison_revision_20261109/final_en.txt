@@ -1,0 +1,1238 @@
+RESEARCH MANUSCRIPT                                                                                                                            1
+
+
+
+
+    Envelope Equivariant Graph Reinforcement
+Learning and Neighborhood Proximal Allocation for
+ Cooperative Deadlock Resolution Under Coupled
+                Safety Constraints
+                                                              Wei Tan and Xin Chen
+
+
+
+    Abstract—An envelope equivariant graph policy with neigh-                  path. Robots already at their own goals may need to move to
+borhood proximal allocation (EGP-NPA) is developed for dense                   permit interior rearrangement.
+multi-robot rearrangement under collision-avoidance and global                    Analytical approaches introduce circulation or compatible
+connectivity constraints. A rational second-order optimality cer-
+tificate characterizes limitations of error-monotone control on                control Lyapunov and barrier conditions [11], [12]. Learning
+a seven-robot contact configuration. An equivariant residual                   approaches use constrained policy optimization, safety filters,
+policy, dynamic allocation, and a completion envelope support                  or learned barrier functions [13], [14]. GCBF+ learns neural
+local cooperative yielding and restoration of the zero-velocity                graph barrier functions and distributed control [15]; DGPPO
+goal equilibrium. One full-budget checkpoint safely completes 96               incorporates discrete graph barrier conditions into proximal
+development tasks and 48 held-out tasks. To separate component
+effects from training variation, fixed-weight interventions are                policy updates [16]. Their constraint representations, dynam-
+reported alongside eight budget- and seed-matched learning                     ics, observations, and objectives differ, so empirical compar-
+runs with 384 evaluations. Projection regularization reduces                   isons require explicit task adaptations. Static-allocation and
+cross-scale arrivals with team critics but increases them with                 custom projection-penalty experiments describe those internal
+local critics, indicating a configuration-dependent interaction.               variants, not these independent published methods.
+Certification stops, computational-budget exhaustion, and safety
+violations are retained separately. Second-order physical simula-                 We investigate three connected design questions: gener-
+tions expose distance violations under actuator lag and nonarrival             ating cooperative nonmonotone motion when error descent
+under conservative compensation, identifying practical limits of               is obstructed, recruiting stationary neighbors through local
+the current implementation.                                                    allocation, and suppressing learned residuals at the goal. The
+   Index Terms—Multi-robot systems, control barrier functions,                 proposed Envelope Equivariant Graph Policy with Neighbor-
+algebraic connectivity, safe reinforcement learning, equivariant               hood Proximal Allocation (EGP-NPA) combines multilayer
+graph neural networks, neighborhood proximal allocation.                       neighbor-message passing, a coupled safety-allocation layer,
+                                                                               and a completion envelope restoring the zero-velocity target
+                                                                               equilibrium.
+                           I. Introduction
+                                                                                  First, a rational second-order Karush–Kuhn–Tucker (KKT)
+   Multi-robot inspection, communication relaying, and for-                    certificate and a safe path on a seven-robot contact configura-
+mation reconfiguration require collision avoidance, network                    tion expose a limitation of error-monotone control. Second, we
+connectivity, and task completion. Algebraic connectivity char-                construct a rotation-, translation-, and permutation-equivariant
+acterizes a state-dependent communication graph, and dis-                      residual policy, analyze deterministic lateral-output restric-
+tributed estimation and control provide tools for maintaining                  tions on exactly mirror-symmetric configurations, and derive
+mobile networks [1]–[3]. Control barrier functions (CBFs),                     allocation-induced yielding in a two-node contact subprob-
+often combined with quadratic programs (QPs), impose safety                    lem. Third, we state conditional safety guarantees for learned
+conditions while modifying nominal commands [4], [5]. Joint                    commands followed by allocation and holding-segment certi-
+spectral and pairwise constraints additionally require allocation              fication, and establish a first-order envelope bound. Finally,
+of coupled responsibilities under finite communication [6].                    specified-checkpoint evaluations, fixed-weight interventions,
+   Instantaneous feasibility does not imply task completion.                   and budget- and seed-matched learning comparisons distin-
+CBF-QPs can introduce undesired equilibria, and robots ex-                     guish controller behavior, component effects, and training
+changing    positions can become stuck [7]–[9]. For W (p) =                    variation. Negative second-order physical-simulation outcomes
+1
+              gi ∥22 , projecting −∇W onto a convex safe input
+   P
+2    i ∥p i −                                                                  are retained.
+set containing zero produces error-monotone control [10]. A                       Notation: Rn , Qn , and Sn+ denote real vectors, rational
+strict nongoal local minimum on the feasible configuration set                 vectors, and positive semidefinite matrices. In is the identity,
+can require a temporary increase in W along a successful safe                  1N is the all-ones vector, and εi is a standard basis vector.
+                                                                               ∥·∥2 denotes the Euclidean or spectral norm; col denotes
+   Research manuscript. The authors are with the School of Artificial Intel-   column stacking; ⊗ denotes the Kronecker product; (x)+ =
+ligence and Automation, China University of Geosciences, Wuhan 430074,
+China. Author and funding details are subject to verification before submis-   max(x, 0) and clip(x, a, b) = min(max(x, a), b). The matrix
+sion.                                                                          J = 01 −1 0    rotates vectors counterclockwise by a right angle,
+RESEARCH MANUSCRIPT                                                                                                                       2
+
+
+
+and I(·) is an indicator.                                                enforces both pairwise collision avoidance dsafe > 0 and
+                                                                         global algebraic connectivity maintenance λreq > 0.
+      II. Problem Formulation and Preliminaries on                          Choosing an orthogonal complement basis matrix Q⊥ ∈
+                Closed-Neighborhood NPA                                  RN ×(N −1) satisfying Q⊤                      ⊤
+                                                                                                 ⊥ Q⊥ = IN −1 and Q⊥ 1N = 0, the
+                                                                         compressed spectral margin matrix on the zero-mean subspace
+A. Planar Multi-Robot Fixed-Goal Model and Rationally                    is defined as
+Closed Channel
+                                                                                      H(p) = Q⊤ ⊥ Lp (p)Q⊥ − λreq IN −1 ,
+   Consider N mobile robots operating in the Euclidean plane                                                                     (6)
+                                                                                      H(p) ⪰ 0 ⇐⇒ λ2 (Lp (p)) ≥ λreq .
+R2 with vertex set V = {1, . . . , N }. Each robot i ∈ V obeys
+velocity-bounded single-integrator kinematics:                           Its P directional derivative along u is DH(p)[u] =
+                                                                         Q⊤ ⊥
+                                                                                            ⊤                  ⊤
+                                                                                  i<j [∇pi wij (ui − uj )]bij bij Q⊥ . With pairwise bar-
+                         ui (t) ∈ Ui := v ∈ R2 : ∥v∥2 ≤ U ,
+                                         
+  ṗi (t) = ui (t),                                                                        col        2       2
+                                                                         rier function hij (p) = dij − dsafe and barrier decay rates
+                                                                   (1)   αc , αs , αx > 0, the continuous-time composite safe input set
+where pi ∈ R2 and ui ∈ R2 are the planar position and                    is
+velocity control input of robot i, and U > 0 is the maximum                             n
+speed bound (U = 0.50 m/s throughout this paper). Given                     K0 (p) = u ∈ R2N : 2p⊤                          col
+                                                                                                        ij (ui − uj ) + αc hij (p) ≥ 0,
+distinct static labeled goal positions gi ∈ R2 satisfying                            DH(p)[u] + αs H(p) ⪰ 0,
+∥gi − gj ∥2 ≥ dsafe (∀i ̸= j), define the stacked state p =                                                                         o
+col(p1 , . . . , pN ) ∈ R2N , joint input u = col(u1 , . . . , uN ) ∈                ui ∈ Ui , |pi,a + αx−1 ui,a | ≤ Bws (∀i < j, a) .
+R2N , and goal configuration g = col(g1 , . . . , gN ) ∈ R2N . Let                                                                    (7)
+ei = pi − gi , e = p − g, pij = pi − pj , and dij = ∥pij ∥2 .            For every p ∈ S, K0 (p) is nonempty, closed, and convex, and
+The raw navigation task distance cost is defined as                      always contains the zero-velocity vector 0 ∈ K0 (p). Given
+                                      N                                  a nominal velocity unom ∈ R2N , the centralized minimally
+                         1         1X
+              W (p) =      ∥e∥22 =       ∥pi − gi ∥22 .           (2)    invasive safety projection is
+                         2         2 i=1
+                                                                                                                 1
+                                                                                  ΠK0 (p) (unom ) = arg min        ∥u − unom ∥22 .      (8)
+   To rigorously separate intrinsic geometric deadlocks of the                                          u∈K0 (p) 2
+mathematical model from floating-point rounding artifacts dur-              Under sampled-data ZOH execution at tk = k∆t (∆t =
+ing equilibrium certification and sampled-data ZOH verifica-             0.05 s), the executed velocity uk is held constant over [tk , tk +
+tion, the physical communication graph employs a polynomial              h], generating the straight-line segment p(s) = pk + suk
+squared-cutoff channel kernel that is algebraically closed over          (s ∈ [0, h]). Using the explicit second-order curvature bound
+                                                                          d2                              2                           2
+                                                                         ds2 H(pk + suk ) ⪰ −cL ∥uk ∥2 IN −1 with cL = 8N/Rc for
+the rational field Q:
+                             2                                          the polynomial kernel (3), we obtain the following continuous-
+                          d2
+                   
+           ω(d) = 1 − 2          ,     Rc = 10.0 m.         (3)          time segment safety guarantee.
+                         Rc +
+                                                                         Theorem 1 (Continuous-Time Safety Over ZOH Segments).
+Within the communication support d < Rc , the edge weight                Suppose pk ∈ S and step size h > 0 satisfies αc h ≤ 1, αs h ≤
+wij (p) = ω(dij ) is a quadratic polynomial in the squared               1, αx h ≤ 1. If uk satisfies the speed ball, workspace bounds,
+distance d2ij = ∥pi − pj ∥22 , continuously differentiable at            pairwise collision CBF inequalities in (7), and the curvature-
+d = Rc with locally Lipschitz gradient. With incidence vector            tightened spectral condition
+bij = εi − εj ∈ RN , the state-dependent weighted graph
+                                                                                                                cL h
+Laplacian is                                                                     DH(pk )[uk ] + αs H(pk ) ⪰          ∥uk ∥22 IN −1 , (9)
+                       X                                                                                         2
+            Lp (p) =          ω(dij )bij b⊤     N
+                                          ij ∈ S+ .       (4)            then the continuous trajectory p(s) = pk + suk satisfies
+                        1≤i<j≤N                                          dij (s) ≥ dsafe (∀i < j), λ2 (Lp (p(s))) ≥ λreq , and p(s) ∈ X
+                                                                         for all s ∈ [0, h].
+Whenever p ∈ Q2N , Lp (p) and all its directional derivatives
+are exact rational matrices, enabling zero-error verification of         Proof. For each pair i < j, exact quadratic expansion of
+KKT optimality conditions and matrix positive definiteness via           hcol
+                                                                          ij (pk + suk ) together with (7) and αc s ≤ 1 yields
+exact rational arithmetic.                                                                                   ⊤
+                                                                            hcol               col
+                                                                             ij (pk + suk ) = hij (pk ) + 2spij,k (ui,k − uj,k )
+                                                                                                + s2 ∥ui,k − uj,k ∥22                 (10)
+B. Composite Safe Set and Sampled-Data ZOH Segment Safety
+                                                                                              ≥ (1 − αc s)hcol
+                                                                                                           ij (pk ) ≥ 0.
+   Let 0 = λ1 (Lp (p)) ≤ λ2 (Lp (p)) ≤ · · · ≤ λN (Lp (p))
+denote the ordered eigenvalues of Lp (p), where λ2 (Lp (p)) is           For H(pk +suk ), second-order Taylor expansion with integral
+the algebraic connectivity. The composite safe configuration             remainder and (9) yield, for all s ∈ [0, h],
+set is S := X ∩ C, where X = [−Bws , Bws ]2N is the bounded                  H(pk + suk ) ⪰ H(pk ) + sDH(pk )[uk ]
+workspace and                                                                                  − 21 cL s2 ∥uk ∥22 IN −1
+                                                                                                                                      (11)
+ C = p ∈ R2N : dij ≥ dsafe (∀i < j), λ2 (Lp (p)) ≥ λreq
+       
+                                                                                             ⪰ (1 − αs s)H(pk )
+                                                          (5)                                  + 12 cL s(h − s)∥uk ∥22 IN −1 ⪰ 0.
+RESEARCH MANUSCRIPT                                                                                                                           3
+
+
+
+Workspace bounds hold for all s ∈ [0, h] by convexity.                                                               +
+                                                                              neighborhood induced subgraph Gi+ = (Ni,k , Ei ) solves
+                                                                              in parallel:
+                                                                                            1 X
+                                                                                  min            ∥ũq − unom  2
+                                                                                                         q,k ∥2
+C. Closed-Neighborhood Block NPA and Antisymmetric Edge-                        ũq ,wq ,te 2
+                                                                                               +
+                                                                                             q∈Ni,k
+Ledger Settlement
+                                                                                                   1 X 2 1X 2
+                                                                                              +         wq +   te
+  At step k, the linearized coupled safety constraints are                                        2η  +
+                                                                                                             η
+                                                                                                     q∈Ni,k       e∈Ei
+written as Mk = 1 + Pk affine inequality rows:
+                                                                                                                 (r−1)
+                                                                                    s.t.    a⊤
+                                                                                             q0,k ũq + bq0,k + sq0,k + wq ≤ 0,
+   X
+          a⊤
+                             
+                                                                                                                 (r−1)
+                                                                                                                         X
+           ia,k ui + bia,k       ≤ 0,   a ∈ {0, 1, . . . , Pk },   (12)                     a⊤
+                                                                                             qa,k ũq + bqa,k + sqa,k +        σq,e te ≤ 0,
+   i∈Va                                                                                                                 e∈Ei,a
+                                                                                             X
+where row a = 0 (V0 = V) is the Fiedler spectral connectivity                                        wq = 0,   ũq ∈ Uq ∩ Xq ,
+                                                                                               +
+row with unit Fiedler eigenvector ϕk (1⊤     N ϕk = 0, ∥ϕk ∥2 = 1)
+                                                                                            q∈Ni,k
+
+and discretization    margin     δλ  >  0   (λ  eff = λreq + δλ ),
+                                                                                                                                         (15)
+i.e., ai0,k = − j̸=i (ϕi,k − ϕj,k )2 ∇pi wij (pk ) and bi0,k =
+                  P
+                                                                              where η = 2.0 is the proximal parameter, wq is the block
+− αNs (λ2 (Lp (pk )) − λeff ); rows a ∈ {1, . . . , Pk } (Va = {i, j})        spectral quota increment, and te is the pairwise collision
+are pairwise collision rows with aia,k = −2pij,k , aja,k =                    quota transfer on edge e ∈ Ei,a = {e ∈ Ei : a(e) =
+2pij,k , and bia,k = bja,k = − α2c (d2ij,k − d2safe ). Note that              a}. Block solutions are committed via convex combination
+bia,k ≤ 0 holds throughout S (the zero-velocity feasible                      weights ϑi = (maxq∈N + |Nq,k   + −1
+                                                                                                              |) :
+                                                                                                      i,k
+initialization condition). In dense triangular-lattice interior
+                                                                                               X                   X
+swap tasks, robots permute locally within the compact lattice                   u(r)                  ϑi u(r−1)           ϑi ũ(i)
+                                                                                  q = 1−                    q   +              q . (16)
+without global expansion, so λ2 (Lp (p(t))) ≫ λreq (e.g.,                                              +                      +
+                                                                                                  i:q∈Ni,k               i:q∈Ni,k
+λ2 ≈ 15.3 ≫ λreq = 9.69 in Section V) and the active
+geometric bottleneck arises from tightly coupled pairwise
+contact constraints at dsafe = 1.000 m.                                    III. Obstruction of Myopic Error-Monotone Control
+                                                                                      and Rational KKT Certificate
+   Over the one-hop directed communication graph Gc (pk ) =
+(V, Ek ) defined by sensing/communication radius Rsense =                 A. Variational Inequality and Normal-Cone Lock-Up of My-
+2.50 m (open neighborhood Ni,k = {j : 0 < dij,k ≤ Rsense },               opic Projections
+                           +
+closed neighborhood Ni,k       = {i} ∪ Ni,k ), each robot maintains         In standard safety-critical navigation [4], [7], each robot
+zero-sum quota variables sia,k reconstructed from antisym-                uses the proportional goal-attraction nominal law unom     =
+                                                                                                                                i
+metric edge ledgers ϖe,a,k on undirected edges e = {i, j}:                −kg ei = −kg (pi − gi ) (kg > 0), yielding the filtered
+                    X                       X                             input uG = ΠK0 (p) (−kg e). By the variational inequality of
+          sia,k =          σi,e ϖe,a,k =⇒          sia,k = 0,      (13)   Euclidean projection onto the closed convex set K0 (p),
+                     e∋i                    i∈Va
+                                                                               (uG + kg e)⊤ (v − uG ) ≥ 0,            ∀v ∈ K0 (p).       (17)
+where σi,e = +1, σj,e = −1 for i < j. The closed-                         Substituting the always-safe zero velocity v = 0 ∈ K0 (p) into
+neighborhood NPA safety filter L executes two stages per                  (17) yields
+control step:
+                                                                                                                1
+1) Stage 1 (Link-loss revocation, single-robot safety refit,                               Ẇ (p) = e⊤ uG ≤ −      ∥uG ∥22 ≤ 0.          (18)
+                                                                                                                kg
+   and one-hop local settlement): Edges exceeding Rsense
+   have their ledgers zeroed by both endpoints. Each robot                Equation (18) shows that whenever 0 ∈ K0 (p), any
+   i ∈ V then solves the local refit QP under inherited quotas            proportional-attraction safety filter enforces monotone non-
+   si,k−1 (with nonnegative KKT multiplier vector µi,k−1 ):               increasing W (p(t)). However, at a non-target configuration
+                                                                          (e ̸= 0), if −kg e falls into the normal cone NK0 (p) (0) =
+                    1                                                     {w ∈ R2N : w⊤ v ≤ 0, ∀v ∈ K0 (p)} [17], no nonzero safe
+          min         ∥ui − unom
+                               i,k ∥2
+                                     2
+                                                                          velocity can decrease W to first order, and the unique global
+       ui ∈Ui ∩Xi   2                                              (14)
+                                                                          optimum of the safety QP collapses to uG = 0.
+           s.t.     a⊤ia,k ui + bia,k + sia,k−1 ≤ 0, ∀a ∋ i.
+
+
+   If (14) is infeasible for robot i, one-hop local settlement            B. Seven-Robot Strict Non-Target Local Minimum Theorem
+   clears all incident edge ledgers of node i (sia = 0,                   and Energy Barrier
+   restoring feasibility of ui = 0 since bia,k ≤ 0) and                     Deadlocks in CBF filters are often treated as unstable
+   notifies one-hop neighbors to re-solve (14), yielding a                saddle points escapable via small perturbations or negative
+                                   (0) (0)
+   strictly feasible warm start (uk , sk ).                               curvature [7], [8]. To rigorously falsify the universality of this
+2) Stage 2 (B-round closed-neighborhood block proxi-                      assumption when all robots are mobile, consider the seven-
+   mal allocation): In round r ∈ {1, . . . , B}, each closed-             robot planar symmetric double-triangle configuration p̄ ∈ R14
+RESEARCH MANUSCRIPT                                                                                                                        4
+
+
+
+shown in Fig. 1(a) (dsafe = 1 m, U = 1/2 m/s, columns                  min z ⊤ Qc z s.t. Gc z ≥ 0, Ec z = (0, 1)⊤ , the exact rational
+correspond to robots 1, . . . , 7):                                    primal witness Z∗ ∈ Q7×2 and dual multipliers (µ, ν) are:
+                                                                                                                              
+                                                                        ⊤      1 −15 −132 −105 90 177 −105 90
+           −1    −1/2
+                 √         −1/2
+                           √         0 √1/2        1/2
+                                                   √         1           Z∗ =                                                    ,
+  p̄⊤ =                                                          .              496 15 132 −15 206 177 −225 −290
+            0      3/2    − 3/2      0   3/2     − 3/2 0
+                                                                               15          33
+                                                                (19)    µ13 = 248 , µ24 = 62  , µ36 = 15         177         225
+                                                                                                      62 , µ45 = 248 , µ67 = 248 ,
+At p̄, all 7 robots are mobile and form 12                                     135 1545 ⊤
+                                                                          ν = 496 , 496 ,
+active contact edges at dij               =     1 m: Ec            =                                                           (22)
+{12, 13, 14, 24, 25, 34, 36, 45, 46, 47, 57, 67}. Outer robots
+1, 2, 3, 5, 6 start at their respective goals (gi = p̄i , ei = 0),     with all other µij = 0. Exact rational arithmetic verifies primal
+whereas center robot 4 at (0, 0) and rightmost robot 7 at              feasibility Gc z∗ ≥ 0, Ec z∗ = (0, 1)⊤ , complementary slack-
+(1, 0) must exchange positions (g4 = p̄7 , g7 = p̄4 ).                 ness µ⊤ Gc z∗ = 0, and stationarity Qc z∗ = G⊤              ⊤
+                                                                                                                           c µ+Ec ν, with
+                                                                                             ⊤            1545
+                                                                       optimal objective z∗ Qc z∗ = 496 . Dividing by the vertical
+Theorem 2 (Exact Rational Certificate of Strict Local Mini-            scaling factor 3 yields minv∈C,v4y −v7y =1 ∥v∥22 = 515  496 > 1 and
+mum and Energy Barrier). For the seven-robot position swap             v ⊤ HL v ≥ (1 − 496    )∥v∥2
+                                                                                                     =   19
+                                                                                                             ∥v∥  2
+                                                                                                                    .
+                                                                                          515     2     515       2
+task (19) with dsafe = 1 m, λreq = 5/2, Rc = 10 m:                        (2) Let 0 < R := ∥δ∥2 ≤ 200   1
+                                                                                                             satisfy ∥p̄ij + δi − δj ∥22 ≥ 1
+1) First-order stationarity and second-order strict positive           (∀{i, j} ∈ Ec ). With z = δ4x − δ7x and t = δ4y − δ7y ,
+   definiteness on the critical cone: At p̄, W (p̄) = 1,               we have W (p̄ + δ) − W (p̄) = 12 R2 − z. If z ≤ 0, (21)
+   λ2 (Lp (p̄)) > 5/2, and ∇W (p̄) = 12 ∇hcol47 (p̄), so uG = 0        holds trivially; suppose z > 0. Each contact edge gives
+   is the unique optimum of (8). Over the full critical cone           p̄⊤                1          2         2
+                                                                         ij (δi −δj ) ≥ − 2 ∥δi −δj ∥2 ≥ −R . Taking the inner product
+   C = {v ∈ R14 : p̄⊤  ij (vi − vj ) ≥ 0 (∀{i, j} ∈ Ec ), v4x =
+                                                                                       ⊤       ⊤
+                                                                       P Qc z∗ = 609
+                                                                       of            Gc µ + Ec ν with the scaled perturbation δ̃, using
+   v7x }, the Lagrangian Hessian HL = I14 − (b47 b⊤      47 ) ⊗ I2         µij = 248 =: S, c √      = 1545
+                                                                                                        496 , and the Cauchy–Schwarz
+                                                                                           c                                    496 2
+   satisfies the exact rational bounds:                                inequality gives √3 |t| ≤ cR + SR2 =⇒ t2 ≤ 515               R (1 +
+                                                                       3     2                       2     2                     2     2
+                             515                                       2 R) . Moreover, (−1 + z) + t ≥ 1 =⇒ 2z ≤ z + t and
+                                                                                 2
+           min        ∥v∥22 =     > 1,                                 z ≤ 2R , whence
+     v∈C, v4y −v7y =1        496
+                             19                                                                   1 2
+                  v ⊤ HL v ≥     ∥v∥22 > 0       (∀v ∈ C \ {0}).         W (p̄ + δ) − W (p̄) =      R −z
+                             515                                                                  2 
+                                                                                                  R2
+                                                                                                                            
+                                                               (20)                                       496     3 2
+                                                                                                ≥      1−       1 + R − 4R2
+                                                                                                   2      515      2
+2) Finite-radius spherical energy barrier and strictly inte-                                       1 2               1 i
+   rior open-ball trap: For every collision-free perturbation                                   ≥     R ,    ∀R ∈ 0,      .
+                                                                                                  100                200
+                 1
+   0 < ∥δ∥2 ≤ 200   satisfying dij (p̄ + δ) ≥ 1 (∀i < j),                                                                   (23)
+                                                                       The strictly interior trap on Bρ (p0 ) follows from Wτ (p̄+δ)−
+                                          1                                        r2
+                W (p̄ + δ) − W (p̄) ≥        ∥δ∥22 > 0.        (21)    Wτ (p̄) ≥ 100               19
+                                                                                       − 25 τ r = 8×10                    1
+                                                                                                      7 on ∥δ∥2 = r = 200 .
+                                         100
+                                                                          (3) Along the 3-stage path in Fig. 1(b) (uniform expansion
+   Moreover, for the strictly interior perturbed task p0 =             to 3p̄, opposite semicircular swap of robots 4 and 7 around
+   (1 + 10−8 )p̄, gτ = (1 + 10−6 )g, every continuous safe             (3/2, 0) with radius 3/2, and uniform contraction to g), all
+   trajectory starting in the open ball Bρ (p0 ) ⊂ int(S) of           pairwise distances satisfy dij (s) ≥ 1 and maxi<j dij (s) ≤ 6,
+   radius ρ = 4×10  1
+                      8 with Ẇτ ≤ 0 is permanently trapped
+                                                                       so wij (s) ≥ (1 − 36/100)2 = 256/625 and λ2 (Lp (p(s))) ≥
+                                                                            256
+   inside the sphere ∥p − p̄∥2 = 200 1
+                                        (Wτ (p̄ + δ) − Wτ (p̄) ≥       7 × 625  = 1792
+                                                                                    625 > 2 .
+                                                                                             5
+
+      19
+         7 > W  τ (p) − W τ (p̄)) and  cannot reach the exterior
+   8×10                                                                Remark 1 (Cooperative Control Constructions Motivated by
+   goal gτ .
+                                                                       the Witness). The exact rational witness (22) motivates two
+3) Global collision-free and spectrally connected reachabil-           local control constructions used here. These are not global
+   ity: There exists an explicit piecewise smooth path p(s)            necessary and sufficient conditions for arbitrary rearrange-
+   (s ∈ [0, 3]) connecting the initial and goal configurations         ment tasks:
+   such that dij (s) ≥ 1 m and λ2 (Lp (p(s))) ≥ 1792     625 =          1) Lateral symmetry-breaking nominal drive from swapping
+   2.8672 > 52 for all s ∈ [0, 3].
+                                                                           robots: In (22), robots 4 and 7 must generate opposite
+Proof. (1) At p̄, e4 = (−1, 0)⊤ , e7 = (1, 0)⊤ , and ei = 0                transverse velocity components z4y = + 206         496 > 0 and
+otherwise, while ∇p4 hcol   47 (p̄) = (−2, 0)
+                                              ⊤
+                                                and ∇p7 hcol
+                                                         47 (p̄) =         z7y = − 290
+                                                                                     496  <  0  perpendicular   to e 4 , e7 .  Purely radial
+      ⊤                                                                    attraction keeps the system inside the collinear deadlock
+(2, 0) ; thus multiplier λ47 = 1/2 (and 0 on all other
+edges) satisfies ∇W (p̄) − 12 ∇hcol    47 (p̄) = 0. For v ∈ C,             subspace v4y − v7y = 0.
+v ⊤ HL v = √∥v∥22 − |v4y − v7y |2 . Scaling coordinates as              2) Cooperative yielding of outer stationary neighbors via
+vi = (zix , 3ziy )⊤ stacked into z ∈ R14 with Qc =                         dynamic quota transfer: As robots 4 and 7 separate
+diag(1, 3, . . . , 1, 3) gives ∥v∥22 = z ⊤ Qc√  z. Define rational         transversely, the five outer target-holding neighbors (ej =
+matrices (Gc z)ij = p̄ij,x (zix − zjx ) + 3p̄ij,y (ziy − zjy )             0) must simultaneously execute nonzero outward yielding
+and Ec z = [z4x − z7x , z4y − z7y ]⊤ . For the convex QP                   velocities (e.g., (Z∗ )2,: = 496 1
+                                                                                                               [−132, 132], (Z∗ )5,: =
+RESEARCH MANUSCRIPT                                                                                                                                                           5
+
+
+
+
+                                   Robot 4 Path/Vel.        Robot 7 Path/Vel.                        Neighbor Yielding                 Contact Edge (1 m)
+                                                                                                   (b) Safe Connected Reachability Path
+
+                                 (a) 7-Robot Contact & Critical Velocity                      2
+
+
+
+
+                                                                               y (m)
+                                                                                              0
+                          1.0
+Vertical Position y (m)
+
+
+
+
+                                                                                              -2
+                          0.5
+                                                                                                     -3      -2        -1         0          1           2          3
+                          0.0
+                                                                                                   (c) Task Error Energy Barrier Profile
+                          -0.5
+
+
+
+
+                                                                              Error W(p(s))
+                                                                                              20
+                          -1.0
+
+                                                                                              10
+                                        -1             0          1
+                                         Horizontal Position x (m)                            0
+                                                                                               0.0        0.5        1.0         1.5         2.0         2.5            3.0
+                                                                                                                       Path Parameter s
+
+Fig. 1. Seven-robot strict non-target local minimum configuration and analytical safe connected reachability witness. (a) Double-triangle contact configuration
+(19), 12 initial contact edges, and optimal critical-cone velocity witness vectors (22); (b) analytical 3-stage reachability path (uniform expansion by 3, opposite
+semicircular swap of robots 4 and 7, and uniform contraction); (c) task error profile W (p(s)) along the witness path, illustrating the mandatory energy barrier
+above W (p̄) = 1.
+
+                      1
+                     496 [177, 177]), transmitted mechanically through strictly                  Let ui,k−1 be the previous executed velocity, δi,k−1 =
+                     positive contact shadow prices µ24 , µ45 , µ67 > 0. Under                ui,k−1 − ΠUi (unom
+                                                                                                               i,k−1 ) the filter velocity modification, µi,k−1
+                     static equal quota splitting (sia ≡ 0), stationary neighbors             the KKT dual multiplier vector (shadow prices) from the
+                     remain frozen at uj = 0 and truncate the transverse                      single-robot refit QP (14), si0,k−1 the spectral quota, and
+                     separation of robots 4 and 7 to zero.                                    ϖe,k−1 = [ϖij,0,k−1 , ϖij,1,k−1 ]⊤ the binary edge ledger on
+                                                                                              e = {i, j}. Define the one-hop closed-neighborhood      conflict
+                                                                                              memory mi,k = max γm mi,k−1 , maxj∈N + cj,k−1 and gate
+                           IV. Envelope Equivariant Graph Policy with                                                                              i,k
+                                                                                               gate
+                          Neighborhood Proximal Allocation (EGP-NPA)                          γi,k   = tanh(βm mi,k ) ∈ [0, 1) (γm = 0.97, βm = 4.0;
+                                                                                                                                                   gate,µ
+                                                                                              cj,k−1 = ∥µj,k−1 ∥2 gives the shadow-price gate γi,k         , while
+A. Chiral Rotation- and Permutation-Equivariant GNN Resid-                                    cj,k−1 = ∥δj,k−1 ∥2 gives the intervention gate γi,kgate,int
+                                                                                                                                                            ). The
+ual Policy
+                                                                                              rotation-invariant node feature xi,k = col(xgeom
+                                                                                                                                           i,k   , x alg
+                                                                                                                                                     i,k )  ∈  R17
+                                                                                                                                      geom alg
+    To break the collinear deadlock identified in Remark 1                                    and directed edge feature efeat
+                                                                                                                          ij,k = col(eij,k , eij,k ) ∈ R
+                                                                                                                                                            20
+                                                                                                                                                                are
+without hand-crafting global topological potentials, we con-                                  constructed as:
+struct a distributed residual nominal policy over the one-hop
+directed communication graph Gc (pk ) = (V, Ek ) at tk = k∆t
+(Rsense = 2.50 m).
+    Feeding raw Cartesian coordinates pi,k , gi into a neu-
+ral network violates Euclidean rigid-body invariance, caus-
+ing identical relative formations rotated or translated in the
+workspace to produce inconsistent actions [18]. For each robot                                        h
+                                                                                               xgeom                                          gate
+                                                                                                     = min(∥ei,k ∥2 , 4), I(∥ei,k ∥2 < εg ), γi,k  ,
+i ∈ V, we construct a local target orthonormal frame using                                      i,k
+
+êi,k = ei,k / max(∥ei,k ∥2 , 10−9 ) and J êi,k , together with                                          ∥ui,k−1 ∥2   u⊤
+                                                                                                                     , i,k−1
+                                                                                                                              êi,k         u⊤
+                                                                                                                                    σi,k , i,k−1U
+                                                                                                                                                  J êi,k
+                                                                                                                                                           σi,k ,
+                                                                                                              U            U
+a smooth goal-vanishing factor σi,k = min(1, ∥ei,k ∥2 /r0 )                                                              ⊤                   ⊤
+                                                                                                          ∥δi,k−1 ∥2   δ     ê i,k        δ     J ê i,k
+(r0 = 0.10 m) to remove directional singularity as ei,k → 0.                                                  U      , i,k−1
+                                                                                                                           U        σi,k , i,k−1U         σi,k ,
+For each directed edge (i, j) ∈ Ek , we construct a local                                                 λ2 (Lp (pk ))−λreq  |N |
+                                                                                                                                                                    i⊤
+edge orthonormal frame using r̂ij,k = (pj,k − pi,k )/dij,k and                                                   λreq        , 8i,k , min (dij,k − dsafe )               ,
+                                                                                                                                      j∈Ni,k
+J r̂ij,k .                                                                                                                                                              (24)
+RESEARCH MANUSCRIPT                                                                                                                                         6
+
+             h
+                 dij,k
+  egeom
+   ij,k =        Rsense ,
+                                                            ⊤
+                            clip(dij,k − dsafe , 0, 1.5), r̂ij,k êi,k σi,k ,         pj,k )/dij,k provides pairwise repulsive bias along neighbor
+               ⊤                     ⊤                   ⊤                            links.
+             r̂ij,k J êi,k σi,k , r̂ij,k êj,k σj,k , r̂ij,k J êj,k σj,k ,
+                min(∥ej,k ∥2 , 4), ê⊤
+                                     i,k êj,k σi,k σj,k ,                            Proposition 1 (SO(2) ⋉ R2 and Permutation Equivariance
+                                            (uj,k−1 −ui,k−1 )⊤ r̂ij,k                 and Chiral Symmetry Breaking). For any network parameters
+             (J êi,k )⊤ êj,k σi,k σj,k ,                             ,
+                                                      U
+                                                                 i⊤                   θ, any rotation matrix R ∈ SO(2), translation c ∈ R2 ,
+                                 ⊤
+                (uj,k−1 −ui,k−1 ) J r̂ij,k    gate ∥δj,k−1 ∥2
+                                           , γj,k ,                  ,                and N × N permutation matrix Pπ , let (p̃i , g̃i , ũi,k−1 ) =
+                           U                             U
+                                                                                      (Rpi + c, Rgi + c, Rui,k−1 ). Then the nominal control field
+                                                                               (25)
+                                                                                      (29) satisfies:
+            h
+  xalg                                                                                                unom                     nom
+                                               P                 
+    i,k = ln(1 + |µi0,k−1 |), ln 1 +              j̸=i |µij,k−1 | ,                                      i,k (p̃k , g̃; θ) = Rui,k (pk , g; θ),
+                                                                                      unom (Pπ ⊗ I2 )pk , (Pπ ⊗ I2 )g = (Pπ ⊗ I2 )unom
+                                                                                                                         
+                 s
+          clip i0,k−1
+                                                                                                                                            (pk , g).
+                   ν̄i0,k , −3, 3 , ln(1 + ∥µi,k−1 ∥2 ),
+                                                                                       k                                                k
+                                                                                                                                                  (30)
+                 U ∥ai0,k ∥2 −bi0,k −si0,k−1            i ⊤
+          clip                ν̄i0,k           , −3,  3      ,                        Furthermore, if (29) is constrained to be equivariant under
+          h                                                         (26)
+  ealg  =   ln(1 +    |µ         |),   ln(1 + |µ         |),                          the full orthogonal group O(2) (including planar reflections
+   ij,k                  ij,k−1                  ji,k−1
+                                                                                      M ∈ O(2) \ SO(2) with det M = −1), then on any
+            tanh(2ϖij,0,k−1 ), tanh(2ϖij,1,k−1 ),                                     encounter configuration that is mirror-symmetric across êi,k ,
+                                                                    i⊤                the tangential circulation coefficient necessarily collapses to
+            |ϕ̃i,k − ϕ̃j,k |, ∥Φ
+                               e i,k − Φ          e⊤ Φ
+                                       e j,k ∥2 , Φ                      ,
+                                                    i,k j,k                             θ
+                                                       e
+                                                                                      ωi,k ≡ 0.
+                                             −3
+                      √ ∥2 +|bi0,k |+10√ normalizes2 the spec-
+where ν̄i0,k = U ∥ai0,k                                                               Proof. Under SO(2) ⋉ R2 , ẽi,k = Rei,k and p̃ij,k = Rpij,k .
+tral row, and ϕ̃i,k = N ϕi,k , Φi,k = N Φi,k ∈ R are unit-
+                                     e                                                Since R ∈ SO(2) preserves Euclidean norms and inner prod-
+                                                       PN
+RMS normalized spectral states satisfying N1 i=1 ϕ̃2i,k = 1.                          ucts and commutes with J (RJ = J R), all scalar features in
+                                                                                                                              θ    θ      θ
+   A parameter-shared Lgnn = 2-layer message-passing GNN                              (24)–(26) and action coefficients (ωi,k   , ri,k , ψij,k ) are strictly
+           (0)                                                                        invariant. Substituting into (29) and using RJ ei,k = J Rei,k
+encodes hi = ϕenc (xi,k ) ∈ Rdh (dh = 64) and performs
+one-hop message passing with mean–max dual aggregation                                yields the first identity; permutation equivariance follows from
+across layers ℓ ∈ {1, . . . , Lgnn }:                                                 parameter sharing and symmetric mean/max aggregation in
+                                                                                      (27). Conversely, any reflection M ∈ O(2) \ SO(2) an-
+     (ℓ)               (ℓ−1)       (ℓ−1) feat 
+  mij = ϕ(ℓ)msg col(hi         , hj     , eij,k ) , ∀(i, j) ∈ Ek ,                    ticommutes with J (M J = −J M ). On a state mirror-
+     (ℓ)          1            X        (ℓ)        (ℓ)             (ℓ)                symmetric under M (M ei,k = ei,k ), O(2) equivariance
+  m̄i =                               mij , m̂i = max mij ,                           requires M unom       = unom
+           max(|Ni,k |, 1)                                j∈Ni,k                                      i,k         i,k , whose projection along J ei,k
+                             j∈Ni,k                                                              θ        θ           θ
+                                                                                    forces −ωi,k = ωi,k =⇒ ωi,k        ≡ 0.
+     (ℓ)            (ℓ−1)        (ℓ)         (ℓ−1)      (ℓ)   (ℓ) 
+   hi = LN(ℓ) hi           + ϕupd col(hi            , m̄i , m̂i ) ,
+                                                                    (27)              B. Closed-Neighborhood Dynamic Quota Shield and Cooper-
+              (ℓ)    (ℓ)                                                              ative Yielding of Stationary Neighbors
+where ϕenc , ϕmsg , ϕupd are Multi-Layer Perceptrons (MLPs)
+                             (ℓ)                                                         The nominal velocity unom i,k is filtered by the B-round
+with SiLU activations and LN denotes Layer Normalization.
+                                                                                      closed-neighborhood block NPA shield L (Section II-C) and
+Output heads ϕnode and ϕedge produce bounded scalar action
+                                                                                      verified by the exact rational ZOH segment certificate (Theo-
+coefficients:
+                                                                                      rem 1).
+  θ      θ                     (L  )        
+(ωi,k , ri,k ) = clip ϕnode (hi gnn ), −1, 1 ,
+                                                                                      Proposition 2 (Anytime Hard Safety Invariance Under Ex-
+         θ                        (L   )   (L   )
+               = clip ϕedge (col(hi gnn , hj gnn , efeat
+                                                                  
+       ψij,k                                        ij,k )), −1, 1 ,                  ploration and Cross-Scale Deployment). Suppose p0 ∈ S and
+                                                               (28)                   bia,k ≤ 0. Then for arbitrary policy parameters θ (includ-
+                                                                                      ing noisy policies during training exploration and zero-shot
+which synthesize the planar nominal velocity of robot i:                              deployment to any team size N ) and any finite number of al-
+  unom                     eff θ                                                      location rounds B ≥ 0, the closed-loop continuous trajectory
+   i,k (pk ; θ) = −ei,k + γi,k ri,k (pk ),
+        θ                 θ                  θ                                        p(t) satisfies dij (t) ≥ dsafe (∀i < j), λ2 (Lp (p(t))) ≥ λreq ,
+       ri,k (pk ) = Arot ωi,k J ei,k + Arad ri,k ei,k
+                                                                                      ui (t) ∈ Ui , and p(t) ∈ X for all t ≥ 0.
+                            Aψ U                 θ pi,k − pj,k
+                                        X
+                    +                          ψij,k           ,                      Proof. By the antisymmetric edge-ledger construction (13),
+                      max(|Ni,k |, 1)                 dij,k
+                                               j∈Ni,k                                 Stage 1 revocation and one-hop local settlement guarantee
+                                                                               (29)   P        (0)
+                                                                                         i∈Va sia,k = 0 and single-robot feasibility (14). Each
+         eff                                                                          block  QP (15) in Stage 2 preserves zero-sum quotas via
+where γi,k   ∈ [0, 1) is the composite envelope gate (Sec-                            P
+                                                                                             + wq = 0 and σq,e te + σm,e te = 0, and the convex
+tion IV-C) and Arot = 2.0 s−1 , Arad = 1.5 s−1 , Aψ = 2.0.                               q∈N i,k
+                                                    θ                                                                                    (B)    (B)
+Here −ei,k provides baseline goal attraction; Arot ωi,k J ei,k                        combination (16) maintains feasibility of (uk , sk ) for all
+generates tangential circulation perpendicular to the line-                           coupled constraints (12). Combined with adaptive ZOH step-
+                                                       θ
+of-sight to break head-on collinear symmetry; Arad ri,k    ei,k                       halving under Theorem 1, p(t) ∈ S holds for all t ≥ 0 by
+                                                 θ
+                                      P
+modulates radial approach speed; and           ψ
+                                         j∈Ni,k ij,k (p  i,k −                        induction.
+RESEARCH MANUSCRIPT                                                                                                                        7
+
+
+
+   We next prove algebraically why dynamic quota transfer te           C. One-Hop Closed-Neighborhood Completion Envelope and
+in (15) is the exact mechanism that unfreezes outer stationary         Goal Equilibrium Recovery
+neighbors, whereas static equal allocation (B = 0) induces                In (29), the tangential and radial residual terms scale with
+artificial freezing.                                                   ei,k and vanish as ei,k → 0, whereas the pairwise repulsive
+                                                                                          Aψ U
+                                                                       bias bψ                                 θ
+                                                                                                    P
+Proposition 3 (Cooperative Unfreezing of Stationary Blocking                   i,k = max(|Ni,k |,1)  j∈Ni,k ψij,k (pi,k − pj,k )/dij,k is
+Neighbors via Dynamic Quota Transfer). Consider a contact              a zero-order term of unit direction vectors. On a tightly
+pair on the safety boundary dij = dsafe (bia = bja = 0)                packed goal lattice with spacing 1.001 m (1 mm above
+between a moving robot i and a stationary target-holding               dsafe = 1.000 m), near-active contact constraints maintain
+                                                                                               gate
+neighbor j (ej = 0, unom     = 0), with unit contact normal            ∥µi,k−1 ∥2 > 0 and γi,k      ≈ 1, causing bψi,k to balance −ei,k
+                         j
+nij = (pi − pj )/dsafe . Suppose the GNN residual policy               at ∥ei,k ∥2 ∈ [0.015, 0.05] m (terminal steady-state hovering).
+(29) generates a lateral bypass nominal velocity for robot i              To keep residuals active whenever any one-hop neighbor
+with strictly positive normal intrusion δn := −n⊤    nom
+                                                 ij ui   >0            has not yet reached its goal while enforcing unconditional
+(unsaturated):                                                         first-order vanishing once the entire one-hop closed neighbor-
+                                                                       hood enters the goal ball, we define the One-Hop Closed-
+1) Artificial freezing under static equal splitting (B =               Neighborhood Completion Envelope:
+   0, sia = sja ≡ 0): The decoupled constraints reduce to
+                                                                                                  maxj∈N + ∥pj,k − gj ∥2
+                                                                                                                           !
+   −2dsafe n⊤                        ⊤
+             ij ui ≤ 0 and 2dsafe nij uj ≤ 0. Since uj
+                                                      nom
+                                                             =0                                           i,k
+   is feasible for node j, ustat     =  0 (stationary neighbor                ρi,k (pk ) = tanh                              ,
+                                j                                                                             εg                     (32)
+   remains frozen) while robot i’s normal component is                             eff    gate
+   truncated to zero (−n⊤      stat                                               γi,k = γi,k  · ρi,k (pk ),
+                          ij ui     = 0).
+2) Quota transfer and cooperative yielding under closed-               with envelope scale εg = 0.05 m (5× the arrival tolerance
+   neighborhood dynamic allocation (B ≥ 1): In the two-                0.01 m).
+   node contact block subproblem of (15) starting from zero
+   quotas, the unique optimal pairwise quota transfer t⋆ij , nor-      Proposition 4 (First-Order Residual Vanishing and Goal Equi-
+   mal advance speed −n⊤          ⋆                                    librium Recovery). Under the completion envelope (32) in
+                            ij ui , and outward yielding speed
+       ⊤ ⋆                                                             (29):
+   −nij uj admit the strictly positive closed-form solution:
+                                                                        1) Residual preservation during cooperative transit: When-
+                                                                                                    +
+                                                                            ever there exists j ∈ Ni,k with ∥ej,k ∥2 ≥ 3εg = 0.15 m,
+                     ηdsafe
+              |t⋆ij | =        δn > 0,                                      even if ei,k = 0, we have ρi,k (pk ) ≥ tanh(3) > 0.995.
+                   η + 4d2safe
+                                     η                         (31)     2) First-order suppression near the goal and equilibrium
+         −n⊤   ⋆      ⊤ ⋆
+           ij ui = −nij uj =                    δn > 0.                     restoration: Let emax
+                                                                                               i,k := maxj∈N + ∥ej,k ∥2 ≤ ∥ek ∥2 .
+                                2(η + 4d2safe )                                                                    i,k
+                                                                                                                        gate
+                                                                           Since tanh(z) ≤ z (∀z ≥ 0), γi,k                   ∈ [0, 1), and
+                                                                             θ        θ        θ
+Proof. At dij = dsafe , aia = −2dsafe nij , aja =                          |ωi,k |, |ri,k |, |ψij,k | ≤ 1,
+2dsafe nij , bia = bja = 0. Decompose velocities into normal                                          emax h                               i
+                                                                               eff θ                   i,k
+components uq,n = −n⊤      ij uq (positive outward from i toward
+                                                                            ∥γi,k ri,k (pk )∥2 ≤             (Arot + Arad )∥ei,k ∥2 + Aψ U
+                                                                                                       εg
+j) and tangential components uq,τ = (I2 − nij n⊤       ij )uq . Tan-
+                                                                                                  = O(∥ek ∥2 ).
+gential components are unconstrained, so u⋆i,τ = unom          ⋆
+                                                       i,τ , uj,τ =
+                                                                                                                                        (33)
+0. Along the normal direction: (1) For B = 0, sia = sja = 0,
+minimizing 21 (ui,n − δn )2 subject to 2dsafe ui,n ≤ 0 and 21 u2j,n        In particular, at pk = g, ρi,k (g) = 0 and unom
+                                                                                                                       i,k (g; θ) = 0
+subject to −2dsafe uj,n ≤ 0 yields ustat          stat
+                                          i,n = uj,n = 0. (2) In           regardless of µi,k−1 .
+the block QP (15), the normal constraints are 2dsafe ui,n +
+tij ≤ 0 and −2dsafe uj,n − tij ≤ 0 with strictly convex cost           Proof. Claim (1) follows from monotonicity of tanh(·) since
+1              2 1 2     1 2                                           tanh(3) ≈ 0.99505 > 0.995. Claim (2) follows from
+2 (ui,n −δn ) + 2 uj,n + η tij . Since the unconstrained minimum              eff
+                                                                       0 ≤ γi,k    ≤ ρi,k (pk ) ≤ emax
+                                                                                                   i,k /εg and the triangle inequality
+(δn , 0, 0) violates 2dsafe ui,n + tij ≤ 0, both constraints are          θ
+active at optimum: tij = −2dsafe ui,n = −2dsafe uj,n and               ∥ri,k (pk )∥2 ≤ (Arot + Arad )∥ei,k ∥2 + Aψ U . Setting ek = 0
+u⋆i,n = u⋆j,n =: vn . Minimizing f (vn ) = 21 (vn − δn )2 + 12 vn2 +   yields unom
+                                                                                 i,k (g; θ) = 0.
+4d2safe 2         8d2safe
+  η vn gives (2 +   η )vn = δn , yielding (31).
+                                                                       D. Small-Scale Short-Horizon MAPPO Training and Zero-
+                                                                       Shot Cross-Scale Deployment
+   Within the isolated two-node model of Proposition 3, nor-              Because the B-round block QP filter L involves nonsmooth
+                                            η+8d2
+mal filter modification is u⋆i,n − δn = − 2(η+4dsafe
+                                                  2      δn . If a     active-set switches and local settlements, backpropagating
+                                                  safe )
+learning update reduces δn toward zero, the yielding term              long-horizon policy gradients through the QP solver suffers
+in (31) also vanishes. This conditional relation motivates             from gradient singularities at multi-contact corners. We adopt
+examining projection penalties; it does not determine their            a Centralized Training with Decentralized Execution (CTDE)
+net effect under joint reward optimization, critic changes, or         MAPPO protocol [19] that combines small-scale short-horizon
+multiple contacts. Section V-C reports the matched learning            training (N ∈ {6, . . . , 10}, B = 2, validation selection on
+comparison.                                                            N = 8) with large-scale multi-round zero-shot deployment
+RESEARCH MANUSCRIPT                                                                                                                               8
+
+
+
+(N ∈ {12, 20, 25}, B = 8), as summarized in Table I.                              measured from timestamps, with all executed segments passing
+Training tasks are sampled on dense triangular lattices (spacing                  the same rational safety audit. Commands are integrated
+1.001 ∼ 1.12 m, λreq /λ2 (p0 ) ∈ [0.55, 0.90], 1 ∼ 3 pair                         without position clipping. Any certificate-induced reduction
+swaps, 3-cycle rotations, and full permutations with random                       in holding time is recorded as part of the controller.
+global rotation). The shared team reward at step k is:                                We distinguish performance of a specified frozen policy,
+               PN                                                                execution-time interventions holding its weights fixed, and
+                  i=1 ∥ei,k ∥2 − ∥ei,k+1 ∥2
+   Rk = rprog                                 − rtime                             comparisons between learning variants with matched train-
+                           D0                                                   ing budgets and seeds. The analytical references use either
+           + rsucc I max∥ei,k+1 ∥2 ≤ εsucc                                        unom
+                                                                                    i     = −ei or a constant tangential residual with ωi =
+                      i∈V
+                                                       (34)                       1, ri = ψij = 0, followed by the same NPA shield. These
+                     N      ∥e ∥          ∥u ∥2 
+           rstall    X           i,k 2           i,k 2                            are explicitly defined references related to CBF projection
+        −            tanh               exp −
+            N i=1                εp              ε2u                              and circulation [4], [11], rather than reproductions of every
+                                                                                  component of those published methods.
+                  × ln 1 + ∥µi,k ∥22 ,
+                                       
+                                                                                      GCBF+ [15] and DGPPO [16] learn barrier functions that
+                PN                                      −3
+where D0 =        i=1 ∥ei,0 ∥2 , rprog = 1.0, rtime = 10   ,                      differ from static allocation. Replacing NPA by static allocation
+εsucc = 0.01 m, rsucc = 1.0, and the fourth term penalizes                        does not implement their algorithms. The projection-penalty
+dual-blocked stagnation (rstall = 0.02, εp = 0.10 m, εu =                         variant also uses our policy and shield. Both are internal
+0.05 m/s). Policy parameters θ are updated via GAE (γ =                           comparisons. Section V-F separately uses the official DGPPO
+0.995, λGAE = 0.95) and clipped PPO (ϵclip = 0.20, target                         update with an explicit adaptation to our dynamics and spectral
+KL 0.03).                                                                         constraint; no DGPPO performance is inferred from internal
+                                                                                  variants.
+                            TABLE I                                                   We separately record certification stops, solver failures,
+       EGP-NPA Training and Zero-Shot Distributed Execution                       computational-budget exhaustion, zero-speed stalls, physical-
+                          (Algorithm 1)
+                                                                                  horizon timeouts, and safe arrivals. Existing shield evaluations
+                                                                                  allow at most 3600 controller calls; 100 consecutive calls with
+Phase A: Small-Scale Short-Horizon              CTDE      Training    (N     ∈
+{6, . . . , 10}, Btrain = 2)                                                      total speed norm below 10−6 m/s are classified as a stall. A
+                                                                                  certified prefix ending early is not counted as a completed
+1. Initialize 2-layer equivariant GNN actor θ and centralized GNN critic ϕ;
+2. for iteration m = 1, 2, . . . , Mmax do
+                                                                                  safe horizon. Paired arrival times use common safe arrivals;
+3.      Sample dense triangular-lattice swap/permutation tasks (N            ∈    we additionally report mean completion time with failures
+{6, . . . , 10}, random rotation), set ϖ−1 = 0;                                   assigned 60 s. Training replicates are reported separately;
+4. for step k = 0, 1, . . . , Kmax − 1 do                                         scenarios evaluated using one policy are not independent
+5.       Construct invariant features (xi,k , efeat
+                                               ij,k ) and sample noisy nominal
+velocity unom
+                                                                                  training replicates.
+              i,k via (27)–(29);
+6.       Solve single-robot refit QP (14) (recording shadow prices µi,k ) and
+apply one-hop local settlement if needed;                                         B. Performance of the Specified Frozen Policy
+7.      Run Btrain = 2 closed-neighborhood block NPA rounds (15)–(16) and
+ZOH certificate (Theorem 1);                                                         The original policy receives approximately 9.63 × 105
+8.      Compute team reward Rk via (34) and store transition in rollout buffer;   environment steps and one checkpoint is selected on valida-
+9. end for                                                                        tion tasks. Fig. 2 shows this training run. The development
+10. Compute GAE advantages, update (θ, ϕ) via clipped PPO, and save best
+checkpoint θ⋆ on N = 8 validation set.                                            benchmark comprises 64 tasks at N = 8 and 32 cross-scale
+11. end for                                                                       tasks. The former contains 20 local swaps and 12 permutations
+Phase B: Zero-Shot Cross-Scale Decentralized Execution (Arbitrary N ,
+                                                                                  at each of f = λreq /λ2 (Lp (p0 )) = 0.60, 0.90. The latter
+θ = θ⋆ , Beval = 8)                                                               contains 12, 12, 8 tasks at N = 12, 20, 25, respectively, with
+12. At each step tk , each robot i ∈ V evaluates completion envelope
+                                                                                  f = 0.60. Initial states, goal assignments, and safety require-
+ρi,k (pk ) = tanh(maxj∈N + ∥ej,k ∥2 /εg );                                        ments are shared within each task.
+                            i,k
+13. Compute deterministic GNN actions (ωi,k
+                                               ⋆    ⋆     ⋆
+                                              θ , r θ , ψ θ ) and synthesize         Tables II–III report 96/96 safe arrivals for the specified
+                                                    i,k  ij,k
+unom  (pk ; θ ⋆ ) via (29);                                                       checkpoint; it also achieves 48/48 on an additional held-out
+ i,k
+14. Execute single-robot refit (14), one-hop settlement, and Beval = 8 block      set. These percentages describe that checkpoint on those tasks.
+NPA rounds (15)–(16) to apply ui,k .                                              It is not ranked against lower-budget learning runs as evidence
+                                                                                  of algorithm-level superiority. Training variability is examined
+                                                                                  separately below.
+V. Numerical Evaluation and Controlled Comparisons
+A. Tasks, Evaluation Criteria, and Comparison Levels                              C. Learning Variants With Matched Budgets and Seeds
+   Single-integrator experiments use dsafe = 1.000 m, U =                            A 2 × 2 factorial design varies team/local critics and the
+0.50 m/s, workspace [−4, 4]2 m2 , polynomial channel radius                       projection penalty, with two training replicates per cell. All
+Rc = 10.0 m, communication radius 2.50 m, barrier decay                           variants share the 17-dimensional node and 20-dimensional
+rates 2.0 s−1 , nominal control period 0.05 s, and horizon                        edge observations, two-layer equivariant actor, training distri-
+60 s. Initial triangular-lattice spacing is 1.001 m. Safe arrival                 bution, reward, B = 2 training shield, and validation selection
+requires maximum goal error at most 0.01 m for at least 1.0 s                     rule. Corresponding replicates use matched initialization and
+RESEARCH MANUSCRIPT                                                                                                                                                                       9
+
+
+
+
+                                     EGP-NPA (Proposed)                 Pure Geometric GNN                                               Intervention-Gated GNN
+                           (a) Training Episode Return Convergence                                                      (b) Validation Deterministic Arrival Rate
+
+
+
+
+                                                                                    Validation Arrival Rate (%)
+                                                                                                                  100
+Episode Return Rep
+
+
+
+
+                                                                                                                   80
+                     1.5
+                                                                                                                   60
+
+                     1.0                                                                                           40
+
+                                                                                                                   20
+                           0       20         40          60           80                                               0           20          40          60             80
+                                                                   4                                                                                                   4
+                                     Environment Steps (×10 )                                                                         Environment Steps (×10 )
+
+Fig. 2. Full-budget returns and validation success for the original policy and separately trained configurations. Each curve is one training run, rather than a
+mean or confidence interval across seeds.
+
+                                                                               TABLE II
+                      Specified Checkpoint and Analytical References on the N = 8 Development Benchmark; Times Are Medians Among Safe Arrivals
+
+Controller                                                       f = .60 Arrivals          Time/s                       f = .90 Arrivals    Time/s   Step Cuts     Failed Audit Segments
+EGP-NPA, B = 8                                                         32/32                   7.32                         32/32           7.12        0                     0
+Constant tangential residual + NPA                                     21/32                  32.50                         18/32           30.50       0                     0
+Proportional attraction + NPA                                          17/32                  36.35                         16/32           31.80       0                     0
+
+
+                                                                              TABLE III
+                      Cross-Scale Performance of the Specified Checkpoint and Analytical References; Parentheses Give Median Safe-Arrival Time/s
+
+Controller                                                                                                          N = 12            N = 20          N = 25          Total       Step Cuts
+EGP-NPA, B = 8                                                                                                    12/12 (6.52)      12/12 (10.55)    8/8 (10.43)     32/32              0
+Constant tangential residual + NPA                                                                                7/12 (14.40)       4/12 (24.53)    2/8 (38.22)     13/32          14198
+Proportional attraction + NPA                                                                                     4/12 (34.30)       1/12 (55.50)     0/8 (—)         5/32              0
+
+
+scene random seeds. Each run receives a budget of 480000                                        critics, but improves them from 50.42/35.11 to 39.32/22.88 s
+environment transitions, ending at a complete sampling batch;                                   for local critics. Intervention reduction and task completion
+actual totals range from 481274 to 487089. All eight check-                                     must consequently be evaluated separately. Two training repli-
+points are evaluated on the same 48 held-out tasks with the                                     cates support a descriptive comparison, not an algorithm-level
+completion envelope and B = 8, giving 384 retained runs and                                     significance claim.
+zero failed audit segments or step cuts.
+   The penalty is Lproj = λproj N −1 i ∥ΠUi (unom
+                                              P
+                                                          i   ) −                               D. Fixed-Weight Ablations and Failure Categories
+sg(ui )∥22 , where sg denotes stop-gradient and λproj ∈                                            Keeping the original policy weights fixed while replacing
+{0, 1}. Its nonzero weight is calibrated using gradient                                         B = 8 with B = 0 yields 11/64 safe arrivals at N = 8
+scales before training. The common validation rule selects                                      and 1/32 across larger teams. This is an execution-time shield
+different training stages: team-critic base checkpoints at                                      replacement for a policy trained with dynamic allocation, not
+approximately 216000/401000 steps and penalized check-                                          a separately trained competing algorithm. Table V retains
+points at 71000/73000 steps; local-critic counterparts at                                       all termination categories; 51 certification or computational-
+360000/420000 and 140000/129000 steps. The comparison                                           budget stops are distinguished from zero-speed stalls.
+therefore concerns the complete training-and-selection proce-                                      For one N = 20 task over [0.05, 1.00] s, identical nomi-
+dure.                                                                                           nal inputs yield lateral executed speeds 0.2003/0.0004 m/s
+   Table IV exhibits a critic-dependent interaction. With team                                  under dynamic/static allocation and outward neighbor speeds
+critics, the penalty loses three cross-scale arrivals in each                                   0.0915/0.0013 m/s. This local intervention is consistent with
+replicate. With local critics, cross-scale arrivals increase from                               the two-node yielding mechanism of Proposition 3; failure
+4 to 8 and from 9 to 14. Median paired time differences                                         categories for complete multi-contact tasks remain those in
+are 0.00/1.60 s for team critics and 4.35/1.60 s for local                                      Table V.
+critics. Assigning 60 s to cross-scale failures changes mean                                       Terminal hovering after envelope removal demonstrates the
+completion times from 28.23/20.49 to 34.10/29.34 s for team                                     component’s practical role for this policy. Differences between
+RESEARCH MANUSCRIPT                                                                                                                                                             10
+
+
+
+                                                              TABLE IV
+ Matched-Budget Internal Learning Variants. Semicolons Separate Training Replicates; Time Differences Are Penalty Minus Base on Common
+                                                    Safe Arrivals Within Each Seed
+
+Critic                                                                                     λproj   N = 8 Safe Arrivals   Cross-Scale Safe Arrivals       Median Paired Difference/s
+Team                                                                                         0       32/32 ; 32/32           12/16 ; 14/16                         —
+Team                                                                                         1       32/32 ; 32/32            9/16 ; 11/16                    +0.00 ; +1.60
+Local                                                                                        0       32/32 ; 32/32             4/16 ; 9/16                         —
+Local                                                                                        1       31/32 ; 32/32            8/16 ; 14/16                    +4.35 ; +1.60
+
+
+
+                                             Mover 1                Mover 2                  Yielding Neighbor               Idle Neighbor                    Goal
+                                        (a) Base policy: Training replicate 1                                         (b) Projection penalty: Replicate 1
+                                    4                                                                             4
+         Vertical Position y (m)
+
+
+
+
+                                    2                                                                             2
+
+
+                                    0                                                                             0
+
+
+                                   -2                                                                            -2
+
+
+                                   -4                                                                            -4
+                                     -4          -2           0          2          4                              -4        -2         0            2           4
+                                        (c) Base policy: Training replicate 2                                         (d) Projection penalty: Replicate 2
+                                    4                                                                             4
+         Vertical Position y (m)
+
+
+
+
+                                    2                                                                             2
+
+
+                                    0                                                                             0
+
+
+                                   -2                                                                            -2
+
+
+                                   -4                                                                            -4
+                                     -4          -2           0          2          4                              -4        -2         0            2           4
+                                           Horizontal Position x (m)                                                     Horizontal Position x (m)
+
+Fig. 3. Matched-budget team-critic trajectories on one held-out N = 20 swap. (a)–(b) Base and penalized policies from training replicate 1; (c)–(d) the
+corresponding pair from replicate 2. Initial states, goals, safety parameters, and axis limits are shared.
+
+                                                    TABLE V                                            rather than the value of those features after retraining. Re-
+                                     All Static-Allocation Ablation Outcomes                           flection symmetrization at inference reduces arrivals from 48
+                                                                                                       to 30 on the held-out set, describing this deterministic policy
+                                   Termination                    N =8       Cross-Scale
+                                                                                                       intervention and its connection to the exactly symmetric head-
+                                   Safe arrival                     11                1
+                                   Certification stop               30                7
+                                                                                                       on analysis.
+                                   Controller-call budget            7                7                   The custom unshielded Lagrangian PPO is retained as an ex-
+                                   Zero-speed stall                 12               13
+                                   Physical-horizon timeout          4                4                ploratory negative result. It uses 12/13-dimensional geometric
+                                                                                                       inputs and at most 264000 training transitions. Its last logged
+                                                                                                       average cost is approximately 0.929, exceeding its training
+                                                                                                       limit 0.02. Re-evaluating the same checkpoint with an elapsed
+separate checkpoints also include training variation; execution-                                       1.0 s holding rule and without workspace position clipping still
+time feature removal probes sensitivity of a trained policy                                            produces collisions in all 96 development tasks. This training
+RESEARCH MANUSCRIPT                                                                                                                                                                              11
+
+
+
+
+                                                                 Base 1            Penalty 1                                    Base 2              Penalty 2
+                                           (a) Maximum Position Error Convergence                                                         (b) Algebraic Connectivity Maintenance
+                                       0                                                                                             16
+                                  10
+       Max Error max‖ei ‖2 (m)
+
+
+
+
+                                                                                                             Connectivity λ2 (Lp )
+                                      −1
+                                 10
+                                                                                                                                     14
+                                      −2
+                                 10
+                       i
+
+
+
+
+                                 10
+                                      −3                                                                                             12
+
+                                      −4
+                                 10
+                                                                                                                                     10
+                                      −5
+                                 10
+                                           0    10       20       30       40      50       60                                            0    10     20        30        40        50       60
+                                           (c) Minimum Inter-Robot Distance                                                               (d) Team RMS Control Speed
+
+
+
+                                                                                                 RMS Speed ‖u‖2 /√ N (m/s)
+                                 1.000                                                                                       0.15
+Min Distance min dij (m)
+
+
+
+
+                                 0.998
+                                                                                                                             0.10
+               i<j
+
+
+
+
+                                 0.996
+                                                                                                                             0.05
+                                 0.994
+
+                                 0.992                                                                                       0.00
+                                           0    10       20       30       40      50       60                                            0    10     20        30        40        50       60
+                                                              Time t (s)                                                                                   Time t (s)
+
+Fig. 4. Time responses for the same task and four matched policies in Fig. 3: maximum goal error, algebraic connectivity, minimum distance, and RMS
+speed. Curves use stored executed trajectories without extending terminated runs.
+
+                                                                                            TABLE VI
+                                               Internal Interventions, Distinguishing Separate Training Runs From Fixed-Weight Execution Changes
+
+Configuration                                                                                                                                       Comparison Type                 Safe Arrivals
+Complete policy and envelope                                                                                                                        Reference checkpoint                 32/32
+Remove completion envelope                                                                                                                          Fixed-weight execution change        25/32
+Geometric-only observations                                                                                                                         Separately trained checkpoint        22/32
+Intervention-based gate training                                                                                                                    Separately trained checkpoint        15/32
+Original / envelope-only / replaced gate                                                                                                            Fixed weights, 16-task subset    16/16 each
+Zero collision-price features                                                                                                                       Fixed weights, 16-task subset      16/16
+Zero collision-ledger features                                                                                                                      Fixed weights, 16-task subset      16/16
+Zero all algebraic features                                                                                                                         Fixed weights, 16-task subset      15/16
+
+
+configuration has not met the task constraints; its failure is not                               Observation delay is 10 ms, communication delay is 5–15 ms,
+used to infer the general capability of primal–dual learning or                                  and packet loss is 2%. These runs are reported separately from
+the necessity of our particular shield.                                                          the single-integrator comparisons.
+
+                                                                                                    Regime A uses spacing 1.018 m. Regime B uses spac-
+E. Separate Boundary Evaluation With Second-Order Physics                                        ing 1.045 m, distance tightening 0.028 m, and command-
+   The MuJoCo evaluation uses robot mass 6.0 kg, body radius                                     increment limit 0.22 m/s. Table VII retains negative full-
+0.45 m, velocity-loop time constant 45 ms, thrust limit 22.0 N,                                  stack outcomes: regime A has arrivals with distance violations;
+physics step 5 ms, and control period 50 ms. Each control                                        regime B has no arrivals in eight tasks, with seven collision-
+step has six spectral-consensus rounds and four NPA rounds.                                      violation-free runs and one N = 8 task reaching 0.9910 m.
+RESEARCH MANUSCRIPT                                                                                                                                                                        12
+
+
+
+
+                               (a) 20-Robot Full Permutation (EGP-NPA)                                                 (b) Gate Swap & Algebraic Knockout
+                          3                                                                                       0
+                                                                                                             10                                     EGP-NPA (Shadow-Price Gate)
+
+                          2                                                                                                                         Envelope-Only (γi,gate
+                                                                                                                                                                       k ≡ 1)
+
+
+
+
+                                                                                   Max Error max‖ei ‖2 (m)
+Vertical Position y (m)
+
+
+
+
+                                                                                                                                                    Intervention Gate Swap
+                          1                                                                                                                         Algebraic Feature Knockout
+                                                                                                                  −1
+                                                                                                             10
+                          0
+
+
+
+
+                                                                                                  i
+                          -1
+                                                                                                                  −2
+                                                                                                             10
+                          -2
+
+                          -3
+                                    -2               0                2                                                0       2        4       6           8       10        12         14
+                                     Horizontal Position x (m)                                                                                  Time t (s)
+
+Fig. 5. Permutation-task trajectories and fixed-weight gate/feature interventions. Training-configuration comparisons and execution-time interventions are
+evaluated separately.
+
+                                                                  TABLE VII
+     Physical Arrivals and Safety Boundaries. Arrivals Do Not Require Violation-Free Motion; Distance Is the Minimum and Violation Steps Are
+                                                           Averaged Over Four Tasks
+
+Regime                         N    Configuration                                                                                                   Arrivals    Min Distance/m     Viol. Steps
+A                               8   Attraction + physical interface                                                                                   0/4                 .9817         610.2
+A                               8   Learned policy + static allocation                                                                                1/4                 .9798         442.2
+A                               8   Learned policy + uncompensated filter                                                                             0/4                 .9792        4231.0
+A                               8   Learned policy + online spectrum + physical interface                                                             3/4                 .8990        1683.5
+A                              12   Attraction + physical interface                                                                                   0/4                 .9952        1679.2
+A                              12   Learned policy + static allocation                                                                                0/4                 .9976         850.8
+A                              12   Learned policy + uncompensated filter                                                                             0/4                 .9937        4190.2
+A                              12   Learned policy + online spectrum + physical interface                                                             1/4                 .8988        2777.0
+B                               8   Attraction + physical interface                                                                                   0/4                1.0240             0
+B                               8   Learned policy + static allocation                                                                                0/4                1.0260             0
+B                               8   Learned policy + uncompensated filter                                                                             0/4                 .8987        4722.0
+B                               8   Learned policy + online spectrum + physical interface                                                             0/4                 .9910        1133.2
+B                              12   Attraction + physical interface                                                                                   0/4                1.0256             0
+B                              12   Learned policy + static allocation                                                                                0/4                1.0255             0
+B                              12   Learned policy + uncompensated filter                                                                             0/4                 .9809        4783.2
+B                              12   Learned policy + online spectrum + physical interface                                                             0/4                1.0096             0
+
+
+All 64 physical runs record zero connectivity violations. Accu-                                                        distance requirement.
+rate spectrum tracking does not imply simultaneous collision
+avoidance, and the single-integrator safety statement does not                                                           This theorem concerns the specified section. General rear-
+directly cover actuator lag and post-filter command limiting.                                                          rangements permit asymmetric detours and motion of outer
+                                                                                                                       robots; path connectedness of the full configuration space
+Theorem 3 (Initial Feasibility and a Specified Crossing Sec-                                                           requires a separate analysis.
+tion). Let D = dsafe + ∆dphys . Initial distance constraints
+are strictly feasible exactly when D < S, where S is the                                                               F. Official DGPPO With Task Adaptation and Controlled
+minimum initial spacing. Consider only a symmetric four-                                                               Budgets
+node crossing section whose perpendicular diagonals share
+a midpoint, with moving-node diagonal fixed at D and the                                                                  An independent learning reference uses the public imple-
+other diagonal equal √ to b. All adjacent distances are at least                                                       mentation of DGPPO by Zhang et al. [16], retaining its graph-
+D exactly when b ≥ 3D.                                                                                                 transformer policy, task value network, decomposed constraint
+                                                                                                                       value network, discrete-barrier advantage, and proximal pol-
+Proof. The first claim follows from the definition of minimum                                                          icy update. We use the upstream nonrecurrent option and a
+initial distance.
+         √        Each adjacent side in the specified section has                                                      separate environment adapter replacing the original second-
+length D2 + b2 /2, so the required inequality
+                                           √        is equivalent                                                      order dynamics with our single integrator. Signed collision,
+to b2 ≥ 3D2 . The diagonals D and b ≥ 3D also satisfy the                                                              spectral-connectivity, and workspace costs enter its constraint
+RESEARCH MANUSCRIPT                                                                                                                                                        13
+
+
+
+
+                                         EGP-NPA + Online Est. + Phys-NPA                                          EGP-NPA + Ideal Single-Integrator
+                                         EGP-NPA + Static Split (B = 0)                                            Myopic Attraction + Phys-NPA
+                           (a) N = 8 Chassis Local Swap Error                                                          (b) N = 12 Zero-Shot Cross-Scale Error
+
+                     1.0
+                                                                                                                1.00
+Max Goal Error (m)
+
+
+
+
+                                                                                          Max Goal Error (m)
+                     0.8
+                                                                                                                0.75
+                     0.6
+                                                                                                                0.50
+                     0.4
+
+                     0.2                                                                                        0.25
+
+                     0.0                                                                                        0.00
+                            0        5            10     15         20                                                  0        5         10          15        20
+                           (c) Online Division-Free Spectral Tracking                                                  (d) Margin Shrinkage vs. Passability
+                                                                                                               1.100
+                     11                                                                                                                    Ideal-NPA (4764 Viol. Steps)
+                                                                                 Min Distance min dij (m)      1.075                       Regime A (Arrived 7.71 s)
+ Connectivity λ2
+
+
+
+
+                     10                                                                                                                    Regime B (0 Viol., Pinched)
+                                  N = 8 True λ2         N = 12 True λ2                                         1.050
+                      9           N = 8 Online λ2̂      N = 12 Online λ2̂
+                                                                                                               1.025
+                      8
+                                                                                                               1.000
+
+                      7                                                                                        0.975
+                            0              5             10                 15                                          0       5        10       15        20        25
+                                         Physical Time t (s)                                                                         Physical Time t (s)
+
+Fig. 6. Second-order closed-loop goal error, online spectral estimation, and distance responses. Violations and nonarrivals are retained for both compensation
+regimes.
+
+interface. The original training-cost margin transformation is                                 reward. These differences are components of the complete
+retained; it never modifies physical distances, integrated states,                             systems, rather than a one-factor intervention isolating the
+or evaluation audits.                                                                          policy-update formula.
+   Both methods use the original lattice task generator over                                      DGPPO’s policy, task-value network, and constraint-value
+N ∈ {6, . . . , 10}. DGPPO uses finite banks of 4096 tasks                                     network contain 37796, 33441, and 14211 parameters, respec-
+per scale, with size-homogeneous batches drawn according to                                    tively; the EGP-NPA actor contains 108998. Native network
+accepted sample frequencies; EGP-NPA uses its existing online                                  sizes are retained rather than parameter-matched, so observed
+task stream. DGPPO rollout windows contain 500 steps, with                                     differences also include representation and control-architecture
+480000 environment transitions per replicate counting both                                     effects.
+stochastic collection and deterministic collection inside the                                     Testing uses 96 newly generated and frozen tasks: 64 at
+update. The two EGP-NPA replicates use 481990 and 484821                                       N = 8 and 12, 12, 8 at N = 12, 20, 25. Two methods
+steps. Final-budget checkpoints are specified before testing,                                  and two training replicates give 384 closed-loop runs with
+without selection on test results.                                                             identical initial states, goals, safety distance, speed limit, time
+   Native parameterizations and learning objectives are re-                                    horizon, holding criterion, and independent rational auditing.
+tained and disclosed. DGPPO receives 6-dimensional node                                        DGPPO executes its policy directly without our shield. EGP-
+and 5-dimensional edge features containing relative goals,                                     NPA’s allocation and holding-segment certification are explicit
+relative geometry, boundary clearance, and exact spectral mar-                                 system components; certification and computational-budget
+gin. EGP-NPA receives 17/20-dimensional inputs including its                                   stops remain separate outcomes.
+shield’s internal state. DGPPO’s task reward is normalized                                        For EGP-NPA replicate 1, nominal arrivals are 93/96, safe
+progress minus the time-step cost; it does not include EGP-                                    arrivals are 93/96, and 0 runs have physical collisions. For
+NPA’s dual-dependent stagnation term or terminal arrival                                       EGP-NPA replicate 2, nominal arrivals are 92/96, safe arrivals
+RESEARCH MANUSCRIPT                                                                                                                            14
+
+
+
+                                                           TABLE VIII
+Adapted External-Method Comparison on 96 New Tasks. Non-Safe-Arrivals Receive 60 Seconds in Mean Completion Time; Audit Failure Is Not
+                                                 Necessarily a Physical Collision.
+
+Method                                                  Replicate   N = 8 Safe     Cross-Scale Safe     Failed-Audit Runs     Mean Completion/s
+EGP-NPA                                                     1         64/64              29/32                 0/96                  13.67
+EGP-NPA                                                     2         64/64              28/32                 0/96                  13.67
+DGPPO (task-adapted)                                        1          0/64               0/32                96/96                  60.00
+DGPPO (task-adapted)                                        2          0/64               0/32                96/96                  60.00
+
+
+are 92/96, and 0 runs have physical collisions. For DGPPO                                          References
+replicate 1, nominal arrivals are 0/96, safe arrivals are 0/96,      [1] P. Yang, R. A. Freeman, G. J. Gordon, K. M. Lynch, S. S. Srinivasa,
+and 96 runs have physical collisions. For DGPPO replicate 2,             and R. Sukthankar, “Decentralized estimation and control of graph
+nominal arrivals are 0/96, safe arrivals are 0/96, and 96 runs           connectivity for mobile sensor networks,” Automatica, vol. 46, no. 2,
+                                                                         pp. 390–396, 2010.
+have physical collisions.                                            [2] L. Sabattini, N. Chopra, and C. Secchi, “Decentralized connectivity
+   Table VIII evaluates these implementations at the stated              maintenance for cooperative control of mobile robotic systems,” The
+budgets. Only two training replicates are available; finite-bank         International Journal of Robotics Research, vol. 32, no. 12, pp. 1411–
+                                                                         1423, 2013.
+versus online sampling, training rewards, and prior tuning           [3] P. Ong, B. Capelli, L. Sabattini, and J. Cortés, “Nonsmooth control bar-
+effort are not fully matched. The global spectral constraint is          rier function design of continuous constraints for network connectivity
+a task extension of DGPPO, so this result does not replace its           maintenance,” Automatica, vol. 156, p. 111209, 2023.
+                                                                     [4] A. D. Ames, X. Xu, J. W. Grizzle, and P. Tabuada, “Control barrier
+published benchmark conclusions. We make neither algorithm-              function based quadratic programs for safety critical systems,” IEEE
+level significance nor general-superiority claims. Failure of            Transactions on Automatic Control, vol. 62, no. 8, pp. 3861–3876, 2017.
+an adapted policy to meet safety requirements describes the          [5] J. Breeden, K. Garg, and D. Panagou, “Control barrier functions in
+                                                                         sampled-data systems,” IEEE Control Systems Letters, vol. 6, pp. 367–
+present configuration, not an impossibility result for discrete-         372, 2022.
+barrier learning.                                                    [6] X. Tan, C. Liu, K. H. Johansson, and D. V. Dimarogonas, “A continuous-
+                                                                         time violation-free multiagent optimization algorithm and its appli-
+                                                                         cations to safe distributed control,” IEEE Transactions on Automatic
+                       VI. Conclusion                                    Control, vol. 70, no. 8, pp. 5114–5128, 2025.
+                                                                     [7] M. F. Reis, A. P. Aguiar, and P. Tabuada, “Control barrier function-
+   EGP-NPA combines an equivariant residual policy, local                based quadratic programs introduce undesirable asymptotically stable
+                                                                         equilibria,” IEEE Control Systems Letters, vol. 5, no. 2, pp. 731–736,
+dynamic allocation, and a completion envelope for multi-                 2021.
+robot rearrangement under coupled safety constraints. The            [8] X. Tan and D. V. Dimarogonas, “On the undesired equilibria induced
+seven-robot certificate identifies limitations of error-monotone         by control barrier function based quadratic programs,” Automatica, vol.
+                                                                         159, p. 111359, 2024.
+control on safely reachable tasks. The two-node subproblem           [9] J. Grover, C. Liu, and K. Sycara, “The before, during, and after of
+explains allocation-induced yielding, while the envelope gives           multi-robot deadlock,” The International Journal of Robotics Research,
+first-order residual suppression and restores the zero-velocity          vol. 42, no. 6, pp. 317–336, 2023.
+                                                                    [10] A. Allibhoy and J. Cortés, “Control-barrier-function-based design of gra-
+goal equilibrium.                                                        dient flows for constrained nonlinear programming,” IEEE Transactions
+   One full-budget checkpoint safely completes 96 develop-               on Automatic Control, vol. 69, no. 6, pp. 3499–3514, 2024.
+ment and 48 held-out tasks. Eight budget-matched training           [11] V. M. Gonçalves, P. Krishnamurthy, A. Tzes, and F. Khorrami, “Using
+                                                                         circulation to mitigate spurious equilibria in control barrier function,”
+runs and 384 evaluations show that the arrival effect of projec-         in Proceedings of the 62nd IEEE Conference on Decision and Control
+tion regularization depends on critic configuration: it reduces          (CDC). IEEE, 2023, pp. 1770–1775.
+arrivals with team critics and increases them with local critics.   [12] H. Dai, C. Jiang, H. Zhang, and A. Clark, “Verification and synthesis
+                                                                         of compatible control Lyapunov and control barrier functions,” in
+Static allocation is reported as a fixed-weight intervention,            Proceedings of the 63rd IEEE Conference on Decision and Control
+separating certification and computational-budget stops from             (CDC). IEEE, 2024, pp. 8178–8185.
+zero-speed stalls. We additionally train the official DGPPO         [13] S. Gu, J. Grudzien Kuba, Y. Chen, Y. Du, L. Yang, A. Knoll, and
+                                                                         Y. Yang, “Safe multi-agent reinforcement learning for multi-robot con-
+update in two budget-controlled replicates and evaluate it on            trol,” Artificial Intelligence, vol. 319, p. 103905, 2023.
+new tasks, reporting outcomes and adaptation differences in         [14] K. P. Wabersich and M. N. Zeilinger, “A predictive safety filter for
+Table VIII. Internal ablations are no longer substituted for             learning-based control of constrained nonlinear dynamical systems,”
+                                                                         Automatica, vol. 129, p. 109597, 2021.
+external algorithms.                                                [15] S. Zhang, O. So, K. Garg, and C. Fan, “GCBF+: A neural graph control
+   Each learning-variant cell currently has only two training            barrier function framework for distributed safe multiagent control,” IEEE
+                                                                         Transactions on Robotics, vol. 41, pp. 1533–1552, 2025.
+replicates. Main single-integrator evaluations use exact spec-      [16] S. Zhang, O. So, M. Black, and C. Fan, “Discrete GCBF proximal policy
+tral features, whereas physical experiments separately incor-            optimization for multi-agent safe optimal control,” in International
+porate online estimation. Each graph layer communicates over             Conference on Learning Representations (ICLR), 2025.
+one-hop edges, and multilayer inference has a larger informa-       [17] R. T. Rockafellar, Convex Analysis. Princeton, NJ: Princeton University
+                                                                         Press, 1970.
+tion receptive field. Physical simulations exhibit both distance    [18] V. G. Satorras, E. Hoogeboom, and M. Welling, “E(n) equivariant graph
+violations and nonarrival under conservative compensation.               neural networks,” in Proceedings of the 38th International Conference
+                                                                         on Machine Learning (ICML), vol. 139. PMLR, 2021, pp. 9323–9332.
+Independent-method comparisons require faithful algorithm           [19] C. Yu, A. Velu, E. Vinitsky, J. Gao, Y. Wang, A. Bayen, and Y. Wu,
+implementations, shared task adaptations, comparable total               “The surprising effectiveness of PPO in cooperative multi-agent games,”
+interaction and tuning budgets, additional training replicates,          Advances in Neural Information Processing Systems (NeurIPS), vol. 35,
+and new held-out tasks.                                                  pp. 24 611–24 624, 2022.
+

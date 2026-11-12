@@ -1,0 +1,12 @@
+\section{引言}\label{sec:intro}
+多机器人协同巡检、通信中继和编队重构需要同时考虑机间避碰、通信连通与任务完成。状态相关图的代数连通度可量化网络连通性，相关分布式估计与控制方法为移动网络维护提供了基础\cite{yang2010decentralized,sabattini2013decentralized,ong2021connectivity}。控制障碍函数（Control Barrier Function, CBF）将安全条件转化为控制输入约束，常与二次规划（Quadratic Program, QP）结合以修正标称指令\cite{ames2017cbf,breeden2022sampled}。在全局谱约束和成对避碰约束共同作用时，有限通信下的安全分配还需处理多节点耦合\cite{tan2025violationfree}。
+
+瞬时安全可行性与任务完成性是不同问题。CBF-QP 可能引入非目标平衡点，多机器人也可能在互换位置时发生停滞\cite{reis2021,tan2024equilibria,grover2023deadlock}。对于位置误差能量 $W(\bp)=\frac12\sum_i\norm{\bp_i-\bg_i}_2^2$，将 $-\nabla W$ 投影到包含零输入的凸安全集可产生误差单调控制\cite{allibhoy2024safegradient}。当可行配置上存在严格非目标局部极小时，安全可达路径可能需要暂时增加 $W$。外围机器人虽已处于自身目标，也可能需要移动以允许内部交换。
+
+解析方法通过环流项或兼容的控制李雅普诺夫与障碍条件改善任务推进\cite{goncalves2023circulation,dai2024compatible}。学习方法则以约束策略优化、安全滤波或学习障碍函数处理多机器人安全控制\cite{gu2023safe,wabersich2021}。GCBF+ 学习神经图障碍函数与分布式控制\cite{zhang2025gcbf}；DGPPO 将离散图障碍条件结合到近端策略更新中\cite{zhang2025dgppo}。这些方法的约束表示、动力学、观测和训练目标不同，与本文比较时需要逐项说明任务适配。静态份额投影和自建投影惩罚实验只能说明对应内部变体的表现。
+
+本文考察三个相互关联的设计问题：如何为误差单调控制受阻的配置产生非单调的协同运动，如何利用局部份额交换使静止邻居参与退让，以及如何使学习残差在目标处消失。为此提出包络等变图策略与邻域近端分配（Envelope Equivariant Graph Policy with Neighborhood Proximal Allocation, EGP-NPA）。图策略采用多层邻居消息传递，分配层维持耦合约束，完成包络恢复目标零速平衡点。
+
+主要内容如下。首先，构造七机器人接触构型的精确有理数二阶 Karush--Kuhn--Tucker（KKT）证书及安全可达路径，说明误差单调性可能阻止完成安全可达任务。其次，构建旋转、平移与置换等变的残差策略，分析严格镜像对称构型的确定性侧向输出限制，并在两节点接触子问题中求出份额转移与退让速度的闭式解。再次，给出学习动作经安全分配与保持段认证后的条件性安全保证，以及完成包络的一阶消隐界。最后，通过指定检查点的任务评测、固定权重干预和预算、种子匹配的学习变体比较，分别检验控制行为、组件作用与训练配置影响，并报告二阶物理仿真的负面结果。
+
+\textbf{符号说明：} $\mathbb R^n$、$\mathbb Q^n$ 和 $\mathbb S_+^n$ 分别表示实向量空间、有理向量空间与半正定矩阵锥；$\I_n$ 为单位矩阵，$\boldsymbol1_N$ 为全一向量，$\boldsymbol\varepsilon_i$ 为标准基向量；$\norm{\cdot}_2$ 表示欧氏范数或矩阵谱范数，$\col$ 表示列堆叠，$\otimes$ 表示 Kronecker 积，$(x)_+=\max(x,0)$，$\clip(x,a,b)=\min(\max(x,a),b)$。矩阵 $\bJ=\left[\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\right]$ 表示逆时针直角旋转，$\mathbb I(\cdot)$ 为示性函数。

@@ -1,0 +1,19 @@
+{
+  "identity": "Official DGPPO update, adapted single-integrator lattice environment",
+  "upstream_commit": "bf9ff80ebc7f135121b9fe1658800bdb106b8c20",
+  "mode": "smoke_only",
+  "seed": 110201,
+  "requested_budget": 128,
+  "transitions_per_update": 128,
+  "updates": 1,
+  "budget_counting": "Both stochastic collection and deterministic collection inside DGPPO.update",
+  "training_agents": 8,
+  "training_distribution": "Bank sampled from original train_scene conditioned on n=8",
+  "observations": "6D nodes and 5D edges; includes exact spectral margin and workspace clearance",
+  "reward": "Normalized progress minus 0.001 per step; not the EGP-NPA dual-dependent reward",
+  "physical_model": "p_next=p+0.05*u; radial speed bound 0.5; no state clipping",
+  "limitations": "Task adaptation, not an equal-training-distribution EGP-NPA comparison",
+  "devices": [
+    "TFRT_CPU_0"
+  ]
+}

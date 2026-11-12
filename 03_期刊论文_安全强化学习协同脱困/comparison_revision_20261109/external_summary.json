@@ -1,0 +1,148 @@
+[
+  {
+    "method": "egp",
+    "seed_index": 1,
+    "split": "N8",
+    "count": 64,
+    "safe_arrivals": 64,
+    "arrived": 64,
+    "failed_audit_runs": 0,
+    "collision_runs": 0,
+    "statuses": {
+      "arrived": 64
+    },
+    "median_safe_arrival": 9.199999999999996,
+    "failure_penalized_completion": 10.678906250000022,
+    "minimum_distance": 1.0000000468195538,
+    "final_error_median": 0.003371501829132634,
+    "audit_failed_segments": 0
+  },
+  {
+    "method": "egp",
+    "seed_index": 1,
+    "split": "Cross",
+    "count": 32,
+    "safe_arrivals": 29,
+    "arrived": 29,
+    "failed_audit_runs": 0,
+    "collision_runs": 0,
+    "statuses": {
+      "arrived": 29,
+      "horizon_reached": 3
+    },
+    "median_safe_arrival": 11.300000000000026,
+    "failure_penalized_completion": 19.63749999999999,
+    "minimum_distance": 1.000000000023335,
+    "final_error_median": 0.004598663758045036,
+    "audit_failed_segments": 0
+  },
+  {
+    "method": "egp",
+    "seed_index": 2,
+    "split": "N8",
+    "count": 64,
+    "safe_arrivals": 64,
+    "arrived": 64,
+    "failed_audit_runs": 0,
+    "collision_runs": 0,
+    "statuses": {
+      "arrived": 64
+    },
+    "median_safe_arrival": 9.249999999999996,
+    "failure_penalized_completion": 10.735156250000024,
+    "minimum_distance": 1.0000000044644062,
+    "final_error_median": 0.0035077752672206565,
+    "audit_failed_segments": 0
+  },
+  {
+    "method": "egp",
+    "seed_index": 2,
+    "split": "Cross",
+    "count": 32,
+    "safe_arrivals": 28,
+    "arrived": 28,
+    "failed_audit_runs": 0,
+    "collision_runs": 0,
+    "statuses": {
+      "arrived": 28,
+      "horizon_reached": 4
+    },
+    "median_safe_arrival": 11.65000000000003,
+    "failure_penalized_completion": 19.55000000000002,
+    "minimum_distance": 1.0000000000700346,
+    "final_error_median": 0.0038308501412027468,
+    "audit_failed_segments": 0
+  },
+  {
+    "method": "dgppo",
+    "seed_index": 1,
+    "split": "N8",
+    "count": 64,
+    "safe_arrivals": 0,
+    "arrived": 0,
+    "failed_audit_runs": 64,
+    "collision_runs": 64,
+    "statuses": {
+      "horizon_reached": 64
+    },
+    "median_safe_arrival": null,
+    "failure_penalized_completion": 60.0,
+    "minimum_distance": 0.0004767731626648154,
+    "final_error_median": 3.177819304026191,
+    "audit_failed_segments": 76800
+  },
+  {
+    "method": "dgppo",
+    "seed_index": 1,
+    "split": "Cross",
+    "count": 32,
+    "safe_arrivals": 0,
+    "arrived": 0,
+    "failed_audit_runs": 32,
+    "collision_runs": 32,
+    "statuses": {
+      "horizon_reached": 32
+    },
+    "median_safe_arrival": null,
+    "failure_penalized_completion": 60.0,
+    "minimum_distance": 0.0009642434322764058,
+    "final_error_median": 3.4097980240712165,
+    "audit_failed_segments": 38400
+  },
+  {
+    "method": "dgppo",
+    "seed_index": 2,
+    "split": "N8",
+    "count": 64,
+    "safe_arrivals": 0,
+    "arrived": 0,
+    "failed_audit_runs": 64,
+    "collision_runs": 64,
+    "statuses": {
+      "horizon_reached": 64
+    },
+    "median_safe_arrival": null,
+    "failure_penalized_completion": 60.0,
+    "minimum_distance": 0.00031537883561436996,
+    "final_error_median": 12.706657780901772,
+    "audit_failed_segments": 76789
+  },
+  {
+    "method": "dgppo",
+    "seed_index": 2,
+    "split": "Cross",
+    "count": 32,
+    "safe_arrivals": 0,
+    "arrived": 0,
+    "failed_audit_runs": 32,
+    "collision_runs": 32,
+    "statuses": {
+      "horizon_reached": 32
+    },
+    "median_safe_arrival": null,
+    "failure_penalized_completion": 60.0,
+    "minimum_distance": 0.011974059499589133,
+    "final_error_median": 12.660112354062043,
+    "audit_failed_segments": 38397
+  }
+]

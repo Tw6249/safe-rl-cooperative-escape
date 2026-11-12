@@ -1,0 +1,33 @@
+{
+  "source": "Frozen original train_scene, unchanged",
+  "seed": 111001,
+  "accepted_counts": {
+    "6": 4096,
+    "7": 6931,
+    "8": 19486,
+    "9": 16415,
+    "10": 9826
+  },
+  "files": {
+    "train_n6.npz": {
+      "count": 4096,
+      "sha256": "67d8d8e134c6bb5fb6f865aeee5fe79f0eb1e2d6ce4dffc3d53fddfd67789f2c"
+    },
+    "train_n7.npz": {
+      "count": 4096,
+      "sha256": "6c3618e99d46d3eb32b2f1f688f43e5818bd9a1b9eb11c9783b9f44cdb366e78"
+    },
+    "train_n8.npz": {
+      "count": 4096,
+      "sha256": "a572478520cbcd942e67cc2d5b177955a6916a5aff84ececafa62a81d584f4d7"
+    },
+    "train_n9.npz": {
+      "count": 4096,
+      "sha256": "4cffab1523a080957361ede05db94e74a30f28d312cadb6c6fa2868afa6cc3a7"
+    },
+    "train_n10.npz": {
+      "count": 4096,
+      "sha256": "32382007e5ea2cb8910724f6df96d4d400f8c006e43fde3cc93870a2137d782e"
+    }
+  }
+}

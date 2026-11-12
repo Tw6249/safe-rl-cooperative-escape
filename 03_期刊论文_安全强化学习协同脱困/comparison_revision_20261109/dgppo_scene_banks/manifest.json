@@ -1,0 +1,17 @@
+{
+  "training_agents": 8,
+  "conditioning": "Original train_scene conditioned on n=8",
+  "novelty": "New training bank; original development tasks are not a fresh final test",
+  "banks": {
+    "train": {
+      "seed": 110101,
+      "count": 4096,
+      "sha256": "328ee367950c4edc8c36c27c6fd536e1d1d425a198213dfb65c6b82a3ef268ec"
+    },
+    "validation": {
+      "seed": 110102,
+      "count": 48,
+      "sha256": "ff53bcf03e2c947ea5394572728ccade36b857d0e704d2f30ec8fddb73520ef6"
+    }
+  }
+}

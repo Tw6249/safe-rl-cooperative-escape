@@ -1,0 +1,3943 @@
+{
+ "meta": {
+  "time": "2026-11-06T08:58:11",
+  "spec": "3.0",
+  "command": "python check_figures.py --layout-map qa/layout_map_20261106.json --pdf ../整篇论文/build/main.pdf --pages --out qa/20261106_after_batch1"
+ },
+ "figures": [
+  {
+   "number": "1.1",
+   "chapter": 1,
+   "label": "fig:ch1-loop",
+   "source": "独立章节/第一章_绪论/sections/01_background.tex:17",
+   "place": "htbp",
+   "tikz": true,
+   "caption_lines_est": 1,
+   "layout": "D",
+   "layout_src": "map",
+   "page": 3,
+   "first_ref": 3
+  },
+  {
+   "number": "1.2",
+   "chapter": 1,
+   "label": "fig:ch1-roadmap",
+   "source": "独立章节/第一章_绪论/sections/06_roadmap.tex:3",
+   "place": "htbp",
+   "tikz": true,
+   "caption_lines_est": 1,
+   "layout": "D",
+   "layout_src": "map",
+   "page": 18,
+   "first_ref": 17
+  },
+  {
+   "number": "2.1",
+   "chapter": 2,
+   "label": "fig:ch2-gain-threshold",
+   "source": "独立章节/第二章_分布式谱估计/sections/01_introduction.tex:14",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 5,
+   "file": "figures/v5/gain_threshold.pdf",
+   "canvas_mm": [
+    150.0,
+    62.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    62.0
+   ],
+   "layout": "P2",
+   "layout_src": "map",
+   "nominal_h": 58,
+   "font": {
+    "n": 98,
+    "min": 5.9,
+    "median": 8.8,
+    "base_min": 8.5,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.3,
+    "top": 1.0,
+    "bottom": 2.0
+   },
+   "page": 20,
+   "first_ref": 20
+  },
+  {
+   "number": "2.2",
+   "chapter": 2,
+   "label": "fig:weak_connection",
+   "source": "独立章节/第二章_分布式谱估计/sections/02_model.tex:28",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/v2/weak_connection.pdf",
+   "canvas_mm": [
+    150.0,
+    105.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    105.0
+   ],
+   "layout": "P4",
+   "layout_src": "map",
+   "nominal_h": 116,
+   "font": {
+    "n": 144,
+    "min": 6.2,
+    "median": 9.5,
+    "base_min": 8.2,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 3.0,
+    "bottom": 1.8
+   },
+   "page": 23,
+   "first_ref": 23
+  },
+  {
+   "number": "2.3",
+   "chapter": 2,
+   "label": "fig:information_flow",
+   "source": "独立章节/第二章_分布式谱估计/sections/02_model.tex:67",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 2,
+   "file": "figures/v2/information_flow.pdf",
+   "canvas_mm": [
+    150.0,
+    52.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    52.0
+   ],
+   "layout": "D",
+   "layout_src": "map",
+   "nominal_h": 52,
+   "font": {
+    "n": 69,
+    "min": 6.2,
+    "median": 8.8,
+    "base_min": 8.8,
+    "small": {
+     "7.0": 1
+    },
+    "n_small": 1,
+    "pct_small": 1
+   },
+   "fonts": [
+    "STIXGeneral-Bold",
+    "STIXGeneral-BoldItalic",
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "STIXSizeOneSym-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 2.0,
+    "right": 2.0,
+    "top": 4.6,
+    "bottom": 3.6
+   },
+   "page": 25,
+   "first_ref": 24
+  },
+  {
+   "number": "2.4",
+   "chapter": 2,
+   "label": "fig:ch2-reference-plane",
+   "source": "独立章节/第二章_分布式谱估计/sections/03_reference.tex:180",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 5,
+   "file": "figures/v6/reference_plane.pdf",
+   "canvas_mm": [
+    150.0,
+    68.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    68.0
+   ],
+   "layout": "P2E",
+   "layout_src": "map",
+   "nominal_h": 66,
+   "font": {
+    "n": 65,
+    "min": 8.5,
+    "median": 9.5,
+    "base_min": 8.5,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 5.6,
+    "right": 14.7,
+    "top": 1.0,
+    "bottom": 3.0
+   },
+   "page": 30,
+   "first_ref": 30
+  },
+  {
+   "number": "2.5",
+   "chapter": 2,
+   "label": "fig:reference_trajectory",
+   "source": "独立章节/第二章_分布式谱估计/sections/07_experiments.tex:39",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 4,
+   "file": "figures/v6/reference_trajectory.pdf",
+   "canvas_mm": [
+    150.0,
+    112.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    112.0
+   ],
+   "layout": "P4",
+   "layout_src": "map",
+   "nominal_h": 116,
+   "font": {
+    "n": 240,
+    "min": 3.9,
+    "median": 8.0,
+    "base_min": 8.0,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.3,
+    "top": 1.0,
+    "bottom": 1.8
+   },
+   "page": 44,
+   "first_ref": 43
+  },
+  {
+   "number": "2.6",
+   "chapter": 2,
+   "label": "fig:full_dac",
+   "source": "独立章节/第二章_分布式谱估计/sections/07_experiments.tex:54",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 5,
+   "file": "figures/v7/full_dac_v8.pdf",
+   "canvas_mm": [
+    154.0,
+    114.0
+   ],
+   "scale": 0.974,
+   "out_mm": [
+    150.0,
+    111.0
+   ],
+   "layout": "P4",
+   "layout_src": "map",
+   "nominal_h": 116,
+   "font": {
+    "n": 239,
+    "min": 5.0,
+    "median": 7.8,
+    "base_min": 7.8,
+    "small": {
+     "5.0": 1,
+     "5.2": 10,
+     "7.2": 12,
+     "7.3": 1,
+     "7.4": 38
+    },
+    "n_small": 62,
+    "pct_small": 26
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "STIXSizeOneSym-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 1.0,
+    "bottom": 1.8
+   },
+   "page": 45,
+   "first_ref": 44
+  },
+  {
+   "number": "2.7",
+   "chapter": 2,
+   "label": "fig:gain_scan",
+   "source": "独立章节/第二章_分布式谱估计/sections/07_experiments.tex:67",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/v7/gain_scan.pdf",
+   "canvas_mm": [
+    150.0,
+    62.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    62.0
+   ],
+   "layout": "P2",
+   "layout_src": "map",
+   "nominal_h": 58,
+   "font": {
+    "n": 161,
+    "min": 5.2,
+    "median": 7.5,
+    "base_min": 8.8,
+    "small": {
+     "5.2": 21,
+     "7.5": 27
+    },
+    "n_small": 48,
+    "pct_small": 30
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "STIXSizeOneSym-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 0.8,
+    "right": 1.3,
+    "top": 1.0,
+    "bottom": 1.8
+   },
+   "page": 46,
+   "first_ref": 45
+  },
+  {
+   "number": "2.8",
+   "chapter": 2,
+   "label": "fig:switch_topology",
+   "source": "独立章节/第二章_分布式谱估计/sections/08_comparison.tex:55",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 2,
+   "file": "figures/v4/switch_topology.pdf",
+   "canvas_mm": [
+    150.0,
+    50.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    50.0
+   ],
+   "layout": "P2E",
+   "layout_src": "map",
+   "nominal_h": 66,
+   "font": {
+    "n": 98,
+    "min": 6.6,
+    "median": 9.5,
+    "base_min": 8.2,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.3,
+    "top": 3.3,
+    "bottom": 2.3
+   },
+   "page": 48,
+   "first_ref": 47
+  },
+  {
+   "number": "2.9",
+   "chapter": 2,
+   "label": "fig:switch_comparison",
+   "source": "独立章节/第二章_分布式谱估计/sections/08_comparison.tex:87",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/v7/switch_comparison.pdf",
+   "canvas_mm": [
+    150.0,
+    118.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    118.0
+   ],
+   "layout": "P4",
+   "layout_src": "map",
+   "nominal_h": 116,
+   "font": {
+    "n": 143,
+    "min": 6.2,
+    "median": 8.8,
+    "base_min": 8.4,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.3,
+    "top": 2.0,
+    "bottom": 1.8
+   },
+   "page": 49,
+   "first_ref": 48
+  },
+  {
+   "number": "2.10",
+   "chapter": 2,
+   "label": "fig:comparison_failure",
+   "source": "独立章节/第二章_分布式谱估计/sections/08_comparison.tex:128",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 2,
+   "file": "figures/v7/comparison_failure.pdf",
+   "canvas_mm": [
+    150.0,
+    64.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    64.0
+   ],
+   "layout": "P2",
+   "layout_src": "map",
+   "nominal_h": 58,
+   "font": {
+    "n": 125,
+    "min": 6.2,
+    "median": 8.8,
+    "base_min": 8.0,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.5,
+    "top": 1.0,
+    "bottom": 1.8
+   },
+   "page": 52,
+   "first_ref": 50
+  },
+  {
+   "number": "3.1",
+   "chapter": 3,
+   "label": "fig:ch3-coupling",
+   "source": "独立章节/第三章_持久分配/sections/02_model.tex:53",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 5,
+   "file": "figures/concept_coupling.pdf",
+   "canvas_mm": [
+    150.0,
+    128.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    128.0
+   ],
+   "layout": "P4",
+   "layout_src": "map",
+   "nominal_h": 116,
+   "font": {
+    "n": 119,
+    "min": 6.2,
+    "median": 9.5,
+    "base_min": 8.0,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "STIXNonUnicode-Italic",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 3.6,
+    "right": 1.0,
+    "top": 1.0,
+    "bottom": 1.5
+   },
+   "page": 59,
+   "first_ref": 58
+  },
+  {
+   "number": "3.2",
+   "chapter": 3,
+   "label": "fig:ch3-persistent",
+   "source": "独立章节/第三章_持久分配/sections/03_allocation.tex:37",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/concept_persistent.pdf",
+   "canvas_mm": [
+    150.0,
+    52.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    52.0
+   ],
+   "layout": "1x3-data",
+   "layout_src": "map",
+   "font": {
+    "n": 157,
+    "min": 5.6,
+    "median": 8.5,
+    "base_min": 8.0,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 1.0,
+    "bottom": 1.8
+   },
+   "page": 61,
+   "first_ref": 60
+  },
+  {
+   "number": "3.3",
+   "chapter": 3,
+   "label": "fig:ch3-joint",
+   "source": "独立章节/第三章_持久分配/sections/03_allocation.tex:87",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/concept_joint_feasibility.pdf",
+   "canvas_mm": [
+    150.0,
+    54.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    54.0
+   ],
+   "layout": "1x3-data",
+   "layout_src": "map",
+   "font": {
+    "n": 76,
+    "min": 5.9,
+    "median": 8.5,
+    "base_min": 8.0,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "STIXNonUnicode-Italic",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "image_ppi_min": 300,
+   "margins_mm": {
+    "left": 1.0,
+    "right": 3.0,
+    "top": 1.0,
+    "bottom": 1.8
+   },
+   "page": 63,
+   "first_ref": 62
+  },
+  {
+   "number": "3.4",
+   "chapter": 3,
+   "label": "fig:ch3mechanism",
+   "source": "独立章节/第三章_持久分配/sections/04_algorithm.tex:10",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/pa_mechanism_block_v2.pdf",
+   "canvas_mm": [
+    150.0,
+    96.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    96.0
+   ],
+   "layout": "D",
+   "layout_src": "map",
+   "nominal_h": 100,
+   "font": {
+    "n": 226,
+    "min": 4.2,
+    "median": 7.0,
+    "base_min": 8.0,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Bold",
+    "STIXGeneral-BoldItalic",
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "STIXNonUnicode-Italic",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.8,
+    "right": 5.1,
+    "top": 3.0,
+    "bottom": 7.6
+   },
+   "page": 64,
+   "first_ref": 63
+  },
+  {
+   "number": "3.5",
+   "chapter": 3,
+   "label": "fig:ch3convergence",
+   "source": "独立章节/第三章_持久分配/sections/05_convergence.tex:168",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 4,
+   "file": "figures/convergence_examples_block_v4.pdf",
+   "canvas_mm": [
+    150.0,
+    62.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    62.0
+   ],
+   "layout": "P2",
+   "layout_src": "map",
+   "nominal_h": 58,
+   "font": {
+    "n": 146,
+    "min": 4.9,
+    "median": 7.2,
+    "base_min": 8.8,
+    "small": {
+     "7.2": 8
+    },
+    "n_small": 8,
+    "pct_small": 5
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.3,
+    "top": 1.0,
+    "bottom": 1.8
+   },
+   "page": 74,
+   "first_ref": 73
+  },
+  {
+   "number": "3.6",
+   "chapter": 3,
+   "label": "fig:ch3scene",
+   "source": "独立章节/第三章_持久分配/sections/07_experiments.tex:39",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/frozen_scene_v2.pdf",
+   "canvas_mm": [
+    150.0,
+    74.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    74.0
+   ],
+   "layout": "P2E",
+   "layout_src": "map",
+   "nominal_h": 66,
+   "font": {
+    "n": 77,
+    "min": 5.9,
+    "median": 9.5,
+    "base_min": 8.2,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 0.0,
+    "bottom": 2.0
+   },
+   "page": 81,
+   "first_ref": 81
+  },
+  {
+   "number": "3.7",
+   "chapter": 3,
+   "label": "fig:ch3anytime",
+   "source": "独立章节/第三章_持久分配/sections/07_experiments.tex:55",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/frozen_anytime_v2.pdf",
+   "canvas_mm": [
+    150.0,
+    84.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    84.0
+   ],
+   "layout": "P2",
+   "layout_src": "map",
+   "nominal_h": 58,
+   "font": {
+    "n": 128,
+    "min": 5.3,
+    "median": 8.8,
+    "base_min": 8.8,
+    "small": {
+     "5.3": 1,
+     "7.4": 9,
+     "7.6": 20
+    },
+    "n_small": 30,
+    "pct_small": 23
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.3,
+    "top": 1.0,
+    "bottom": 1.8
+   },
+   "page": 83,
+   "first_ref": 82
+  },
+  {
+   "number": "3.8",
+   "chapter": 3,
+   "label": "fig:ch3comparison",
+   "source": "独立章节/第三章_持久分配/sections/07_experiments.tex:66",
+   "place": "!htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/optimization_comparison.pdf",
+   "canvas_mm": [
+    150.0,
+    148.0
+   ],
+   "scale": 0.84,
+   "out_mm": [
+    126.0,
+    124.3
+   ],
+   "layout": "V3",
+   "layout_src": "map",
+   "nominal_h": 128,
+   "font": {
+    "n": 109,
+    "min": 4.7,
+    "median": 7.4,
+    "base_min": 8.0,
+    "small": {
+     "4.7": 4,
+     "5.2": 21,
+     "6.7": 25,
+     "7.4": 44
+    },
+    "n_small": 94,
+    "pct_small": 86
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 0.5,
+    "right": 1.0,
+    "top": 0.8,
+    "bottom": 1.5
+   },
+   "page": 84,
+   "first_ref": 83
+  },
+  {
+   "number": "3.9",
+   "chapter": 3,
+   "label": "fig:ch3switching",
+   "source": "独立章节/第三章_持久分配/sections/07_experiments.tex:75",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 2,
+   "file": "figures/persistent_switching.pdf",
+   "canvas_mm": [
+    150.0,
+    72.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    72.0
+   ],
+   "layout": "P1W",
+   "layout_src": "map",
+   "nominal_h": 78,
+   "font": {
+    "n": 127,
+    "min": 3.7,
+    "median": 7.5,
+    "base_min": 8.8,
+    "small": {
+     "3.7": 1,
+     "5.2": 5,
+     "7.5": 80
+    },
+    "n_small": 86,
+    "pct_small": 68
+   },
+   "fonts": [
+    "STIXGeneral-Bold",
+    "STIXGeneral-BoldItalic",
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "STIXNonUnicode-Italic",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 0.8,
+    "right": 1.0,
+    "top": 1.8,
+    "bottom": 1.8
+   },
+   "page": 85,
+   "first_ref": 84
+  },
+  {
+   "number": "3.10",
+   "chapter": 3,
+   "label": "fig:ch3interruptions",
+   "source": "独立章节/第三章_持久分配/sections/07_experiments.tex:82",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/anytime_interruptions.pdf",
+   "canvas_mm": [
+    150.0,
+    76.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    76.0
+   ],
+   "layout": "P2",
+   "layout_src": "map",
+   "nominal_h": 58,
+   "font": {
+    "n": 68,
+    "min": 5.1,
+    "median": 8.8,
+    "base_min": 8.8,
+    "small": {
+     "5.1": 2,
+     "7.3": 31
+    },
+    "n_small": 33,
+    "pct_small": 49
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "STIXNonUnicode-Italic",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "image_ppi_min": 300,
+   "margins_mm": {
+    "left": 0.8,
+    "right": 3.6,
+    "top": 1.0,
+    "bottom": 1.5
+   },
+   "page": 85,
+   "first_ref": 84
+  },
+  {
+   "number": "3.11",
+   "chapter": 3,
+   "label": "fig:ch3closedloop",
+   "source": "独立章节/第三章_持久分配/sections/07_experiments.tex:95",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 4,
+   "file": "figures/closed_loop_settle_v4.pdf",
+   "canvas_mm": [
+    150.0,
+    88.0
+   ],
+   "scale": 0.98,
+   "out_mm": [
+    147.0,
+    86.2
+   ],
+   "layout": "P3",
+   "layout_src": "map",
+   "nominal_h": 88,
+   "font": {
+    "n": 187,
+    "min": 6.0,
+    "median": 8.6,
+    "base_min": 7.8,
+    "small": {
+     "7.4": 4,
+     "7.6": 56
+    },
+    "n_small": 60,
+    "pct_small": 32
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.5,
+    "top": 1.0,
+    "bottom": 1.8
+   },
+   "page": 87,
+   "first_ref": 86
+  },
+  {
+   "number": "4.1",
+   "chapter": 4,
+   "label": "fig:ch4-rectangle",
+   "source": "独立章节/第四章_子空间连通安全/sections/01_introduction.tex:14",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 5,
+   "file": "figures/concept_rectangle.pdf",
+   "canvas_mm": [
+    150.0,
+    112.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    112.0
+   ],
+   "layout": "3+2",
+   "layout_src": "map",
+   "font": {
+    "n": 150,
+    "min": 5.6,
+    "median": 8.8,
+    "base_min": 8.0,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.3,
+    "top": 1.0,
+    "bottom": 1.5
+   },
+   "page": 90,
+   "first_ref": 89
+  },
+  {
+   "number": "4.2",
+   "chapter": 4,
+   "label": "fig:ch4-cone",
+   "source": "独立章节/第四章_子空间连通安全/sections/04_barrier.tex:90",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 4,
+   "file": "figures/concept_cone.pdf",
+   "canvas_mm": [
+    150.0,
+    68.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    68.0
+   ],
+   "layout": "P2E",
+   "layout_src": "map",
+   "nominal_h": 66,
+   "font": {
+    "n": 79,
+    "min": 5.9,
+    "median": 9.5,
+    "base_min": 8.5,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "STIXNonUnicode-Italic",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 11.4,
+    "right": 6.3,
+    "top": 1.0,
+    "bottom": 1.8
+   },
+   "page": 99,
+   "first_ref": 99
+  },
+  {
+   "number": "4.3",
+   "chapter": 4,
+   "label": "fig:c4crossing",
+   "source": "独立章节/第四章_子空间连通安全/sections/07_experiments.tex:63",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/crossing_results.pdf",
+   "canvas_mm": [
+    150.0,
+    102.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    102.0
+   ],
+   "layout": "V2",
+   "layout_src": "map",
+   "nominal_h": 100,
+   "font": {
+    "n": 48,
+    "min": 5.9,
+    "median": 8.8,
+    "base_min": 8.4,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 1.0,
+    "bottom": 1.8
+   },
+   "page": 111,
+   "first_ref": 110
+  },
+  {
+   "number": "4.4",
+   "chapter": 4,
+   "label": "fig:c4topmargins",
+   "source": "独立章节/第四章_子空间连通安全/sections/07_experiments.tex:76",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 2,
+   "file": "figures/topology_margins_v2.pdf",
+   "canvas_mm": [
+    153.0,
+    105.0
+   ],
+   "scale": 0.981,
+   "out_mm": [
+    150.0,
+    102.9
+   ],
+   "layout": "V2",
+   "layout_src": "map",
+   "nominal_h": 100,
+   "font": {
+    "n": 53,
+    "min": 6.5,
+    "median": 8.6,
+    "base_min": 8.0,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 2.3,
+    "right": 2.5,
+    "top": 2.5,
+    "bottom": 3.3
+   },
+   "page": 112,
+   "first_ref": 111
+  },
+  {
+   "number": "4.5",
+   "chapter": 4,
+   "label": "fig:c4geometry",
+   "source": "独立章节/第四章_子空间连通安全/sections/07_experiments.tex:81",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/topology_geometry_v2.pdf",
+   "canvas_mm": [
+    153.0,
+    67.4
+   ],
+   "scale": 0.981,
+   "out_mm": [
+    150.0,
+    66.1
+   ],
+   "layout": "P2E",
+   "layout_src": "map",
+   "nominal_h": 66,
+   "font": {
+    "n": 60,
+    "min": 8.0,
+    "median": 9.3,
+    "base_min": 8.0,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 2.5,
+    "right": 2.5,
+    "top": 2.5,
+    "bottom": 3.3
+   },
+   "page": 112,
+   "first_ref": 112
+  },
+  {
+   "number": "4.6",
+   "chapter": 4,
+   "label": "fig:c4recovery",
+   "source": "独立章节/第四章_子空间连通安全/sections/07_experiments.tex:97",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 6,
+   "file": "figures/frozen_recovery.pdf",
+   "canvas_mm": [
+    150.0,
+    104.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    104.0
+   ],
+   "layout": "P4",
+   "layout_src": "map",
+   "nominal_h": 116,
+   "font": {
+    "n": 392,
+    "min": 4.8,
+    "median": 7.2,
+    "base_min": 7.8,
+    "small": {
+     "7.2": 70
+    },
+    "n_small": 70,
+    "pct_small": 18
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 1.0,
+    "bottom": 1.8
+   },
+   "page": 114,
+   "first_ref": 113
+  },
+  {
+   "number": "4.7",
+   "chapter": 4,
+   "label": "fig:c4pipeline",
+   "source": "独立章节/第四章_子空间连通安全/sections/07_experiments.tex:115",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/estimated_pipeline_v2.pdf",
+   "canvas_mm": [
+    153.0,
+    119.0
+   ],
+   "scale": 0.981,
+   "out_mm": [
+    150.0,
+    116.7
+   ],
+   "layout": "P4",
+   "layout_src": "map",
+   "nominal_h": 116,
+   "font": {
+    "n": 90,
+    "min": 8.3,
+    "median": 9.3,
+    "base_min": 8.3,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 2.3,
+    "right": 2.5,
+    "top": 2.5,
+    "bottom": 3.3
+   },
+   "page": 116,
+   "first_ref": 114
+  },
+  {
+   "number": "4.8",
+   "chapter": 4,
+   "label": "fig:c4paclosedloop",
+   "source": "独立章节/第四章_子空间连通安全/sections/07_experiments.tex:128",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 5,
+   "file": "figures/ch4_pa_closed_loop_v3.pdf",
+   "canvas_mm": [
+    153.0,
+    123.0
+   ],
+   "scale": 0.843,
+   "out_mm": [
+    129.0,
+    103.7
+   ],
+   "layout": "P4",
+   "layout_src": "map",
+   "nominal_h": 116,
+   "font": {
+    "n": 346,
+    "min": 3.8,
+    "median": 5.7,
+    "base_min": 8.0,
+    "small": {
+     "5.2": 9,
+     "7.4": 38
+    },
+    "n_small": 47,
+    "pct_small": 14
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 2.0,
+    "right": 2.3,
+    "top": 2.0,
+    "bottom": 2.8
+   },
+   "page": 117,
+   "first_ref": 116
+  },
+  {
+   "number": "4.9",
+   "chapter": 4,
+   "label": "fig:c4blocksettle",
+   "source": "独立章节/第四章_子空间连通安全/sections/07_experiments.tex:134",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/c4_npa_block_settle_b2B_L2_v2.pdf",
+   "canvas_mm": [
+    153.0,
+    103.0
+   ],
+   "scale": 0.843,
+   "out_mm": [
+    129.0,
+    86.8
+   ],
+   "layout": "P4",
+   "layout_src": "map",
+   "nominal_h": 116,
+   "font": {
+    "n": 130,
+    "min": 4.3,
+    "median": 8.0,
+    "base_min": 8.0,
+    "small": {
+     "6.1": 13,
+     "7.4": 32
+    },
+    "n_small": 45,
+    "pct_small": 35
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 2.0,
+    "right": 2.0,
+    "top": 2.0,
+    "bottom": 2.5
+   },
+   "page": 117,
+   "first_ref": 116
+  },
+  {
+   "number": "5.1",
+   "chapter": 5,
+   "label": "fig:seven5",
+   "source": "独立章节/第五章_安全强化学习与协同脱困/sections/03_obstruction.tex:69",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/seven_geometry.pdf",
+   "canvas_mm": [
+    148.6,
+    73.0
+   ],
+   "scale": 1.01,
+   "out_mm": [
+    150.0,
+    73.7
+   ],
+   "layout": "P2E",
+   "layout_src": "map",
+   "nominal_h": 66,
+   "font": {
+    "n": 66,
+    "min": 8.9,
+    "median": 9.6,
+    "base_min": 8.9,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 2.5,
+    "right": 2.5,
+    "top": 2.3,
+    "bottom": 3.3
+   },
+   "page": 127,
+   "first_ref": 125
+  },
+  {
+   "number": "5.2",
+   "chapter": 5,
+   "label": "fig:ch5-swap-traj",
+   "source": "独立章节/第五章_安全强化学习与协同脱困/sections/05_experiments.tex:17",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 6,
+   "file": "figures/fig_ch5_swap_trajectory.pdf",
+   "canvas_mm": [
+    150.0,
+    122.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    122.0
+   ],
+   "layout": "P4",
+   "layout_src": "map",
+   "nominal_h": 116,
+   "font": {
+    "n": 99,
+    "min": 8.3,
+    "median": 9.5,
+    "base_min": 8.3,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 0.5,
+    "right": 0.8,
+    "top": 1.8,
+    "bottom": 1.5
+   },
+   "page": 137,
+   "first_ref": 137
+  },
+  {
+   "number": "5.3",
+   "chapter": 5,
+   "label": "fig:ch5-time-evol",
+   "source": "独立章节/第五章_安全强化学习与协同脱困/sections/05_experiments.tex:22",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/fig_ch5_time_evolution.pdf",
+   "canvas_mm": [
+    150.0,
+    118.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    118.0
+   ],
+   "layout": "P4",
+   "layout_src": "map",
+   "nominal_h": 116,
+   "font": {
+    "n": 151,
+    "min": 6.2,
+    "median": 9.5,
+    "base_min": 8.4,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-BoldItalic",
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.3,
+    "top": 1.5,
+    "bottom": 1.5
+   },
+   "page": 138,
+   "first_ref": 137
+  },
+  {
+   "number": "5.4",
+   "chapter": 5,
+   "label": "fig:ch5-perm-gate",
+   "source": "独立章节/第五章_安全强化学习与协同脱困/sections/05_experiments.tex:69",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 4,
+   "file": "figures/fig_ch5_perm_and_gate.pdf",
+   "canvas_mm": [
+    150.0,
+    68.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    68.0
+   ],
+   "layout": "P2E",
+   "layout_src": "map",
+   "nominal_h": 66,
+   "font": {
+    "n": 101,
+    "min": 5.6,
+    "median": 8.8,
+    "base_min": 8.0,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-BoldItalic",
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 2.3,
+    "right": 1.0,
+    "top": 1.0,
+    "bottom": 1.5
+   },
+   "page": 140,
+   "first_ref": 140
+  },
+  {
+   "number": "5.5",
+   "chapter": 5,
+   "label": "fig:ch5-npa-rounds",
+   "source": "独立章节/第五章_安全强化学习与协同脱困/sections/05_experiments.tex:110",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/npa_bridge_rounds_v2.pdf",
+   "canvas_mm": [
+    153.0,
+    57.0
+   ],
+   "scale": 0.981,
+   "out_mm": [
+    150.0,
+    55.9
+   ],
+   "layout": "1x3-data",
+   "layout_src": "map",
+   "font": {
+    "n": 83,
+    "min": 6.0,
+    "median": 9.3,
+    "base_min": 8.6,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 2.8,
+    "right": 2.5,
+    "top": 2.3,
+    "bottom": 3.0
+   },
+   "page": 142,
+   "first_ref": 142
+  },
+  {
+   "number": "6.1",
+   "chapter": 6,
+   "label": "fig:ch6-arch-3d",
+   "source": "独立章节/第六章_虚拟物理仿真与系统验证/sections/02_platform_model.tex:45",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 4,
+   "file": "figures/fig_ch6_architecture_3d_v3.pdf",
+   "canvas_mm": [
+    150.0,
+    116.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    116.0
+   ],
+   "layout": "D",
+   "layout_src": "pdf",
+   "nominal_h": 116,
+   "font": {
+    "n": 61,
+    "min": 9.8,
+    "median": 9.8,
+    "base_min": 9.8,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun"
+   ],
+   "image_ppi_min": 300,
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 1.0,
+    "bottom": 2.8
+   },
+   "page": 148,
+   "first_ref": 147
+  },
+  {
+   "number": "6.2",
+   "chapter": 6,
+   "label": "fig:ch6-arch-curves",
+   "source": "独立章节/第六章_虚拟物理仿真与系统验证/sections/02_platform_model.tex:51",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/fig_ch6_arch_s3_curves_v3.pdf",
+   "canvas_mm": [
+    150.0,
+    66.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    66.0
+   ],
+   "layout": "P2E",
+   "layout_src": "pdf",
+   "nominal_h": 66,
+   "font": {
+    "n": 68,
+    "min": 8.5,
+    "median": 9.5,
+    "base_min": 8.5,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 1.0,
+    "bottom": 1.5
+   },
+   "page": 148,
+   "first_ref": 147
+  },
+  {
+   "number": "6.3",
+   "chapter": 6,
+   "label": "fig:ch6-exp1",
+   "source": "独立章节/第六章_虚拟物理仿真与系统验证/sections/05_mujoco_experiments.tex:39",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/fig_ch6_exp1a_s1_v3.pdf",
+   "canvas_mm": [
+    150.0,
+    128.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    128.0
+   ],
+   "layout": "V3",
+   "layout_src": "pdf",
+   "nominal_h": 128,
+   "font": {
+    "n": 52,
+    "min": 6.6,
+    "median": 9.5,
+    "base_min": 8.8,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 2.0,
+    "bottom": 1.5
+   },
+   "page": 156,
+   "first_ref": 155
+  },
+  {
+   "number": "6.4",
+   "chapter": 6,
+   "label": "fig:ch6-exp1b",
+   "source": "独立章节/第六章_虚拟物理仿真与系统验证/sections/05_mujoco_experiments.tex:45",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 4,
+   "file": "figures/fig_ch6_exp1b_s23_v3.pdf",
+   "canvas_mm": [
+    150.0,
+    128.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    128.0
+   ],
+   "layout": "V3",
+   "layout_src": "pdf",
+   "nominal_h": 128,
+   "font": {
+    "n": 64,
+    "min": 6.6,
+    "median": 9.5,
+    "base_min": 8.8,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 2.0,
+    "bottom": 1.5
+   },
+   "page": 157,
+   "first_ref": 155
+  },
+  {
+   "number": "6.5",
+   "chapter": 6,
+   "label": "fig:ch6-exp2",
+   "source": "独立章节/第六章_虚拟物理仿真与系统验证/sections/05_mujoco_experiments.tex:92",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 6,
+   "file": "figures/fig_ch6_exp2_gnn_mujoco_v3.pdf",
+   "canvas_mm": [
+    150.0,
+    116.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    116.0
+   ],
+   "layout": "P4",
+   "layout_src": "pdf",
+   "nominal_h": 116,
+   "font": {
+    "n": 190,
+    "min": 6.6,
+    "median": 9.5,
+    "base_min": 8.5,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 2.3,
+    "bottom": 1.5
+   },
+   "page": 160,
+   "first_ref": 159
+  },
+  {
+   "number": "6.6",
+   "chapter": 6,
+   "label": "fig:ch6-exp3",
+   "source": "独立章节/第六章_虚拟物理仿真与系统验证/sections/05_mujoco_experiments.tex:129",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 5,
+   "file": "figures/fig_ch6_exp3_subspace_sfr_v3.pdf",
+   "canvas_mm": [
+    150.0,
+    116.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    116.0
+   ],
+   "layout": "P4",
+   "layout_src": "pdf",
+   "nominal_h": 116,
+   "font": {
+    "n": 267,
+    "min": 5.9,
+    "median": 8.8,
+    "base_min": 8.5,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 2.5,
+    "bottom": 1.5
+   },
+   "page": 162,
+   "first_ref": 161
+  },
+  {
+   "number": "6.7",
+   "chapter": 6,
+   "label": "fig:ch6-exp4-hetero",
+   "source": "独立章节/第六章_虚拟物理仿真与系统验证/sections/06_hetero_air_ground.tex:119",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 6,
+   "file": "figures/fig_ch6_exp4a_hetero_renders_v3.pdf",
+   "canvas_mm": [
+    150.0,
+    58.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    58.0
+   ],
+   "layout": "D",
+   "layout_src": "pdf",
+   "nominal_h": 58,
+   "font": {
+    "n": 4,
+    "min": 9.8,
+    "median": 9.8,
+    "base_min": 9.8,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "image_ppi_min": 300,
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 1.0,
+    "bottom": 3.3
+   },
+   "page": 168,
+   "first_ref": 167
+  },
+  {
+   "number": "6.8",
+   "chapter": 6,
+   "label": "fig:ch6-exp4-curves",
+   "source": "独立章节/第六章_虚拟物理仿真与系统验证/sections/06_hetero_air_ground.tex:125",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 4,
+   "file": "figures/fig_ch6_exp4b_hetero_curves_v3.pdf",
+   "canvas_mm": [
+    150.0,
+    128.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    128.0
+   ],
+   "layout": "V3",
+   "layout_src": "pdf",
+   "nominal_h": 128,
+   "font": {
+    "n": 65,
+    "min": 6.6,
+    "median": 9.5,
+    "base_min": 8.5,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 2.3,
+    "bottom": 1.5
+   },
+   "page": 169,
+   "first_ref": 167
+  },
+  {
+   "number": "6.9",
+   "chapter": 6,
+   "label": "fig:ch6-exp4-offset",
+   "source": "独立章节/第六章_虚拟物理仿真与系统验证/sections/06_hetero_air_ground.tex:131",
+   "place": "htbp",
+   "tikz": false,
+   "caption_lines_est": 3,
+   "file": "figures/fig_ch6_exp4c_offset_sweep_v3.pdf",
+   "canvas_mm": [
+    150.0,
+    128.0
+   ],
+   "scale": 1.0,
+   "out_mm": [
+    150.0,
+    128.0
+   ],
+   "layout": "V3",
+   "layout_src": "pdf",
+   "nominal_h": 128,
+   "font": {
+    "n": 65,
+    "min": 6.6,
+    "median": 9.5,
+    "base_min": 8.8,
+    "small": {},
+    "n_small": 0,
+    "pct_small": 0
+   },
+   "fonts": [
+    "STIXGeneral-Italic",
+    "STIXGeneral-Regular",
+    "SimSun",
+    "TimesNewRomanPSMT"
+   ],
+   "margins_mm": {
+    "left": 1.0,
+    "right": 1.0,
+    "top": 1.0,
+    "bottom": 1.5
+   },
+   "page": 170,
+   "first_ref": 170
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "code": "F13",
+   "where": "图1.1 fig:ch1-loop",
+   "message": "TikZ 有 5 个节点用绝对坐标定位，框内文字变长时易重叠；宜改用 positioning 相对定位"
+  },
+  {
+   "level": "WARN",
+   "code": "F13",
+   "where": "图1.2 fig:ch1-roadmap",
+   "message": "TikZ 有 7 个节点用绝对坐标定位，框内文字变长时易重叠；宜改用 positioning 相对定位"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图2.1 fig:ch2-gain-threshold",
+   "message": "完整题注估计 5 行，宜 ≤ 4 行，解释性内容移入正文"
+  },
+  {
+   "level": "WARN",
+   "code": "F04",
+   "where": "图2.1 fig:ch2-gain-threshold",
+   "message": "P2 档标称高 58 mm，成品 62.0 mm，在存量容差内；修改时回到标称值"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图2.2 fig:weak_connection",
+   "message": "标签未用 fig:ch2- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图2.2 fig:weak_connection",
+   "message": "P4 档标称高 116 mm，成品 105.0 mm（差 -11.0）"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图2.3 fig:information_flow",
+   "message": "标签未用 fig:ch2- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F06",
+   "where": "图2.3 fig:information_flow",
+   "message": "1/69 处文字（1%）低于 7.8 pt：7 pt"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图2.4 fig:ch2-reference-plane",
+   "message": "完整题注估计 5 行，宜 ≤ 4 行，解释性内容移入正文"
+  },
+  {
+   "level": "WARN",
+   "code": "F04",
+   "where": "图2.4 fig:ch2-reference-plane",
+   "message": "P2E 档标称高 66 mm，成品 68.0 mm，在存量容差内；修改时回到标称值"
+  },
+  {
+   "level": "WARN",
+   "code": "F09",
+   "where": "图2.4 fig:ch2-reference-plane",
+   "message": "画布白边 左5.6 右14.7 上1.0 下3.0 mm；宜 ≤ 3 mm 且左右对称"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图2.5 fig:reference_trajectory",
+   "message": "标签未用 fig:ch2- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图2.5 fig:reference_trajectory",
+   "message": "P4 档标称高 116 mm，成品 112.0 mm（差 -4.0）"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图2.6 fig:full_dac",
+   "message": "完整题注估计 5 行，宜 ≤ 4 行，解释性内容移入正文"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图2.6 fig:full_dac",
+   "message": "标签未用 fig:ch2- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F02",
+   "where": "图2.6 fig:full_dac",
+   "message": "插入缩放比 0.974（画布 154 mm 宽被压到 150 mm），应为 1:1"
+  },
+  {
+   "level": "ERROR",
+   "code": "F03",
+   "where": "图2.6 fig:full_dac",
+   "message": "画布宽 154.0 mm，应为 150 或 105 mm"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图2.6 fig:full_dac",
+   "message": "P4 档标称高 116 mm，成品 111.0 mm（差 -5.0）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F06",
+   "where": "图2.6 fig:full_dac",
+   "message": "62/239 处文字（26%）低于 7.8 pt：5, 5.2, 7.2, 7.3, 7.4 pt"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图2.7 fig:gain_scan",
+   "message": "标签未用 fig:ch2- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "WARN",
+   "code": "F04",
+   "where": "图2.7 fig:gain_scan",
+   "message": "P2 档标称高 58 mm，成品 62.0 mm，在存量容差内；修改时回到标称值"
+  },
+  {
+   "level": "ERROR",
+   "code": "F06",
+   "where": "图2.7 fig:gain_scan",
+   "message": "48/161 处文字（30%）低于 7.8 pt：5.2, 7.5 pt"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图2.8 fig:switch_topology",
+   "message": "标签未用 fig:ch2- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图2.8 fig:switch_topology",
+   "message": "P2E 档标称高 66 mm，成品 50.0 mm（差 -16.0）"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图2.9 fig:switch_comparison",
+   "message": "标签未用 fig:ch2- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "WARN",
+   "code": "F04",
+   "where": "图2.9 fig:switch_comparison",
+   "message": "P4 档标称高 116 mm，成品 118.0 mm，在存量容差内；修改时回到标称值"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图2.10 fig:comparison_failure",
+   "message": "标签未用 fig:ch2- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图2.10 fig:comparison_failure",
+   "message": "P2 档标称高 58 mm，成品 64.0 mm（差 +6.0）"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图3.1 fig:ch3-coupling",
+   "message": "完整题注估计 5 行，宜 ≤ 4 行，解释性内容移入正文"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图3.1 fig:ch3-coupling",
+   "message": "P4 档标称高 116 mm，成品 128.0 mm（差 +12.0）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F05",
+   "where": "图3.2 fig:ch3-persistent",
+   "message": "一排 3 个带数据坐标轴的子图；数据子图每排最多 2 个，改用 P3/V3 或拆图"
+  },
+  {
+   "level": "ERROR",
+   "code": "F05",
+   "where": "图3.3 fig:ch3-joint",
+   "message": "一排 3 个带数据坐标轴的子图；数据子图每排最多 2 个，改用 P3/V3 或拆图"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图3.4 fig:ch3mechanism",
+   "message": "标签未用 fig:ch3- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图3.4 fig:ch3mechanism",
+   "message": "D 档标称高 100 mm，成品 96.0 mm（差 -4.0）"
+  },
+  {
+   "level": "WARN",
+   "code": "F09",
+   "where": "图3.4 fig:ch3mechanism",
+   "message": "画布白边 左1.8 右5.1 上3.0 下7.6 mm；宜 ≤ 3 mm 且左右对称"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图3.5 fig:ch3convergence",
+   "message": "标签未用 fig:ch3- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "WARN",
+   "code": "F04",
+   "where": "图3.5 fig:ch3convergence",
+   "message": "P2 档标称高 58 mm，成品 62.0 mm，在存量容差内；修改时回到标称值"
+  },
+  {
+   "level": "ERROR",
+   "code": "F06",
+   "where": "图3.5 fig:ch3convergence",
+   "message": "8/146 处文字（5%）低于 7.8 pt：7.2 pt"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图3.6 fig:ch3scene",
+   "message": "标签未用 fig:ch3- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图3.6 fig:ch3scene",
+   "message": "P2E 档标称高 66 mm，成品 74.0 mm（差 +8.0）"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图3.7 fig:ch3anytime",
+   "message": "标签未用 fig:ch3- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图3.7 fig:ch3anytime",
+   "message": "P2 档标称高 58 mm，成品 84.0 mm（差 +26.0）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F06",
+   "where": "图3.7 fig:ch3anytime",
+   "message": "30/128 处文字（23%）低于 7.8 pt：5.3, 7.4, 7.6 pt"
+  },
+  {
+   "level": "ERROR",
+   "code": "F01",
+   "where": "图3.8 fig:ch3comparison",
+   "message": "位置说明符为 [!htbp]，应为 [htbp]（独立章节/第三章_持久分配/sections/07_experiments.tex:66）"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图3.8 fig:ch3comparison",
+   "message": "标签未用 fig:ch3- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F02",
+   "where": "图3.8 fig:ch3comparison",
+   "message": "按系数 0.84\\textwidth 插入；应在出图时按档位重出，不在 LaTeX 中缩放"
+  },
+  {
+   "level": "WARN",
+   "code": "F04",
+   "where": "图3.8 fig:ch3comparison",
+   "message": "V3 档标称高 128 mm，成品 124.3 mm，在存量容差内；修改时回到标称值"
+  },
+  {
+   "level": "ERROR",
+   "code": "F06",
+   "where": "图3.8 fig:ch3comparison",
+   "message": "94/109 处文字（86%）低于 7.8 pt：4.7, 5.2, 6.7, 7.4 pt"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图3.9 fig:ch3switching",
+   "message": "标签未用 fig:ch3- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图3.9 fig:ch3switching",
+   "message": "P1W 档标称高 78 mm，成品 72.0 mm（差 -6.0）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F06",
+   "where": "图3.9 fig:ch3switching",
+   "message": "86/127 处文字（68%）低于 7.8 pt：3.7, 5.2, 7.5 pt"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图3.10 fig:ch3interruptions",
+   "message": "标签未用 fig:ch3- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图3.10 fig:ch3interruptions",
+   "message": "P2 档标称高 58 mm，成品 76.0 mm（差 +18.0）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F06",
+   "where": "图3.10 fig:ch3interruptions",
+   "message": "33/68 处文字（49%）低于 7.8 pt：5.1, 7.3 pt"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图3.11 fig:ch3closedloop",
+   "message": "标签未用 fig:ch3- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F02",
+   "where": "图3.11 fig:ch3closedloop",
+   "message": "按系数 0.98\\textwidth 插入；应在出图时按档位重出，不在 LaTeX 中缩放"
+  },
+  {
+   "level": "WARN",
+   "code": "F04",
+   "where": "图3.11 fig:ch3closedloop",
+   "message": "P3 档标称高 88 mm，成品 86.2 mm，在存量容差内；修改时回到标称值"
+  },
+  {
+   "level": "ERROR",
+   "code": "F06",
+   "where": "图3.11 fig:ch3closedloop",
+   "message": "60/187 处文字（32%）低于 7.8 pt：7.4, 7.6 pt"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图4.1 fig:ch4-rectangle",
+   "message": "完整题注估计 5 行，宜 ≤ 4 行，解释性内容移入正文"
+  },
+  {
+   "level": "ERROR",
+   "code": "F05",
+   "where": "图4.1 fig:ch4-rectangle",
+   "message": "首排 3 个带坐标轴的子图；数据子图每排最多 2 个，改用 P3/V3 或拆图"
+  },
+  {
+   "level": "WARN",
+   "code": "F04",
+   "where": "图4.2 fig:ch4-cone",
+   "message": "P2E 档标称高 66 mm，成品 68.0 mm，在存量容差内；修改时回到标称值"
+  },
+  {
+   "level": "WARN",
+   "code": "F09",
+   "where": "图4.2 fig:ch4-cone",
+   "message": "画布白边 左11.4 右6.3 上1.0 下1.8 mm；宜 ≤ 3 mm 且左右对称"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图4.3 fig:c4crossing",
+   "message": "标签未用 fig:ch4- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "WARN",
+   "code": "F04",
+   "where": "图4.3 fig:c4crossing",
+   "message": "V2 档标称高 100 mm，成品 102.0 mm，在存量容差内；修改时回到标称值"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图4.4 fig:c4topmargins",
+   "message": "标签未用 fig:ch4- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "WARN",
+   "code": "F03",
+   "where": "图4.4 fig:c4topmargins",
+   "message": "画布宽 153.0 mm，应为 150 或 105 mm"
+  },
+  {
+   "level": "WARN",
+   "code": "F04",
+   "where": "图4.4 fig:c4topmargins",
+   "message": "V2 档标称高 100 mm，成品 102.9 mm，在存量容差内；修改时回到标称值"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图4.5 fig:c4geometry",
+   "message": "标签未用 fig:ch4- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "WARN",
+   "code": "F03",
+   "where": "图4.5 fig:c4geometry",
+   "message": "画布宽 153.0 mm，应为 150 或 105 mm"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图4.6 fig:c4recovery",
+   "message": "短题约 31 字，宜 ≤ 30 字"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图4.6 fig:c4recovery",
+   "message": "完整题注估计 6 行，宜 ≤ 4 行，解释性内容移入正文"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图4.6 fig:c4recovery",
+   "message": "标签未用 fig:ch4- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图4.6 fig:c4recovery",
+   "message": "P4 档标称高 116 mm，成品 104.0 mm（差 -12.0）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F06",
+   "where": "图4.6 fig:c4recovery",
+   "message": "70/392 处文字（18%）低于 7.8 pt：7.2 pt"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图4.7 fig:c4pipeline",
+   "message": "标签未用 fig:ch4- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "WARN",
+   "code": "F03",
+   "where": "图4.7 fig:c4pipeline",
+   "message": "画布宽 153.0 mm，应为 150 或 105 mm"
+  },
+  {
+   "level": "WARN",
+   "code": "F04",
+   "where": "图4.7 fig:c4pipeline",
+   "message": "P4 档标称高 116 mm，成品 116.7 mm，在存量容差内；修改时回到标称值"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图4.8 fig:c4paclosedloop",
+   "message": "短题约 31 字，宜 ≤ 30 字"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图4.8 fig:c4paclosedloop",
+   "message": "完整题注估计 5 行，宜 ≤ 4 行，解释性内容移入正文"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图4.8 fig:c4paclosedloop",
+   "message": "标签未用 fig:ch4- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F02",
+   "where": "图4.8 fig:c4paclosedloop",
+   "message": "按系数 0.86\\textwidth 插入；应在出图时按档位重出，不在 LaTeX 中缩放"
+  },
+  {
+   "level": "ERROR",
+   "code": "F03",
+   "where": "图4.8 fig:c4paclosedloop",
+   "message": "画布宽 153.0 mm，应为 150 或 105 mm"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图4.8 fig:c4paclosedloop",
+   "message": "P4 档标称高 116 mm，成品 103.7 mm（差 -12.3）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F06",
+   "where": "图4.8 fig:c4paclosedloop",
+   "message": "47/346 处文字（14%）低于 7.8 pt：5.2, 7.4 pt"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图4.9 fig:c4blocksettle",
+   "message": "标签未用 fig:ch4- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F02",
+   "where": "图4.9 fig:c4blocksettle",
+   "message": "按系数 0.86\\textwidth 插入；应在出图时按档位重出，不在 LaTeX 中缩放"
+  },
+  {
+   "level": "ERROR",
+   "code": "F03",
+   "where": "图4.9 fig:c4blocksettle",
+   "message": "画布宽 153.0 mm，应为 150 或 105 mm"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图4.9 fig:c4blocksettle",
+   "message": "P4 档标称高 116 mm，成品 86.8 mm（差 -29.2）"
+  },
+  {
+   "level": "ERROR",
+   "code": "F06",
+   "where": "图4.9 fig:c4blocksettle",
+   "message": "45/130 处文字（35%）低于 7.8 pt：6.1, 7.4 pt"
+  },
+  {
+   "level": "WARN",
+   "code": "F11",
+   "where": "图5.1 fig:seven5",
+   "message": "标签未用 fig:ch5- 前缀（存量标签可不改）"
+  },
+  {
+   "level": "WARN",
+   "code": "F03",
+   "where": "图5.1 fig:seven5",
+   "message": "画布宽 148.6 mm，应为 150 或 105 mm"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图5.1 fig:seven5",
+   "message": "P2E 档标称高 66 mm，成品 73.7 mm（差 +7.7）"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图5.2 fig:ch5-swap-traj",
+   "message": "完整题注估计 6 行，宜 ≤ 4 行，解释性内容移入正文"
+  },
+  {
+   "level": "ERROR",
+   "code": "F04",
+   "where": "图5.2 fig:ch5-swap-traj",
+   "message": "P4 档标称高 116 mm，成品 122.0 mm（差 +6.0）"
+  },
+  {
+   "level": "WARN",
+   "code": "F04",
+   "where": "图5.3 fig:ch5-time-evol",
+   "message": "P4 档标称高 116 mm，成品 118.0 mm，在存量容差内；修改时回到标称值"
+  },
+  {
+   "level": "WARN",
+   "code": "F04",
+   "where": "图5.4 fig:ch5-perm-gate",
+   "message": "P2E 档标称高 66 mm，成品 68.0 mm，在存量容差内；修改时回到标称值"
+  },
+  {
+   "level": "WARN",
+   "code": "F03",
+   "where": "图5.5 fig:ch5-npa-rounds",
+   "message": "画布宽 153.0 mm，应为 150 或 105 mm"
+  },
+  {
+   "level": "ERROR",
+   "code": "F05",
+   "where": "图5.5 fig:ch5-npa-rounds",
+   "message": "一排 3 个带数据坐标轴的子图；数据子图每排最多 2 个，改用 P3/V3 或拆图"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图6.5 fig:ch6-exp2",
+   "message": "短题约 36 字，宜 ≤ 30 字"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图6.5 fig:ch6-exp2",
+   "message": "完整题注估计 6 行，宜 ≤ 4 行，解释性内容移入正文"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图6.6 fig:ch6-exp3",
+   "message": "短题约 38 字，宜 ≤ 30 字"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图6.6 fig:ch6-exp3",
+   "message": "完整题注估计 5 行，宜 ≤ 4 行，解释性内容移入正文"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图6.7 fig:ch6-exp4-hetero",
+   "message": "短题约 30 字，宜 ≤ 30 字"
+  },
+  {
+   "level": "WARN",
+   "code": "F10",
+   "where": "图6.7 fig:ch6-exp4-hetero",
+   "message": "完整题注估计 6 行，宜 ≤ 4 行，解释性内容移入正文"
+  },
+  {
+   "level": "WARN",
+   "code": "F14",
+   "where": "第2章 P4",
+   "message": "同档高度相差 13 mm：图2.2 105，图2.5 112，图2.6 111，图2.9 118"
+  },
+  {
+   "level": "WARN",
+   "code": "F14",
+   "where": "第2章 P2E",
+   "message": "同档高度相差 18 mm：图2.4 68，图2.8 50"
+  },
+  {
+   "level": "WARN",
+   "code": "F14",
+   "where": "第3章 P2",
+   "message": "同档高度相差 22 mm：图3.5 62，图3.7 84，图3.10 76"
+  },
+  {
+   "level": "WARN",
+   "code": "F14",
+   "where": "第4章 P4",
+   "message": "同档高度相差 30 mm：图4.6 104，图4.7 117，图4.8 104，图4.9 87"
+  },
+  {
+   "level": "WARN",
+   "code": "F14",
+   "where": "第5章 P2E",
+   "message": "同档高度相差 6 mm：图5.1 74，图5.4 68"
+  },
+  {
+   "level": "WARN",
+   "code": "F14",
+   "where": "第5章 P4",
+   "message": "同档高度相差 4 mm：图5.2 122，图5.3 118"
+  },
+  {
+   "level": "WARN",
+   "code": "P01",
+   "where": "图2.10 fig:comparison_failure",
+   "message": "图在 p52，距首次引用 p50 为 2 页"
+  },
+  {
+   "level": "WARN",
+   "code": "P01",
+   "where": "图4.7 fig:c4pipeline",
+   "message": "图在 p116，距首次引用 p114 为 2 页"
+  },
+  {
+   "level": "WARN",
+   "code": "P01",
+   "where": "图5.1 fig:seven5",
+   "message": "图在 p127，距首次引用 p125 为 2 页"
+  },
+  {
+   "level": "WARN",
+   "code": "P01",
+   "where": "图6.4 fig:ch6-exp1b",
+   "message": "图在 p157，距首次引用 p155 为 2 页"
+  },
+  {
+   "level": "WARN",
+   "code": "P01",
+   "where": "图6.8 fig:ch6-exp4-curves",
+   "message": "图在 p169，距首次引用 p167 为 2 页"
+  },
+  {
+   "level": "ERROR",
+   "code": "P04",
+   "where": "独立章节/第五章_安全强化学习与协同脱困/sections/05_experiments.tex:42",
+   "message": "表格超出版心 20.0 mm（in alignment）"
+  },
+  {
+   "level": "ERROR",
+   "code": "P04",
+   "where": "独立章节/第五章_安全强化学习与协同脱困/sections/05_experiments.tex:56",
+   "message": "表格超出版心 29.3 mm（in alignment）"
+  },
+  {
+   "level": "ERROR",
+   "code": "P04",
+   "where": "独立章节/第五章_安全强化学习与协同脱困/sections/05_experiments.tex:79",
+   "message": "表格超出版心 44.5 mm（in alignment）"
+  },
+  {
+   "level": "ERROR",
+   "code": "P04",
+   "where": "独立章节/第六章_虚拟物理仿真与系统验证/sections/06_hetero_air_ground.tex:87",
+   "message": "表格超出版心 27.2 mm（in alignment）"
+  },
+  {
+   "level": "ERROR",
+   "code": "P04",
+   "where": "独立章节/第六章_虚拟物理仿真与系统验证/sections/06_hetero_air_ground.tex:108",
+   "message": "表格超出版心 74.9 mm（in alignment）"
+  },
+  {
+   "level": "ERROR",
+   "code": "P02",
+   "where": "p17",
+   "message": "页底空白 55 mm（非章末页）"
+  },
+  {
+   "level": "ERROR",
+   "code": "P03",
+   "where": "p18",
+   "message": "页顶空白 68 mm：疑似只排一张图的孤立浮动页"
+  },
+  {
+   "level": "ERROR",
+   "code": "P02",
+   "where": "p127",
+   "message": "页底空白 35 mm（非章末页）"
+  }
+ ],
+ "pages": {
+  "pdf": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\01_论文写作\\整篇论文\\build\\main.pdf",
+  "pdf_mtime": "2026-11-06T08:57:43",
+  "page_offset": 20,
+  "chapter_starts": [
+   1,
+   19,
+   54,
+   89,
+   121,
+   144,
+   173
+  ],
+  "body_end": 177,
+  "figures": {
+   "1.1": {
+    "label": "fig:ch1-loop",
+    "page": 3,
+    "first_ref": 3
+   },
+   "1.2": {
+    "label": "fig:ch1-roadmap",
+    "page": 18,
+    "first_ref": 17
+   },
+   "2.1": {
+    "label": "fig:ch2-gain-threshold",
+    "page": 20,
+    "first_ref": 20
+   },
+   "2.2": {
+    "label": "fig:weak_connection",
+    "page": 23,
+    "first_ref": 23
+   },
+   "2.3": {
+    "label": "fig:information_flow",
+    "page": 25,
+    "first_ref": 24
+   },
+   "2.4": {
+    "label": "fig:ch2-reference-plane",
+    "page": 30,
+    "first_ref": 30
+   },
+   "2.5": {
+    "label": "fig:reference_trajectory",
+    "page": 44,
+    "first_ref": 43
+   },
+   "2.6": {
+    "label": "fig:full_dac",
+    "page": 45,
+    "first_ref": 44
+   },
+   "2.7": {
+    "label": "fig:gain_scan",
+    "page": 46,
+    "first_ref": 45
+   },
+   "2.8": {
+    "label": "fig:switch_topology",
+    "page": 48,
+    "first_ref": 47
+   },
+   "2.9": {
+    "label": "fig:switch_comparison",
+    "page": 49,
+    "first_ref": 48
+   },
+   "2.10": {
+    "label": "fig:comparison_failure",
+    "page": 52,
+    "first_ref": 50
+   },
+   "3.1": {
+    "label": "fig:ch3-coupling",
+    "page": 59,
+    "first_ref": 58
+   },
+   "3.2": {
+    "label": "fig:ch3-persistent",
+    "page": 61,
+    "first_ref": 60
+   },
+   "3.3": {
+    "label": "fig:ch3-joint",
+    "page": 63,
+    "first_ref": 62
+   },
+   "3.4": {
+    "label": "fig:ch3mechanism",
+    "page": 64,
+    "first_ref": 63
+   },
+   "3.5": {
+    "label": "fig:ch3convergence",
+    "page": 74,
+    "first_ref": 73
+   },
+   "3.6": {
+    "label": "fig:ch3scene",
+    "page": 81,
+    "first_ref": 81
+   },
+   "3.7": {
+    "label": "fig:ch3anytime",
+    "page": 83,
+    "first_ref": 82
+   },
+   "3.8": {
+    "label": "fig:ch3comparison",
+    "page": 84,
+    "first_ref": 83
+   },
+   "3.9": {
+    "label": "fig:ch3switching",
+    "page": 85,
+    "first_ref": 84
+   },
+   "3.10": {
+    "label": "fig:ch3interruptions",
+    "page": 85,
+    "first_ref": 84
+   },
+   "3.11": {
+    "label": "fig:ch3closedloop",
+    "page": 87,
+    "first_ref": 86
+   },
+   "4.1": {
+    "label": "fig:ch4-rectangle",
+    "page": 90,
+    "first_ref": 89
+   },
+   "4.2": {
+    "label": "fig:ch4-cone",
+    "page": 99,
+    "first_ref": 99
+   },
+   "4.3": {
+    "label": "fig:c4crossing",
+    "page": 111,
+    "first_ref": 110
+   },
+   "4.4": {
+    "label": "fig:c4topmargins",
+    "page": 112,
+    "first_ref": 111
+   },
+   "4.5": {
+    "label": "fig:c4geometry",
+    "page": 112,
+    "first_ref": 112
+   },
+   "4.6": {
+    "label": "fig:c4recovery",
+    "page": 114,
+    "first_ref": 113
+   },
+   "4.7": {
+    "label": "fig:c4pipeline",
+    "page": 116,
+    "first_ref": 114
+   },
+   "4.8": {
+    "label": "fig:c4paclosedloop",
+    "page": 117,
+    "first_ref": 116
+   },
+   "4.9": {
+    "label": "fig:c4blocksettle",
+    "page": 117,
+    "first_ref": 116
+   },
+   "5.1": {
+    "label": "fig:seven5",
+    "page": 127,
+    "first_ref": 125
+   },
+   "5.2": {
+    "label": "fig:ch5-swap-traj",
+    "page": 137,
+    "first_ref": 137
+   },
+   "5.3": {
+    "label": "fig:ch5-time-evol",
+    "page": 138,
+    "first_ref": 137
+   },
+   "5.4": {
+    "label": "fig:ch5-perm-gate",
+    "page": 140,
+    "first_ref": 140
+   },
+   "5.5": {
+    "label": "fig:ch5-npa-rounds",
+    "page": 142,
+    "first_ref": 142
+   },
+   "6.1": {
+    "label": "fig:ch6-arch-3d",
+    "page": 148,
+    "first_ref": 147
+   },
+   "6.2": {
+    "label": "fig:ch6-arch-curves",
+    "page": 148,
+    "first_ref": 147
+   },
+   "6.3": {
+    "label": "fig:ch6-exp1",
+    "page": 156,
+    "first_ref": 155
+   },
+   "6.4": {
+    "label": "fig:ch6-exp1b",
+    "page": 157,
+    "first_ref": 155
+   },
+   "6.5": {
+    "label": "fig:ch6-exp2",
+    "page": 160,
+    "first_ref": 159
+   },
+   "6.6": {
+    "label": "fig:ch6-exp3",
+    "page": 162,
+    "first_ref": 161
+   },
+   "6.7": {
+    "label": "fig:ch6-exp4-hetero",
+    "page": 168,
+    "first_ref": 167
+   },
+   "6.8": {
+    "label": "fig:ch6-exp4-curves",
+    "page": 169,
+    "first_ref": 167
+   },
+   "6.9": {
+    "label": "fig:ch6-exp4-offset",
+    "page": 170,
+    "first_ref": 170
+   }
+  },
+  "blank_pages": [
+   {
+    "page": 1,
+    "top_blank_mm": 13.3,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 2,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 4.4
+   },
+   {
+    "page": 3,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 1.3
+   },
+   {
+    "page": 4,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 1.9
+   },
+   {
+    "page": 5,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 11.4
+   },
+   {
+    "page": 6,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 4.4
+   },
+   {
+    "page": 7,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 4.4
+   },
+   {
+    "page": 8,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 4.4
+   },
+   {
+    "page": 9,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 4.4
+   },
+   {
+    "page": 10,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 4.4
+   },
+   {
+    "page": 11,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 4.4
+   },
+   {
+    "page": 12,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 2.5
+   },
+   {
+    "page": 13,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 14,
+    "top_blank_mm": 6.3,
+    "bottom_blank_mm": 7.6
+   },
+   {
+    "page": 15,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 16,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 9.5
+   },
+   {
+    "page": 17,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 54.6
+   },
+   {
+    "page": 18,
+    "top_blank_mm": 67.9,
+    "bottom_blank_mm": 67.9
+   },
+   {
+    "page": 19,
+    "top_blank_mm": 13.3,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 20,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 8.3
+   },
+   {
+    "page": 21,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 22,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 23,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 5.1
+   },
+   {
+    "page": 24,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 25,
+    "top_blank_mm": 4.4,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 26,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 27,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 7.0
+   },
+   {
+    "page": 28,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 29,
+    "top_blank_mm": 5.7,
+    "bottom_blank_mm": 1.3
+   },
+   {
+    "page": 30,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 31,
+    "top_blank_mm": 6.3,
+    "bottom_blank_mm": 15.9
+   },
+   {
+    "page": 32,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 21.6
+   },
+   {
+    "page": 33,
+    "top_blank_mm": 5.7,
+    "bottom_blank_mm": 1.9
+   },
+   {
+    "page": 34,
+    "top_blank_mm": 5.7,
+    "bottom_blank_mm": 4.4
+   },
+   {
+    "page": 35,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 4.4
+   },
+   {
+    "page": 36,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 37,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 38,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 39,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 5.1
+   },
+   {
+    "page": 40,
+    "top_blank_mm": 5.7,
+    "bottom_blank_mm": 20.3
+   },
+   {
+    "page": 41,
+    "top_blank_mm": 5.7,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 42,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 9.5
+   },
+   {
+    "page": 43,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 5.7
+   },
+   {
+    "page": 44,
+    "top_blank_mm": 0.6,
+    "bottom_blank_mm": 2.5
+   },
+   {
+    "page": 45,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 46,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 5.7
+   },
+   {
+    "page": 47,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.6
+   },
+   {
+    "page": 48,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 49,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 2.5
+   },
+   {
+    "page": 50,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 51,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 29.2
+   },
+   {
+    "page": 52,
+    "top_blank_mm": 0.6,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 53,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 181.6
+   },
+   {
+    "page": 54,
+    "top_blank_mm": 13.3,
+    "bottom_blank_mm": 3.2
+   },
+   {
+    "page": 55,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 5.1
+   },
+   {
+    "page": 56,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 11.4
+   },
+   {
+    "page": 57,
+    "top_blank_mm": 1.9,
+    "bottom_blank_mm": 2.5
+   },
+   {
+    "page": 58,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 16.5
+   },
+   {
+    "page": 59,
+    "top_blank_mm": 0.6,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 60,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 3.8
+   },
+   {
+    "page": 61,
+    "top_blank_mm": 0.6,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 62,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 1.9
+   },
+   {
+    "page": 63,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 64,
+    "top_blank_mm": 3.2,
+    "bottom_blank_mm": 0.6
+   },
+   {
+    "page": 65,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 15.9
+   },
+   {
+    "page": 66,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 5.7
+   },
+   {
+    "page": 67,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 68,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 1.9
+   },
+   {
+    "page": 69,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 5.1
+   },
+   {
+    "page": 70,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.6
+   },
+   {
+    "page": 71,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 72,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 1.3
+   },
+   {
+    "page": 73,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 74,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 4.4
+   },
+   {
+    "page": 75,
+    "top_blank_mm": 6.3,
+    "bottom_blank_mm": 11.4
+   },
+   {
+    "page": 76,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 77,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 2.5
+   },
+   {
+    "page": 78,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 5.1
+   },
+   {
+    "page": 79,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 80,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 7.6
+   },
+   {
+    "page": 81,
+    "top_blank_mm": 5.7,
+    "bottom_blank_mm": 3.2
+   },
+   {
+    "page": 82,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 83,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 8.9
+   },
+   {
+    "page": 84,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 10.2
+   },
+   {
+    "page": 85,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 86,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 87,
+    "top_blank_mm": 0.6,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 88,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 125.1
+   },
+   {
+    "page": 89,
+    "top_blank_mm": 13.3,
+    "bottom_blank_mm": 0.6
+   },
+   {
+    "page": 90,
+    "top_blank_mm": 0.6,
+    "bottom_blank_mm": 2.5
+   },
+   {
+    "page": 91,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 92,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 93,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 94,
+    "top_blank_mm": 5.7,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 95,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 96,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 97,
+    "top_blank_mm": 6.3,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 98,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 1.9
+   },
+   {
+    "page": 99,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 100,
+    "top_blank_mm": 6.3,
+    "bottom_blank_mm": 3.2
+   },
+   {
+    "page": 101,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 102,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 103,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 104,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 1.3
+   },
+   {
+    "page": 105,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 5.7
+   },
+   {
+    "page": 106,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 107,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 108,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 5.1
+   },
+   {
+    "page": 109,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 110,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 7.6
+   },
+   {
+    "page": 111,
+    "top_blank_mm": 0.6,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 112,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 113,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 5.7
+   },
+   {
+    "page": 114,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 4.4
+   },
+   {
+    "page": 115,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 1.3
+   },
+   {
+    "page": 116,
+    "top_blank_mm": 1.9,
+    "bottom_blank_mm": 9.5
+   },
+   {
+    "page": 117,
+    "top_blank_mm": 1.3,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 118,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 119,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 120,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 216.5
+   },
+   {
+    "page": 121,
+    "top_blank_mm": 13.3,
+    "bottom_blank_mm": 2.5
+   },
+   {
+    "page": 122,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 123,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 6.3
+   },
+   {
+    "page": 124,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 125,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 126,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 127,
+    "top_blank_mm": 1.9,
+    "bottom_blank_mm": 34.9
+   },
+   {
+    "page": 128,
+    "top_blank_mm": 6.3,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 129,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 130,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 10.2
+   },
+   {
+    "page": 131,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 3.2
+   },
+   {
+    "page": 132,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 133,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 134,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 135,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 22.2
+   },
+   {
+    "page": 136,
+    "top_blank_mm": 6.3,
+    "bottom_blank_mm": 0.6
+   },
+   {
+    "page": 137,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 3.8
+   },
+   {
+    "page": 138,
+    "top_blank_mm": 0.6,
+    "bottom_blank_mm": 1.3
+   },
+   {
+    "page": 139,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 140,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 7.0
+   },
+   {
+    "page": 141,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 142,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 143,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 188.6
+   },
+   {
+    "page": 144,
+    "top_blank_mm": 13.3,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 145,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 146,
+    "top_blank_mm": 6.3,
+    "bottom_blank_mm": 17.1
+   },
+   {
+    "page": 147,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 148,
+    "top_blank_mm": 3.8,
+    "bottom_blank_mm": 3.2
+   },
+   {
+    "page": 149,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 18.4
+   },
+   {
+    "page": 150,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 151,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.6
+   },
+   {
+    "page": 152,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 153,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 1.9
+   },
+   {
+    "page": 154,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 3.8
+   },
+   {
+    "page": 155,
+    "top_blank_mm": 5.7,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 156,
+    "top_blank_mm": 1.9,
+    "bottom_blank_mm": 1.9
+   },
+   {
+    "page": 157,
+    "top_blank_mm": 1.3,
+    "bottom_blank_mm": 7.6
+   },
+   {
+    "page": 158,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 8.9
+   },
+   {
+    "page": 159,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 11.4
+   },
+   {
+    "page": 160,
+    "top_blank_mm": 1.9,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 161,
+    "top_blank_mm": 5.7,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 162,
+    "top_blank_mm": 1.9,
+    "bottom_blank_mm": 0.6
+   },
+   {
+    "page": 163,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 164,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 165,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 1.9
+   },
+   {
+    "page": 166,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 8.3
+   },
+   {
+    "page": 167,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 168,
+    "top_blank_mm": 2.5,
+    "bottom_blank_mm": 2.5
+   },
+   {
+    "page": 169,
+    "top_blank_mm": 1.9,
+    "bottom_blank_mm": 0.6
+   },
+   {
+    "page": 170,
+    "top_blank_mm": 0.6,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 171,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 172,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 72.4
+   },
+   {
+    "page": 173,
+    "top_blank_mm": 13.3,
+    "bottom_blank_mm": 1.9
+   },
+   {
+    "page": 174,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 8.9
+   },
+   {
+    "page": 175,
+    "top_blank_mm": 6.3,
+    "bottom_blank_mm": 8.9
+   },
+   {
+    "page": 176,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 0.0
+   },
+   {
+    "page": 177,
+    "top_blank_mm": 0.0,
+    "bottom_blank_mm": 3.2
+   }
+  ]
+ }
+}

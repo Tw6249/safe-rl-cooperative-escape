@@ -1,0 +1,17 @@
+{
+  "scene": "H25_local2_s20261105",
+  "bench": "E2",
+  "n": 25,
+  "frac": 0.6,
+  "tag": "rl_mappo_lag",
+  "status": "arrived",
+  "arrival": 4.0,
+  "steps": 99,
+  "step_cuts": 0,
+  "audit_segments": 99,
+  "audit_failed": 99,
+  "audit_min_distance": 0.2625023491661192,
+  "audit_min_lambda2": 19.31045923301632,
+  "final_max_err": 0.0042579713478473466,
+  "wall_s": 59.66
+}

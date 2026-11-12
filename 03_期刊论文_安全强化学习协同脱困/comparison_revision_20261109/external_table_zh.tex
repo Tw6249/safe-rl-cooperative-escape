@@ -1,0 +1,11 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{新生成96任务上的外部方法适配比较。平均完成时间将未安全到达计为60秒；审计失败不自动等同于物理碰撞。}\label{tab:external}
+\begin{tabularx}{\textwidth}{@{}Xccccc@{}}\toprule
+方法 & 重复 & $N=8$ 安全到达 & 跨规模安全到达 & 审计失败运行 & 平均完成时间/s\\\midrule
+EGP-NPA & 1 & 64/64 & 29/32 & 0/96 & 13.67 \\
+EGP-NPA & 2 & 64/64 & 28/32 & 0/96 & 13.67 \\
+DGPPO（任务适配） & 1 & 0/64 & 0/32 & 96/96 & 60.00 \\
+DGPPO（任务适配） & 2 & 0/64 & 0/32 & 96/96 & 60.00 \\
+\bottomrule\end{tabularx}
+\end{table*}

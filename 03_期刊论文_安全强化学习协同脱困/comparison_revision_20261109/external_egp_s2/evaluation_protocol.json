@@ -1,0 +1,9 @@
+{
+  "checkpoint": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\\u72ec\u7acb\u6d4b\u8bd5_20261107_\u7b2c\u4e94\u7ae0\u5f3a\u5316\u5b66\u4e60\u6539\u8fdb\\results\\train_cteam_p0_s2\\last.pt",
+  "checkpoint_sha256": "45fc7e00b6c7ccbed85b11bb83b9b5a041dcb047a2a9b87a7c38b0d829a7fe5e",
+  "selection": "Pre-specified final training checkpoint; no new test selection",
+  "physical_horizon": 60.0,
+  "hold_seconds": 1.0,
+  "controller_call_budget": 3600,
+  "controller": "Original EGP-NPA envelope, dynamic allocation B=8 and adaptive segment certification"
+}

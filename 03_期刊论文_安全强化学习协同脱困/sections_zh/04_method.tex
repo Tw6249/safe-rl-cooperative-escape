@@ -1,0 +1,196 @@
+\section{包络等变图策略与邻域近端分配协同控制（EGP-NPA）}\label{sec:method}
+
+\subsection{手性旋转与置换等变的图神经网络残差标称架构}\label{subsec:gnn-arch}
+为在不依赖人工构造全局拓扑势函数的前提下打破注\ref{rem:two-conditions}指出的共线死锁，在采样时刻 $t_k=k\Delta t$、感知与通信半径 $R_{\mathrm{sense}}=2.50\ \mathrm m$ 定义的一跳有向通信图 $\mathcal G_{\mathrm c}(\bp_k)=(\mathcal V,\mathcal E_k)$ 上构建分布式残差标称策略。
+
+直接将笛卡尔坐标 $\bp_{i,k},\bg_i$ 输入神经网络会破坏欧氏空间的刚体变换不变性，导致同一相对队形在旋转或平移至不同工作区位置时产生不一致的策略输出，降低样本效率并损害跨规模泛化能力\cite{satorras2021egnn}。为此，对每个机器人 $i\in\mathcal V$，以其单位目标误差方向 $\hat{\be}_{i,k}=\be_{i,k}/\max(\norm{\be_{i,k}}_2,10^{-9})$ 与逆时针正交旋转 $90^\circ$ 向量 $\bJ\hat{\be}_{i,k}$ 张成局部目标参考标架；对每条有向通信边 $(i,j)\in\mathcal E_k$，以单位相对位置向量 $\hat{\br}_{ij,k}=(\bp_{j,k}-\bp_{i,k})/d_{ij,k}$ 与 $\bJ\hat{\br}_{ij,k}$ 张成局部边参考标架，并引入目标平滑消隐因子 $\sigma_{i,k}=\min(1,\norm{\be_{i,k}}_2/r_0)$（取 $r_0=0.10\ \mathrm m$）以消除 $\be_{i,k}\to\boldsymbol 0$ 时的方向角奇异性。
+
+记节点 $i$ 上一拍实际执行速度为 $\bu_{i,k-1}$，经速度球裁剪后的标称参考与实际执行速度之差（即滤波器速度修正量）为 $\boldsymbol\delta_{i,k-1}=\bu_{i,k-1}-\Pi_{\mathcal U_i}(\bu_{i,k-1}^{\mathrm{nom}})$，上一拍单机安全重拟合式\eqref{eq:refit-one}的非负拉格朗日对偶乘子（碰撞与谱影子价格）为 $\boldsymbol\mu_{i,k-1}$，谱约束分配配额为 $s_{i0,k-1}$，边 $e=\{i,j\}$ 上的二元边记录为 $\boldsymbol\varpi_{e,k-1}=[\varpi_{ij,0,k-1},\varpi_{ij,1,k-1}]^{\top}$。定义一跳闭邻域冲突记忆状态 $m_{i,k}=\max\bigl(\gamma_m m_{i,k-1},\max_{j\in\mathcal N_{i,k}^+}c_{j,k-1}\bigr)$ 及其冲突记忆门控因子 $\gamma_{i,k}^{\mathrm{gate}}=\tanh(\beta_m m_{i,k})\in[0,1)$（其中记忆衰减率 $\gamma_m=0.97$，增益 $\beta_m=4.0$；取 $c_{j,k-1}=\norm{\boldsymbol\mu_{j,k-1}}_2$ 对应影子价格门控 $\gamma_{i,k}^{\mathrm{gate},\mu}$，取 $c_{j,k-1}=\norm{\boldsymbol\delta_{j,k-1}}_2$ 对应滤波修正量门控 $\gamma_{i,k}^{\mathrm{gate,int}}$）。节点 $i$ 的旋转不变特征 $\boldsymbol x_{i,k}=\col(\boldsymbol x_{i,k}^{\mathrm{geom}},\boldsymbol x_{i,k}^{\mathrm{alg}})\in\mathbb R^{17}$ 与有向边 $(i,j)$ 的旋转不变特征 $\boldsymbol e_{ij,k}^{\mathrm{feat}}=\col(\boldsymbol e_{ij,k}^{\mathrm{geom}},\boldsymbol e_{ij,k}^{\mathrm{alg}})\in\mathbb R^{20}$ 由几何投影子向量与滤波器内部代数状态经对数/双曲正切压缩构成：
+\begin{equation}
+\begin{split}
+ \boldsymbol x_{i,k}^{\mathrm{geom}}&=\Big[\min(\norm{\be_{i,k}}_2,4),\ \mathbb I(\norm{\be_{i,k}}_2<\varepsilon_g),\ \gamma_{i,k}^{\mathrm{gate}},\\
+ &\quad\ \tfrac{\norm{\bu_{i,k-1}}_2}{U},\ \tfrac{\bu_{i,k-1}^{\top}\hat{\be}_{i,k}}{U}\sigma_{i,k},\ \tfrac{\bu_{i,k-1}^{\top}\bJ\hat{\be}_{i,k}}{U}\sigma_{i,k},\\
+ &\quad\ \tfrac{\norm{\boldsymbol\delta_{i,k-1}}_2}{U},\ \tfrac{\boldsymbol\delta_{i,k-1}^{\top}\hat{\be}_{i,k}}{U}\sigma_{i,k},\ \tfrac{\boldsymbol\delta_{i,k-1}^{\top}\bJ\hat{\be}_{i,k}}{U}\sigma_{i,k},\\
+ &\quad\ \tfrac{\lambda_2(\bL(\bp_k))-\lr}{\lr},\ \tfrac{|\mathcal N_{i,k}|}{8},\ \min_{j\in\mathcal N_{i,k}}(d_{ij,k}-\ds)\Big]^{\top},
+\end{split}\label{eq:node-geom}
+\end{equation}
+\begin{equation}
+\begin{split}
+ \boldsymbol e_{ij,k}^{\mathrm{geom}}&=\Big[\tfrac{d_{ij,k}}{R_{\mathrm{sense}}},\ \clip(d_{ij,k}-\ds,0,1.5),\ \hat{\br}_{ij,k}^{\top}\hat{\be}_{i,k}\sigma_{i,k},\\
+ &\quad\ \hat{\br}_{ij,k}^{\top}\bJ\hat{\be}_{i,k}\sigma_{i,k},\ \hat{\br}_{ij,k}^{\top}\hat{\be}_{j,k}\sigma_{j,k},\ \hat{\br}_{ij,k}^{\top}\bJ\hat{\be}_{j,k}\sigma_{j,k},\\
+ &\quad\ \min(\norm{\be_{j,k}}_2,4),\ \hat{\be}_{i,k}^{\top}\hat{\be}_{j,k}\sigma_{i,k}\sigma_{j,k},\\
+ &\quad\ (\bJ\hat{\be}_{i,k})^{\top}\hat{\be}_{j,k}\sigma_{i,k}\sigma_{j,k},\ \tfrac{(\bu_{j,k-1}-\bu_{i,k-1})^{\top}\hat{\br}_{ij,k}}{U},\\
+ &\quad\ \tfrac{(\bu_{j,k-1}-\bu_{i,k-1})^{\top}\bJ\hat{\br}_{ij,k}}{U},\ \gamma_{j,k}^{\mathrm{gate}},\ \tfrac{\norm{\boldsymbol\delta_{j,k-1}}_2}{U}\Big]^{\top},
+\end{split}\label{eq:edge-geom}
+\end{equation}
+\begin{equation}
+\begin{split}
+ \boldsymbol x_{i,k}^{\mathrm{alg}}&=\Big[\ln(1+|\mu_{i0,k-1}|),\ \ln\big(1+\textstyle\sum_{j\ne i}|\mu_{ij,k-1}|\big),\\
+ &\quad\ \clip\big(\tfrac{s_{i0,k-1}}{\bar\nu_{i0,k}},-3,3\big),\ \ln(1+\norm{\boldsymbol\mu_{i,k-1}}_2),\\
+ &\quad\ \clip\big(\tfrac{U\norm{\boldsymbol a_{i0,k}}_2-b_{i0,k}-s_{i0,k-1}}{\bar\nu_{i0,k}},-3,3\big)\Big]^{\top},\\
+ \boldsymbol e_{ij,k}^{\mathrm{alg}}&=\Big[\ln(1+|\mu_{ij,k-1}|),\ \ln(1+|\mu_{ji,k-1}|),\\
+ &\quad\ \tanh(2\varpi_{ij,0,k-1}),\ \tanh(2\varpi_{ij,1,k-1}),\\
+ &\quad\ |\tilde\phi_{i,k}-\tilde\phi_{j,k}|,\ \norm{\widetilde{\boldsymbol\Phi}_{i,k}-\widetilde{\boldsymbol\Phi}_{j,k}}_2,\ \widetilde{\boldsymbol\Phi}_{i,k}^{\top}\widetilde{\boldsymbol\Phi}_{j,k}\Big]^{\top},
+\end{split}\label{eq:alg-feat}
+\end{equation}
+其中 $\bar\nu_{i0,k}=U\norm{\boldsymbol a_{i0,k}}_2+|b_{i0,k}|+10^{-3}$ 为全局标量约束行归一化尺度，$\tilde\phi_{i,k}=\sqrt{N}\phi_{i,k}$ 与 $\widetilde{\boldsymbol\Phi}_{i,k}=\sqrt{N}\boldsymbol\Phi_{i,k}\in\mathbb R^2$ 分别为按单位均方幅值约定（满足 $\frac1N\sum_{i=1}^N\tilde\phi_{i,k}^2=1$）的无量纲标量拉普拉斯谱坐标，使各节点仅通过本地差分与内积即可表征与全网规模 $N$ 无关的拓扑相对位置。式\eqref{eq:node-geom}--\eqref{eq:alg-feat}中所有二维几何向量均通过局部正交标架内积化为刚体不变标量；代数子向量 $\boldsymbol x_{i,k}^{\mathrm{alg}},\boldsymbol e_{ij,k}^{\mathrm{alg}}$ 则向策略网络显式暴露各接触边的紧迫度影子价格 $\mu_{ij,k-1}$ 与配额储备状态。
+
+参数共享的 $L_{\mathrm{gnn}}=2$ 层消息传递图网络首先将节点特征编码为 $\boldsymbol h_i^{(0)}=\phi_{\mathrm{enc}}(\boldsymbol x_{i,k})\in\mathbb R^{d_h}$（隐层维数 $d_h=64$），随后在每层 $\ell\in\{1,\dots,L_{\mathrm{gnn}}\}$ 执行一跳消息计算与均值—最大值双聚合更新（其中均值聚合捕获邻域整体拥挤趋势，逐分量最大值聚合保留最紧迫的单个接触阻挡邻居特征）：
+\begin{equation}
+\begin{split}
+ \boldsymbol m_{ij}^{(\ell)}&=\phi_{\mathrm{msg}}^{(\ell)}\big(\col(\boldsymbol h_i^{(\ell-1)},\boldsymbol h_j^{(\ell-1)},\boldsymbol e_{ij,k}^{\mathrm{feat}})\big),\quad\forall (i,j)\in\mathcal E_k,\\
+ \bar{\boldsymbol m}_i^{(\ell)}&=\frac{1}{\max(|\mathcal N_{i,k}|,1)}\sum_{j\in\mathcal N_{i,k}}\boldsymbol m_{ij}^{(\ell)},\quad
+ \hat{\boldsymbol m}_i^{(\ell)}=\max_{j\in\mathcal N_{i,k}}\boldsymbol m_{ij}^{(\ell)},\\
+ \boldsymbol h_i^{(\ell)}&=\operatorname{LN}^{(\ell)}\!\Big(\boldsymbol h_i^{(\ell-1)}+\phi_{\mathrm{upd}}^{(\ell)}\big(\col(\boldsymbol h_i^{(\ell-1)},\bar{\boldsymbol m}_i^{(\ell)},\hat{\boldsymbol m}_i^{(\ell)})\big)\Big),
+\end{split}\label{eq:gnn-layer}
+\end{equation}
+式中 $\phi_{\mathrm{enc}},\phi_{\mathrm{msg}}^{(\ell)},\phi_{\mathrm{upd}}^{(\ell)}$ 为采用 $\operatorname{SiLU}$ 激活函数的多层感知机（MLP），$\operatorname{LN}^{(\ell)}$ 为层归一化（Layer Normalization）算子。经 $L_{\mathrm{gnn}}$ 层传播后，节点输出头 $\phi_{\mathrm{node}}$ 与边输出头 $\phi_{\mathrm{edge}}$ 生成三个有界标量动作系数：
+\begin{equation}
+\begin{split}
+ (\omega_{i,k}^\theta,r_{i,k}^\theta)&=\clip\big(\phi_{\mathrm{node}}(\boldsymbol h_i^{(L_{\mathrm{gnn}})}),-1,1\big),\\
+ \psi_{ij,k}^\theta&=\clip\big(\phi_{\mathrm{edge}}(\col(\boldsymbol h_i^{(L_{\mathrm{gnn}})},\boldsymbol h_j^{(L_{\mathrm{gnn}})},\boldsymbol e_{ij,k}^{\mathrm{feat}})),-1,1\big),
+\end{split}
+ \label{eq:action-heads}
+\end{equation}
+并在局部正交基上合成为机器人 $i$ 的二维标称参考速度：
+\begin{equation}
+\begin{split}
+ \bu_{i,k}^{\mathrm{nom}}(\bp_k;\theta)&=-\be_{i,k}+\gamma_{i,k}^{\mathrm{eff}}\br_{i,k}^\theta(\bp_k),\\
+ \br_{i,k}^\theta(\bp_k)&=A_{\mathrm{rot}}\omega_{i,k}^\theta\bJ\be_{i,k}+A_{\mathrm{rad}}r_{i,k}^\theta\be_{i,k}\\
+ &\quad+\frac{A_\psi U}{\max(|\mathcal N_{i,k}|,1)}\sum_{j\in\mathcal N_{i,k}}\psi_{ij,k}^\theta\frac{\bp_{i,k}-\bp_{j,k}}{d_{ij,k}},
+\end{split}\label{eq:nominal-law}
+\end{equation}
+其中 $\gamma_{i,k}^{\mathrm{eff}}\in[0,1)$ 为综合包络门控因子（定义见第\ref{subsec:envelope}节），幅值增益取 $A_{\mathrm{rot}}=2.0\ \mathrm s^{-1},A_{\mathrm{rad}}=1.5\ \mathrm s^{-1},A_\psi=2.0$。式\eqref{eq:nominal-law}各项具有清晰的几何分工：$-\be_{i,k}$ 为基础目标吸引项；$A_{\mathrm{rot}}\omega_{i,k}^\theta\bJ\be_{i,k}$ 为垂直于目标视线的切向环流项，负责在迎头交会时驱动移动节点向侧面斜插绕行以打破共线对称平衡；$A_{\mathrm{rad}}r_{i,k}^\theta\be_{i,k}$ 为径向伸缩项，调节接近目标的推进速率；$\sum_{j\in\mathcal N_{i,k}}\psi_{ij,k}^\theta(\bp_{i,k}-\bp_{j,k})/d_{ij,k}$ 为沿一跳邻居连线方向的成对避让偏置项。
+
+\begin{proposition}[标称控制场的平面刚体变换与置换等变性及手性破缺机理]\label{prop:equivariance}
+对任意网络参数 $\theta$、任意平面旋转矩阵 $\boldsymbol R\in\mathrm{SO}(2)$、平移向量 $\boldsymbol c\in\mathbb R^2$ 以及任意 $N\times N$ 节点置换矩阵 $\boldsymbol P_\pi$，令刚体变换同步作用于全体节点位置、目标与历史速度（$\tilde\bp_i=\boldsymbol R\bp_i+\boldsymbol c,\tilde\bg_i=\boldsymbol R\bg_i+\boldsymbol c,\tilde\bu_{i,k-1}=\boldsymbol R\bu_{i,k-1}$），则式\eqref{eq:nominal-law}定义的标称控制场满足旋转平移等变性与节点置换等变性：
+\begin{equation}
+\begin{split}
+ \bu_{i,k}^{\mathrm{nom}}(\tilde\bp_k,\tilde\bg;\theta)&=\boldsymbol R\bu_{i,k}^{\mathrm{nom}}(\bp_k,\bg;\theta),\\
+ \bu_k^{\mathrm{nom}}\big((\boldsymbol P_\pi\otimes\I_2)\bp_k,(\boldsymbol P_\pi\otimes\I_2)\bg\big)&=(\boldsymbol P_\pi\otimes\I_2)\bu_k^{\mathrm{nom}}(\bp_k,\bg).
+\end{split}\label{eq:equiv-prop}
+\end{equation}
+进一步，若将式\eqref{eq:nominal-law}强制约束为全正交群 $\mathrm{O}(2)$（含平面镜像反射 $\boldsymbol M\in\mathrm{O}(2)\setminus\mathrm{SO}(2),\det\boldsymbol M=-1$）等变，则在任意关于各自目标视线轴镜像对称的迎头交会构型上，切向破对称系数必然退化为 $\omega_{i,k}^\theta\equiv 0$。
+\end{proposition}
+\begin{proof}
+在刚体变换下，相对位移满足 $\tilde\be_{i,k}=\boldsymbol R\be_{i,k}$ 与 $\tilde\bp_{i,k}-\tilde\bp_{j,k}=\boldsymbol R(\bp_{i,k}-\bp_{j,k})$，平移向量 $\boldsymbol c$ 完全抵消。由于 $\boldsymbol R\in\mathrm{SO}(2)$ 保范数、保内积且与二维反对称旋转算子 $\bJ$ 满足可交换性 $\boldsymbol R\bJ=\bJ\boldsymbol R$，式\eqref{eq:node-geom}--\eqref{eq:alg-feat}中的全部内积项（如 $(\boldsymbol R\bu_{i,k-1})^{\top}(\boldsymbol R\bJ\hat{\be}_{i,k})=\bu_{i,k-1}^{\top}\bJ\hat{\be}_{i,k}$）及拉普拉斯谱量均严格保持不变，故标量动作系数满足 $(\tilde\omega_{i,k}^\theta,\tilde r_{i,k}^\theta,\tilde\psi_{ij,k}^\theta)=(\omega_{i,k}^\theta,r_{i,k}^\theta,\psi_{ij,k}^\theta)$。将其代入式\eqref{eq:nominal-law}并再次利用 $\boldsymbol R\bJ\be_{i,k}=\bJ\boldsymbol R\be_{i,k}$ 即得第一式；节点置换等变性由消息传递式\eqref{eq:gnn-layer}对全体节点与有向边共享网络参数及均值/最大值聚合算子的置换不变性直接推出。反之，对任意平面镜像反射矩阵 $\boldsymbol M\in\mathrm{O}(2)\setminus\mathrm{SO}(2)$（$\det\boldsymbol M=-1$），恒有反对易关系 $\boldsymbol M\bJ=-\bJ\boldsymbol M$。若构型与历史状态关于节点 $i$ 的目标误差轴 $\hat{\be}_{i,k}$ 镜像对称（即 $\boldsymbol M\be_{i,k}=\be_{i,k}$ 且邻域构型满足 $\boldsymbol M$ 对称不变），则 $\mathrm{O}(2)$ 等变性要求 $\boldsymbol M\bu_{i,k}^{\mathrm{nom}}=\bu_{i,k}^{\mathrm{nom}}$，在正交方向 $\bJ\be_{i,k}$ 上投影即给出 $-\omega_{i,k}^\theta=\omega_{i,k}^\theta\implies\omega_{i,k}^\theta\equiv 0$。
+\end{proof}
+
+命题\ref{prop:equivariance}从群表示论角度揭示了破除对称死锁的一条关键设计准则：标称策略必须设计为特殊正交群 $\mathrm{SO}(2)$ 等变而非 $\mathrm{O}(2)$ 镜像等变，通过保留确定性的手性旋转偏置（Chirality），使受阻机器人在完全对称的迎头平衡点处能够一致地选择同一手性方向斜插绕行。
+
+\subsection{闭邻域动态分摊护盾与外围静止邻居协同退让机理}\label{subsec:npa-yield}
+各机器人由式\eqref{eq:nominal-law}生成标称参考速度 $\bu_{i,k}^{\mathrm{nom}}$ 后，送入第\ref{subsec:npa-prelim}节的闭邻域近端分配（NPA）及边记录本地结清安全滤波器 $L$（每拍执行 $B$ 轮局部协商）求解实际执行速度 $\bu_{i,k}$，并在零阶保持执行前经过定理\ref{thm:zoh-safe}的精确有理数整段安全证书核验。
+
+\begin{proposition}[学习探索与有限轮跨规模执行的随时硬安全不变性]\label{prop:safety}
+设初态满足 $\bp_0\in\mathcal S$，耦合安全约束满足零速可行初值条件 $b_{ia,k}\le 0$。则无论图网络策略参数 $\theta$ 如何取值（含训练初期叠加高斯探索噪声的随机策略及任意跨规模 $N$ 的零样本部署），也无论每拍分配轮数 $B\ge 0$ 是否收敛至全局集中式最优解，经闭邻域动态分摊护盾 $L$ 与零阶保持精确有理数证书执行后的闭环轨迹在全部连续时间 $t\ge 0$ 上恒满足机间避碰 $d_{ij}(t)\ge\ds\ (\forall i<j)$、全局代数连通度下界 $\lambda_2(\bL(\bp(t)))\ge\lr$ 以及输入幅值与工作区约束。
+\end{proposition}
+\begin{proof}
+由式\eqref{eq:edge-ledger}的反对称边记录结构，在任意采样时刻 $t_k$，经阶段一断边撤销与一跳本地结清后，初始配额 $\boldsymbol s_k^{(0)}$ 恒满足全局零和条件 $\sum_{i\in\mathcal V_a}s_{ia,k}^{(0)}=0$ 且热启动速度 $\bu_k^{(0)}$ 满足单机约束式\eqref{eq:refit-one}。在阶段二的任意第 $r\in\{1,\dots,B\}$ 轮，每个闭邻域块二次规划式\eqref{eq:block-qp}的局部增量满足 $\sum_{q\in\mathcal N_{i,k}^+}w_q=0$ 及成对边转移反对称性 $\sigma_{q,e}t_e+\sigma_{m,e}t_e=0$，按式\eqref{eq:convex-commit}作凸组合提交后，迭代解 $(\bu_k^{(B)},\boldsymbol s_k^{(B)})$ 严格保持配额零和性与全网耦合线性化约束式\eqref{eq:coupled-rows}。再结合定理\ref{thm:zoh-safe}的整段步长自适应减半有理数核验，每个采样保持段 $[t_k,t_k+h_k]$ 上的连续轨迹恒位于复合安全集 $\mathcal S$ 内，由归纳法知全时域 $t\ge 0$ 硬安全不变性成立。
+\end{proof}
+
+下面从代数上严格证明：为什么闭邻域块二次规划式\eqref{eq:block-qp}中的动态份额转移变量 $t_e$ 是驱动外围静止邻居让出通道的核心机制，而静态配额平摊（$B=0$）会导致机器人人为冻结。
+
+\begin{proposition}[闭邻域动态份额转移对静止阻挡邻居的协同解冻性质]\label{prop:unfreeze}
+考察密集格点内部互换中的典型接触单元：待移动机器人 $i$ 与已处于自身目标位置的静止邻居 $j$（$\be_j=\boldsymbol 0$，其自身标称速度为 $\bu_j^{\mathrm{nom}}=\boldsymbol 0$）处于接触边界 $d_{ij}=\ds$（此时碰撞裕度常数项 $b_{ia}=b_{ja}=0$），记从 $j$ 指向 $i$ 的单位接触法向量为 $\boldsymbol n_{ij}=(\bp_i-\bp_j)/\ds$。设图网络残差策略式\eqref{eq:nominal-law}为机器人 $i$ 生成了指向静止邻居 $j$ 方向的非零侧向绕行标称速度（满足法向侵入量 $\delta_n := -\boldsymbol n_{ij}^{\top}\bu_i^{\mathrm{nom}}>0$，且幅值未饱和）：
+\begin{enumerate}
+ \item \textbf{静态配额平摊（$B=0, s_{ia}=s_{ja}\equiv 0$）下的人为冻结：} 机器人 $i$ 与 $j$ 的局部避碰约束退化为各自独立的半空间约束 $-2\ds\boldsymbol n_{ij}^{\top}\bu_i\le 0$ 与 $2\ds\boldsymbol n_{ij}^{\top}\bu_j\le 0$。由于 $\bu_j^{\mathrm{nom}}=\boldsymbol 0$ 已满足节点 $j$ 的约束，单机投影输出 $\bu_j^{\mathrm{stat}}=\boldsymbol 0$（静止邻居纹丝不动）；而机器人 $i$ 指向 $j$ 的法向速度分量被单机约束强制截断为零（$-\boldsymbol n_{ij}^{\top}\bu_i^{\mathrm{stat}}=0$），侧向绕行通道被完全封死。
+ \item \textbf{闭邻域动态分摊（$B\ge 1$）下的份额让渡与协同退让：} 在式\eqref{eq:block-qp}的两节点接触子问题（从零初始份额出发）中，唯一最优解产生的成对避碰份额转移量 $t_{ij}^\star$、移动机器人法向推进速度 $-\boldsymbol n_{ij}^{\top}\bu_i^\star$ 与静止邻居向外退让速度 $-\boldsymbol n_{ij}^{\top}\bu_j^\star$ 具有显式严格正闭式解：
+ \begin{equation}
+\begin{split}
+  |t_{ij}^\star| &= \frac{\eta\ds}{\eta+4\ds^2}\delta_n > 0,\\
+  -\boldsymbol n_{ij}^{\top}\bu_i^\star &= -\boldsymbol n_{ij}^{\top}\bu_j^\star = \frac{\eta}{2(\eta+4\ds^2)}\delta_n > 0.
+\end{split}
+  \label{eq:joint-yield}
+ \end{equation}
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+在接触边界 $d_{ij}=\ds$ 处，$\boldsymbol a_{ia}=-2\ds\boldsymbol n_{ij},\boldsymbol a_{ja}=2\ds\boldsymbol n_{ij},b_{ia}=b_{ja}=0$。将两节点的速度正交分解为沿 $-\boldsymbol n_{ij}$（即指向 $j$ 外侧的退让方向）的法向标量分量 $u_{q,n}=-\boldsymbol n_{ij}^{\top}\bu_q$ 与切向分量 $\bu_{q,\tau}=(\I_2-\boldsymbol n_{ij}\boldsymbol n_{ij}^{\top})\bu_q$（$q\in\{i,j\}$）。切向分量不受该接触行约束，故 $\bu_{i,\tau}^\star=\bu_{i,\tau}^{\mathrm{nom}},\bu_{j,\tau}^\star=\boldsymbol 0$。对于法向分量：
+（1）当 $B=0$ 且 $s_{ia}=s_{ja}=0$ 时，单机约束分别为 $2\ds u_{i,n}\le 0\implies u_{i,n}\le 0$ 与 $-2\ds u_{j,n}\le 0\implies u_{j,n}\ge 0$。因 $u_{i,n}^{\mathrm{nom}}=\delta_n>0,u_{j,n}^{\mathrm{nom}}=0$，各自独立最小化 $\frac12(u_{i,n}-\delta_n)^2$ 与 $\frac12 u_{j,n}^2$ 直接给出 $u_{i,n}^{\mathrm{stat}}=0,u_{j,n}^{\mathrm{stat}}=0$。
+（2）在式\eqref{eq:block-qp}的动态分摊块问题中，节点 $i$ 与 $j$ 的法向约束分别为 $2\ds u_{i,n}+t_{ij}\le 0$ 与 $-2\ds u_{j,n}-t_{ij}\le 0$，块目标函数法向部分为 $J_n(u_{i,n},u_{j,n},t_{ij})=\frac12(u_{i,n}-\delta_n)^2+\frac12 u_{j,n}^2+\frac{1}{\eta}t_{ij}^2$。由于 $J_n$ 严格凸且无约束极小点 $(\delta_n,0,0)$ 违反节点 $i$ 的约束（$2\ds\delta_n>0$），由 KKT 互补松弛条件可知两条不等式在最优点处必同时取等号，即 $t_{ij}=-2\ds u_{i,n}=-2\ds u_{j,n}$，从而 $u_{i,n}^\star=u_{j,n}^\star=:v_n$。将其代入 $J_n$ 得单变量严格凸二次函数 $f(v_n)=\frac12(v_n-\delta_n)^2+\frac12 v_n^2+\frac{4\ds^2}{\eta}v_n^2$，求导令 $f'(v_n)=(2+\frac{8\ds^2}{\eta})v_n-\delta_n=0$，解得 $v_n=\frac{\eta}{2(\eta+4\ds^2)}\delta_n>0$ 及 $|t_{ij}^\star|=2\ds v_n=\frac{\eta\ds}{\eta+4\ds^2}\delta_n>0$，即得式\eqref{eq:joint-yield}（在本文标称参数 $\ds=1\ \mathrm m,\eta=2.0$ 下单步系数为 $\frac16$，多轮迭代收敛至集中式投影解 $\delta_n/2$）。
+\end{proof}
+
+命题\ref{prop:unfreeze}阐明了强化学习标称层与动态分摊滤波层之间的互补分工：策略网络只需让真正有移动需求的受阻节点 $i$ 学会产生侧向切入分量 $\delta_n>0$，而无需让外围静止邻居在标称层盲目猜测何时离开自身目标点；闭邻域块二次规划通过碰撞份额让渡 $t_{ij}^\star$ 自动将移动节点的侧向绕行意图转化为静止邻居的最小范数退让运动，且一旦移动节点穿过通道（$\delta_n\to 0$），静止邻居立即在 $-\be_j$ 恢复力下归位。同时，式\eqref{eq:joint-yield}表明移动节点 $i$ 在接触法向上的滤波速度修正量为 $u_{i,n}^\star-\delta_n=-\frac{\eta+8\ds^2}{2(\eta+4\ds^2)}\delta_n\ne 0$，即标称速度指向接触边界外侧（$\delta_n>0$）是该接触模型中触发配额转移 $|t_{ij}^\star|>0$ 与邻居协同退让的直接驱动源；若在策略训练损失中惩罚标称指令与滤波安全速度之间的法向偏差以压制 $\delta_n$，则会削弱式\eqref{eq:joint-yield}中的配额让渡与邻居退让速度，其闭环效应将在第\ref{sec:experiments}节中通过主基准与受控析因实验进一步检验。
+
+\subsection{一跳闭邻域终点完成包络与目标平衡点恢复}\label{subsec:envelope}
+考察标称控制律式\eqref{eq:nominal-law}在全体机器人趋近目标构型（$\bp_k\to\bg$，即 $\be_{i,k}\to\boldsymbol 0,\ \forall i\in\mathcal V$）时的渐近行为。在式\eqref{eq:nominal-law}的三个残差项中，切向项 $A_{\mathrm{rot}}\omega_{i,k}^\theta\bJ\be_{i,k}$ 与径向项 $A_{\mathrm{rad}}r_{i,k}^\theta\be_{i,k}$ 均显式乘有自身误差向量 $\be_{i,k}$，因而在 $\be_{i,k}\to\boldsymbol 0$ 时自动一阶归零；然而，第三项成对相对避让偏置
+\begin{equation}
+ \boldsymbol b_{i,k}^\psi := \frac{A_\psi U}{\max(|\mathcal N_{i,k}|,1)}\sum_{j\in\mathcal N_{i,k}}\psi_{ij,k}^\theta\frac{\bp_{i,k}-\bp_{j,k}}{d_{ij,k}}
+\end{equation}
+是由单位相对方向向量构成的零阶项，其幅值不随 $\be_{i,k}\to\boldsymbol 0$ 自动衰减。在间距 $1.001\ \mathrm m$（仅比安全距离 $\ds=1.000\ \mathrm m$ 大 $1\ \mathrm{mm}$）的密集格点终点处，相邻避碰约束仍处于近激活状态，单机重拟合对偶乘子 $\norm{\boldsymbol\mu_{i,k-1}}_2>0$，导致冲突记忆门控因子 $\gamma_{i,k}^{\mathrm{gate}}=\tanh(\beta_m m_{i,k})$ 在终点附近仍保持 $\gamma_{i,k}^{\mathrm{gate}}\approx 1$。此时非零零阶排斥偏置 $\boldsymbol b_{i,k}^\psi$ 与线性恢复力 $-\be_{i,k}$ 在 $\norm{\be_{i,k}}_2\in[0.015,0.05]\ \mathrm m$ 处形成力平衡或微幅极限环（即终点稳态悬停），阻碍系统进入 $\norm{\be_{i,k}}_2\le 0.01\ \mathrm m$ 的达标判定域。
+
+若仅用节点自身误差 $\tanh(\norm{\be_{i,k}}_2/\varepsilon_g)$ 去乘残差，则初始已处于目标位置的静止邻居（$\be_{i,k}=\boldsymbol 0$）从 $t=0$ 起残差即被永久置零。为同时满足“只要一跳邻域内尚有未达标队友即可正常输出协同残差”与“一旦一跳闭邻域全体进入目标微球，残差即无条件一阶归零”，定义一跳闭邻域终点完成包络（One-Hop Closed-Neighborhood Completion Envelope）：
+\begin{equation}
+\begin{split}
+ \rho_{i,k}(\bp_k)&=\tanh\!\left(\frac{\max_{j\in\mathcal N_{i,k}^+}\norm{\bp_{j,k}-\bg_j}_2}{\varepsilon_g}\right),\\
+ \gamma_{i,k}^{\mathrm{eff}} &= \gamma_{i,k}^{\mathrm{gate}}\cdot\rho_{i,k}(\bp_k),
+\end{split}
+ \label{eq:envelope-def}
+\end{equation}
+其中包络尺度阈值取 $\varepsilon_g=0.05\ \mathrm m$（达标容差 $0.01\ \mathrm m$ 的 $5$ 倍），仅依赖节点 $i$ 及其一跳通信邻居的目标距离。
+
+\begin{proposition}[闭邻域完成包络的一阶消隐与终点渐近线性化性质]\label{prop:envelope}
+对于包含式\eqref{eq:envelope-def}完成包络的标称控制律式\eqref{eq:nominal-law}：
+\begin{enumerate}
+ \item \textbf{协同阶段的残差保持性：} 只要一跳闭邻域 $\mathcal N_{i,k}^+$ 内存在至少一台满足 $\norm{\be_{j,k}}_2\ge 3\varepsilon_g=0.15\ \mathrm m$ 的未达标机器人 $j$，即便机器人 $i$ 自身满足 $\be_{i,k}=\boldsymbol 0$，包络因子仍满足 $\rho_{i,k}(\bp_k)\ge\tanh(3)>0.995$，不削弱协同脱困阶段的残差幅值。
+ \item \textbf{终点邻域的一阶压制与零速平衡点恢复：} 记闭邻域最大目标误差为 $e_{i,k}^{\max}:=\max_{j\in\mathcal N_{i,k}^+}\norm{\be_{j,k}}_2\le\norm{\be_k}_2$。由 $\tanh(z)\le z\ (\forall z\ge 0)$、$\gamma_{i,k}^{\mathrm{gate}}\in[0,1)$ 及动作系数有界性 $|\omega_{i,k}^\theta|,|r_{i,k}^\theta|,|\psi_{ij,k}^\theta|\le 1$，门控残差项范数满足显式上界
+ \begin{equation}
+\begin{split}
+  \norm{\gamma_{i,k}^{\mathrm{eff}}\br_{i,k}^\theta(\bp_k)}_2
+  &\le \frac{e_{i,k}^{\max}}{\varepsilon_g}\Big[(A_{\mathrm{rot}}+A_{\mathrm{rad}})\norm{\be_{i,k}}_2+A_\psi U\Big]\\
+  &=\mathcal O(\norm{\be_k}_2).
+\end{split}
+  \label{eq:residual-bound}
+ \end{equation}
+ 特别地，在目标构型 $\bp_k=\bg$ 处，无论对偶乘子 $\boldsymbol\mu_{i,k-1}$ 是否为零，恒有 $\rho_{i,k}(\bg)=0$ 及 $\bu_{i,k}^{\mathrm{nom}}(\bg;\theta)=\boldsymbol 0$，从而完全消除了零阶偏置引起的非零稳态误差。
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+（1）当存在 $j\in\mathcal N_{i,k}^+$ 使 $\norm{\be_{j,k}}_2\ge 3\varepsilon_g$ 时，由 $\max_{m\in\mathcal N_{i,k}^+}\norm{\be_{m,k}}_2\ge 3\varepsilon_g$ 及 $\tanh(\cdot)$ 的严格单调递增性得 $\rho_{i,k}(\bp_k)\ge\tanh(3)\approx 0.99505>0.995$。（2）对任意 $z\ge 0$，由函数凹性有 $0\le\tanh(z)\le z$，故 $0\le\gamma_{i,k}^{\mathrm{eff}}\le\rho_{i,k}(\bp_k)\le e_{i,k}^{\max}/\varepsilon_g$。对式\eqref{eq:nominal-law}中的 $\br_{i,k}^\theta(\bp_k)$ 应用三角不等式与正交性 $\norm{\bJ\be_{i,k}}_2=\norm{\be_{i,k}}_2$，可得 $\norm{\br_{i,k}^\theta(\bp_k)}_2\le(A_{\mathrm{rot}}|\omega_{i,k}^\theta|+A_{\mathrm{rad}}|r_{i,k}^\theta|)\norm{\be_{i,k}}_2+A_\psi U\max_j|\psi_{ij,k}^\theta|\le(A_{\mathrm{rot}}+A_{\mathrm{rad}})\norm{\be_{i,k}}_2+A_\psi U$。两式相乘并利用 $e_{i,k}^{\max}\le\norm{\be_k}_2$ 即得式\eqref{eq:residual-bound}；令 $\be_k=\boldsymbol 0$ 得 $\bu_{i,k}^{\mathrm{nom}}(\bg;\theta)=\boldsymbol 0$。
+\end{proof}
+
+\subsection{小规模短轮数强化学习训练与跨规模零样本部署协议}\label{subsec:mappo}
+由于闭邻域块二次规划滤波器 $L$ 包含非光滑的分段激活约束与本地结清逻辑，直接通过 $B$ 轮优化求解器反向传播长时程策略梯度易在多接触切换角点处产生梯度奇异且计算开销高昂。为此，本文采用基于中心化训练、去中心化执行（CTDE）的多智能体近端策略优化（MAPPO）框架\cite{yu2022mappo}，将“小规模短轮数快训（$N\in\{6,\dots,10\},B=2$，验证选模规模 $N=8$）”与“大规模多轮零样本部署（$N\in\{12,20,25\},B=8$）”相结合，完整流程如表\ref{tab:algo1}所示：
+\begin{enumerate}
+ \item \textbf{训练期的随机化死锁任务生成与短轮数滤波交互：} 训练环境在 $N\in\{6,\dots,10\}$ 的紧密三角晶格（相邻格距 $1.001\ \mathrm m\sim 1.12\ \mathrm m$，连通阈值比例 $\lr/\lambda_2(\bp_0)\in[0.55,0.90]$）上随机选取格点中心、采样 $1\sim 3$ 对相邻互换、三节点环状轮换与全排列任务，并做质心居中与随机整体旋转。训练期每拍滤波轮数设为 $B=2$（$N=8$ 单拍 CPU 耗时仅约 $42\ \mathrm{ms}$），既保留了命题\ref{prop:unfreeze}的动态份额让渡特性，又将单回合交互采样耗时降低约 $70\%$。
+ \item \textbf{策略探索、中心化价值网络与团队奖励函数：} 训练期图网络策略对式\eqref{eq:action-heads}的均值输出叠加各向同性高斯探索噪声；中心化价值网络（Critic）采用与策略同构的两层图网络，对全网节点嵌入做均值与最大值池化后拼接全局谱裕度标量 $[\lambda_2(\bL(\bp_k)),\lr,\tfrac1N\sum_i\mathbb I(\norm{\be_{i,k}}_2<0.05),N/10]^{\top}$ 估计状态价值 $V_\phi(\bp_k)$。每拍共享团队奖励函数设计为
+ \begin{equation}
+ \begin{split}
+  R_k &= r_{\mathrm{prog}}\frac{\sum_{i=1}^N\big(\norm{\be_{i,k}}_2-\norm{\be_{i,k+1}}_2\big)}{D_0} - r_{\mathrm{time}}\\
+  &\quad + r_{\mathrm{succ}}\mathbb I\Big(\max_{i\in\mathcal V}\norm{\be_{i,k+1}}_2\le\varepsilon_{\mathrm{succ}}\Big)\\
+  &\quad - \frac{r_{\mathrm{stall}}}{N}\sum_{i=1}^N\tanh\!\Big(\frac{\norm{\be_{i,k}}_2}{\varepsilon_p}\Big)\exp\!\Big(-\frac{\norm{\bu_{i,k}}_2^2}{\varepsilon_u^2}\Big)\\
+  &\quad\qquad\qquad\times\ln\!\big(1+\norm{\boldsymbol\mu_{i,k}}_2^2\big),
+ \end{split}\label{eq:reward}
+ \end{equation}
+ 其中 $D_0=\sum_{i=1}^N\norm{\be_{i,0}}_2$ 为初始总目标距离，第一项为归一化距离缩减奖励（$r_{\mathrm{prog}}=1.0$），第二项为时间步惩罚（$r_{\mathrm{time}}=10^{-3}$），第三项为全员达标终止奖励（$\varepsilon_{\mathrm{succ}}=0.01\ \mathrm m,r_{\mathrm{succ}}=1.0$），第四项对远离目标（$\varepsilon_p=0.10\ \mathrm m$）、实际执行速度低下（$\varepsilon_u=0.05\ \mathrm{m/s}$）且受局部重拟合对偶乘子 $\norm{\boldsymbol\mu_{i,k}}_2$ 阻挡的停滞状态施加平滑惩罚（$r_{\mathrm{stall}}=0.02$；连续 $60$ 拍最大速度低于 $0.005\ \mathrm{m/s}$ 则按停滞提前终止）。采用广义优势估计（GAE，折扣因子 $\gamma=0.995,\lambda_{\mathrm{GAE}}=0.95$）与裁剪近端策略目标（裁剪率 $\epsilon_{\mathrm{clip}}=0.20$，KL 散度早停阈值 $0.03$）更新策略参数 $\theta$。
+ \item \textbf{跨规模多轮零样本分布式部署：} 训练收敛后冻结最优策略权重 $\theta^\star$，移除中心化价值网络与探索噪声，在 $N=8,12,20,25$ 的测试场景上直接以式\eqref{eq:nominal-law}与式\eqref{eq:envelope-def}（执行期可直接取无状态单包络门控 $\gamma_{i,k}^{\mathrm{eff}}=\rho_{i,k}(\bp_k)$）生成标称速度，并交由 $B=8$ 轮闭邻域块 NPA 滤波器与零阶保持精确有理数证书执行。
+\end{enumerate}
+
+\begin{table}[htbp]
+ \centering\footnotesize
+ \caption{包络等变图策略与邻域近端分配协同控制算法（算法 1：EGP-NPA）}\label{tab:algo1}
+ \renewcommand{\arraystretch}{1.12}
+ \begin{tabularx}{\columnwidth}{@{}X@{}}
+ \toprule
+ \textbf{阶段 A：小规模短轮数中心化训练（$N\in\{6,\dots,10\},\ B_{\mathrm{train}}=2$）}\\
+ \midrule
+ 1. 初始化两层等变图策略参数 $\theta$ 与中心化图价值网络参数 $\phi$；\\
+ 2. \textbf{for} 训练轮次 $m=1,2,\dots,M_{\max}$ \textbf{do}\\
+ 3. \hspace{1em}采样紧密三角晶格局部互换/全排列任务（$N\in\{6,\dots,10\}$，随机旋转与居中），置初始边记录 $\boldsymbol\varpi_{-1}=\boldsymbol 0$；\\
+ 4. \hspace{1em}\textbf{for} 采样拍 $k=0,1,\dots,K_{\max}-1$ \textbf{do}\\
+ 5. \hspace{2em}各节点构建旋转不变特征 $(\boldsymbol x_{i,k},\boldsymbol e_{ij,k}^{\mathrm{feat}})$，由式\eqref{eq:gnn-layer}--\eqref{eq:nominal-law}叠加探索噪声生成 $\bu_{i,k}^{\mathrm{nom}}$；\\
+ 6. \hspace{2em}执行式\eqref{eq:refit-one}拍首单机安全重拟合（记录碰撞影子价格 $\boldsymbol\mu_{i,k}$）及必要的一跳本地结清；\\
+ 7. \hspace{2em}执行 $B_{\mathrm{train}}=2$ 轮闭邻域块二次规划式\eqref{eq:block-qp}与凸组合提交式\eqref{eq:convex-commit}，经定理\ref{thm:zoh-safe}证书执行得 $\bp_{k+1}$；\\
+ 8. \hspace{2em}按式\eqref{eq:reward}计算团队奖励 $R_k$，存入轨迹缓存；若全员进入 $\varepsilon_{\mathrm{succ}}$ 或触发停滞判据则终止回合；\\
+ 9. \hspace{1em}\textbf{end for}\\
+ 10. \hspace{0.6em}计算 GAE 优势估计，以裁剪 PPO 目标与 KL 早停更新 $(\theta,\phi)$，在 $N=8$ 验证集上保存最优权重 $\theta^\star$。\\
+ 11. \textbf{end for}\\
+ \midrule
+ \textbf{阶段 B：大规模多轮零样本去中心化执行（任意规模 $N$，$\theta=\theta^\star,\ B_{\mathrm{eval}}=8$）}\\
+ \midrule
+ 12. 在每拍 $t_k=k\Delta t$，各节点 $i\in\mathcal V$ 仅凭一跳通信邻域 $\mathcal N_{i,k}^+$ 计算包络 $\rho_{i,k}(\bp_k)=\tanh(\max_{j\in\mathcal N_{i,k}^+}\norm{\be_{j,k}}_2/\varepsilon_g)$；\\
+ 13. 由冻结等变图策略 $\theta^\star$ 前向推理确定性动作 $(\omega_{i,k}^{\theta^\star},r_{i,k}^{\theta^\star},\psi_{ij,k}^{\theta^\star})$，按式\eqref{eq:nominal-law}合成 $\bu_{i,k}^{\mathrm{nom}}(\bp_k;\theta^\star)$；\\
+ 14. 执行单机重拟合式\eqref{eq:refit-one}、一跳本地结清与 $B_{\mathrm{eval}}=8$ 轮闭邻域块 NPA 协商式\eqref{eq:block-qp}--\eqref{eq:convex-commit}，输出安全控制 $\bu_{i,k}$。\\
+ \bottomrule
+ \end{tabularx}
+\end{table}

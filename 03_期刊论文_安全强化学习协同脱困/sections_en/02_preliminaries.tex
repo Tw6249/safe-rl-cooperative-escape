@@ -1,0 +1,129 @@
+\section{Problem Formulation and Preliminaries on Closed-Neighborhood NPA}\label{sec:model}
+
+\subsection{Planar Multi-Robot Fixed-Goal Model and Rationally Closed Channel}
+Consider $N$ mobile robots operating in the Euclidean plane $\mathbb R^2$ with vertex set $\mathcal V=\{1,\dots,N\}$. Each robot $i\in\mathcal V$ obeys velocity-bounded single-integrator kinematics:
+\begin{equation}
+ \dot\bp_i(t)=\bu_i(t),\qquad \bu_i(t)\in\mathcal U_i:=\big\{\boldsymbol v\in\mathbb R^2:\norm{\boldsymbol v}_2\le U\big\},
+ \label{eq:kinematics}
+\end{equation}
+where $\bp_i\in\mathbb R^2$ and $\bu_i\in\mathbb R^2$ are the planar position and velocity control input of robot $i$, and $U>0$ is the maximum speed bound ($U=0.50\ \mathrm{m/s}$ throughout this paper). Given distinct static labeled goal positions $\bg_i\in\mathbb R^2$ satisfying $\norm{\bg_i-\bg_j}_2\ge\ds$ ($\forall i\ne j$), define the stacked state $\bp=\col(\bp_1,\dots,\bp_N)\in\mathbb R^{2N}$, joint input $\bu=\col(\bu_1,\dots,\bu_N)\in\mathbb R^{2N}$, and goal configuration $\bg=\col(\bg_1,\dots,\bg_N)\in\mathbb R^{2N}$. Let $\be_i=\bp_i-\bg_i$, $\be=\bp-\bg$, $\bp_{ij}=\bp_i-\bp_j$, and $d_{ij}=\norm{\bp_{ij}}_2$. The raw navigation task distance cost is defined as
+\begin{equation}
+ W(\bp)=\frac12\norm{\be}_2^2=\frac12\sum_{i=1}^N\norm{\bp_i-\bg_i}_2^2.
+ \label{eq:W-def}
+\end{equation}
+
+To rigorously separate intrinsic geometric deadlocks of the mathematical model from floating-point rounding artifacts during equilibrium certification and sampled-data ZOH verification, the physical communication graph employs a polynomial squared-cutoff channel kernel that is algebraically closed over the rational field $\mathbb Q$:
+\begin{equation}
+ \omega(d)=\left(1-\frac{d^2}{R_c^2}\right)_+^2,\qquad R_c=10.0\ \mathrm m.
+ \label{eq:poly-channel}
+\end{equation}
+Within the communication support $d<R_c$, the edge weight $w_{ij}(\bp)=\omega(d_{ij})$ is a quadratic polynomial in the squared distance $d_{ij}^2=\norm{\bp_i-\bp_j}_2^2$, continuously differentiable at $d=R_c$ with locally Lipschitz gradient. With incidence vector $\boldsymbol b_{ij}=\boldsymbol\varepsilon_i-\boldsymbol\varepsilon_j\in\mathbb R^N$, the state-dependent weighted graph Laplacian is
+\begin{equation}
+ \bL(\bp)=\sum_{1\le i<j\le N}\omega(d_{ij})\boldsymbol b_{ij}\boldsymbol b_{ij}^{\top}\in\mathbb S_+^N.
+ \label{eq:laplacian}
+\end{equation}
+Whenever $\bp\in\mathbb Q^{2N}$, the entries of $\bL(\bp)$ and its directional derivatives are exact rational numbers, enabling zero-error verification of KKT optimality conditions and scalar safety margins via exact rational arithmetic.
+
+\subsection{Globally and Locally Coupled Scalar Safety Constraints and ZOH Segment Safety}
+Let $0=\lambda_1(\bL(\bp))\le\lambda_2(\bL(\bp))\le\cdots\le\lambda_N(\bL(\bp))$ denote the ordered eigenvalues of $\bL(\bp)$, where $\lambda_2(\bL(\bp))$ is the algebraic connectivity. The composite safe configuration set is $\mathcal S:=\mathcal X\cap\mathcal C$, where $\mathcal X=[-B_{\mathrm{ws}},B_{\mathrm{ws}}]^{2N}$ is the bounded workspace and
+\begin{equation}
+\begin{split}
+ \mathcal C=\Big\{\bp\in\mathbb R^{2N}:\ &h_0(\bp):=\lambda_2(\bL(\bp))-\lr\ge 0,\\
+ &h_{ij}^{\mathrm{col}}(\bp):=d_{ij}^2-\ds^2\ge 0\ (\forall i<j)\Big\}
+\end{split}
+ \label{eq:safe-set}
+\end{equation}
+is defined by one globally coupled scalar connectivity barrier function $h_0(\bp)$ and $P=N(N-1)/2$ pairwise coupled scalar collision-avoidance barrier functions $h_{ij}^{\mathrm{col}}(\bp)$ ($\ds>0,\lr>0$).
+
+Focusing on deadlock resolution under coupled and mutually conflicting scalar constraints, we consider configurations with a simple Fiedler eigenvalue ($\lambda_2(\bL(\bp))<\lambda_3(\bL(\bp))$). Let $\boldsymbol\phi(\bp)\in\mathbb R^N$ ($\boldsymbol 1_N^{\top}\boldsymbol\phi(\bp)=0,\norm{\boldsymbol\phi(\bp)}_2=1$) denote the unit Fiedler eigenvector. By the Hellmann--Feynman theorem, the partial gradients of the scalar barrier functions $h_0(\bp)$ and $h_{ij}^{\mathrm{col}}(\bp)$ with respect to $\bp_i$ are
+\begin{equation}
+\begin{split}
+ \nabla_{\bp_i}h_0(\bp)&=\sum_{j\ne i}\big(\phi_i(\bp)-\phi_j(\bp)\big)^2\nabla_{\bp_i}w_{ij}(\bp),\\
+ \nabla_{\bp_i}h_{ij}^{\mathrm{col}}(\bp)&=-\nabla_{\bp_j}h_{ij}^{\mathrm{col}}(\bp)=2\bp_{ij}.
+\end{split}\label{eq:H-matrix}
+\end{equation}
+Equation \eqref{eq:H-matrix} highlights the geometric conflict between the two constraint classes: $\nabla_{\bp_i}h_0(\bp)$ pulls connected robots inward to prevent network fragmentation, whereas $\nabla_{\bp_i}h_{ij}^{\mathrm{col}}(\bp)=2\bp_{ij}$ pushes proximate robots outward to prevent collisions. With barrier decay rates $\alpha_c,\alpha_s,\alpha_x>0$, the continuous-time composite safe input set is defined by scalar affine CBF inequalities:
+\begin{equation}
+\begin{split}
+ \mathcal K_0(\bp)&=\Big\{\bu\in\mathbb R^{2N}:\ 2\bp_{ij}^{\top}(\bu_i-\bu_j)+\alpha_c h_{ij}^{\mathrm{col}}(\bp)\ge 0,\\
+ &\quad \sum_{i=1}^N\nabla_{\bp_i}h_0(\bp)^{\top}\bu_i+\alpha_s h_0(\bp)\ge 0,\\
+ &\quad \bu_i\in\mathcal U_i,\ |p_{i,a}+\alpha_x^{-1}u_{i,a}|\le B_{\mathrm{ws}}\ (\forall i<j,\,a)\Big\}.
+\end{split}\label{eq:K0-def}
+\end{equation}
+For every $\bp\in\mathcal S$, $\mathcal K_0(\bp)$ is nonempty, closed, and convex, and always contains the zero-velocity vector $\boldsymbol 0\in\mathcal K_0(\bp)$. Given a nominal velocity $\bu^{\mathrm{nom}}\in\mathbb R^{2N}$, the centralized minimally invasive safety projection is
+\begin{equation}
+ \Pi_{\mathcal K_0(\bp)}(\bu^{\mathrm{nom}})=\arg\min_{\bu\in\mathcal K_0(\bp)}\frac12\norm{\bu-\bu^{\mathrm{nom}}}_2^2.
+ \label{eq:central-proj}
+\end{equation}
+
+Under sampled-data ZOH execution at $t_k=k\Delta t$ ($\Delta t=0.05\ \mathrm s$), the executed velocity $\bu_k$ is held constant over $[t_k,t_k+h]$, generating the straight-line segment $\bp(s)=\bp_k+s\bu_k$ ($s\in[0,h]$). Let $\bar d_{ij,k}(h):=\max\big\{d_{ij,k},\norm{\bp_{ij,k}+h(\bu_{i,k}-\bu_{j,k})}_2\big\}$ denote the segment-wise maximum pairwise distance and $\underline{\bL}(\bp_k,\bu_k,h):=\sum_{i<j}\omega(\bar d_{ij,k}(h))\boldsymbol b_{ij}\boldsymbol b_{ij}^{\top}$ the corresponding constant lower-bound Laplacian; with the scalar Rayleigh-quotient second-order curvature constant $c_L=8N/R_c^2$ of \eqref{eq:poly-channel}, we obtain the following continuous-time segment safety guarantee.
+
+\begin{theorem}[Continuous-Time Safety Over ZOH Segments]\label{thm:zoh-safe}
+Suppose $\bp_k\in\mathcal S$ and step size $h>0$ satisfies $\alpha_c h\le 1,\alpha_s h\le 1,\alpha_x h\le 1$. If $\bu_k$ satisfies the speed ball, workspace bounds, pairwise collision CBF inequalities in \eqref{eq:K0-def}, and the scalar segment connectivity condition
+\begin{equation}
+\begin{split}
+ &\lambda_2\big(\underline{\bL}(\bp_k,\bu_k,h)\big)\ge\lr\quad\text{or}\\
+ &\sum_{i=1}^N\nabla_{\bp_i}h_0(\bp_k)^{\top}\bu_{i,k}+\alpha_s h_0(\bp_k)\ge\frac{c_L h}{2}\norm{\bu_k}_2^2,
+\end{split}
+ \label{eq:zoh-tightened}
+\end{equation}
+then the continuous trajectory $\bp(s)=\bp_k+s\bu_k$ satisfies $h_{ij}^{\mathrm{col}}(\bp(s))\ge 0$ ($\forall i<j$), $h_0(\bp(s))\ge 0$, and $\bp(s)\in\mathcal X$ for all $s\in[0,h]$.
+\end{theorem}
+\begin{proof}
+For each pair $i<j$, exact quadratic expansion of $h_{ij}^{\mathrm{col}}(\bp_k+s\bu_k)$ together with \eqref{eq:K0-def} and $\alpha_c s\le 1$ yields
+\begin{equation}
+\begin{split}
+ h_{ij}^{\mathrm{col}}(\bp_k+s\bu_k)&=h_{ij}^{\mathrm{col}}(\bp_k)+2s\bp_{ij,k}^{\top}(\bu_{i,k}-\bu_{j,k})\\
+ &\quad+s^2\norm{\bu_{i,k}-\bu_{j,k}}_2^2\\
+ &\ge(1-\alpha_c s)h_{ij}^{\mathrm{col}}(\bp_k)\ge 0.
+\end{split}
+\end{equation}
+For the global scalar connectivity barrier $h_0(\bp(s))=\lambda_2(\bL(\bp(s)))-\lr$, convexity of $d_{ij}^2(s)$ on $[0,h]$ implies $\max_{s\in[0,h]}d_{ij}(s)=\bar d_{ij,k}(h)$, so for every unit vector $\boldsymbol v\in\mathbb R^N$ with $\boldsymbol 1_N^{\top}\boldsymbol v=0$, the scalar quadratic form $\psi_{\boldsymbol v}(s):=\boldsymbol v^{\top}\bL(\bp_k+s\bu_k)\boldsymbol v$ satisfies $\psi_{\boldsymbol v}(s)\ge\boldsymbol v^{\top}\underline{\bL}(\bp_k,\bu_k,h)\boldsymbol v$ across $s\in[0,h]$; thus the first condition in \eqref{eq:zoh-tightened} yields $\lambda_2(\bL(\bp(s)))\ge\lambda_2(\underline{\bL}(\bp_k,\bu_k,h))\ge\lr$ by the Courant--Fischer theorem. Similarly, applying second-order Taylor expansion with $\psi_{\boldsymbol v}''(\tau)\ge -c_L\norm{\bu_k}_2^2$ to $\psi_{\boldsymbol v}(s)-\lr$ and taking the infimum over unit zero-mean vectors $\boldsymbol v$ under the second condition in \eqref{eq:zoh-tightened} gives
+\begin{equation}
+\begin{split}
+ h_0(\bp_k+s\bu_k)&\ge(1-\alpha_s s)h_0(\bp_k)\\
+ &\quad+\tfrac12 c_L s(h-s)\norm{\bu_k}_2^2\ge 0.
+\end{split}
+\end{equation}
+Workspace bounds hold for all $s\in[0,h]$ by convexity.
+\end{proof}
+
+\subsection{Closed-Neighborhood Block NPA and Antisymmetric Edge-Ledger Settlement}\label{subsec:npa-prelim}
+At step $k$, the $M_k=1+P_k$ coupled scalar safety constraints in \eqref{eq:K0-def} are written as affine inequality rows:
+\begin{equation}
+ \sum_{i\in\mathcal V_a}\big(\boldsymbol a_{ia,k}^{\top}\bu_i+b_{ia,k}\big)\le 0,\qquad a\in\{0,1,\dots,P_k\},
+ \label{eq:coupled-rows}
+\end{equation}
+where row $a=0$ ($\mathcal V_0=\mathcal V$) is the globally coupled scalar connectivity row with unit Fiedler eigenvector $\boldsymbol\phi_k$ and discretization margin $\delta_\lambda>0$ ($\lambda_{\mathrm{eff}}=\lr+\delta_\lambda$), i.e., $\boldsymbol a_{i0,k}=-\nabla_{\bp_i}h_0(\bp_k)=-\sum_{j\ne i}(\phi_{i,k}-\phi_{j,k})^2\nabla_{\bp_i}w_{ij}(\bp_k)$ and level-clipped constant term $b_{i0,k}=-\frac{\alpha_s}{N}\big(\lambda_2(\bL(\bp_k))-\lambda_{\mathrm{eff}}\big)_+\le 0$; rows $a\in\{1,\dots,P_k\}$ ($\mathcal V_a=\{i,j\}$) are pairwise scalar collision rows with $\boldsymbol a_{ia,k}=-2\bp_{ij,k},\boldsymbol a_{ja,k}=2\bp_{ij,k}$, and $b_{ia,k}=b_{ja,k}=-\frac{\alpha_c}{2}(d_{ij,k}^2-\ds^2)\le 0$. Thus the zero-velocity feasible initialization condition $b_{ia,k}\le 0$ ($\forall a\in\{0,1,\dots,P_k\}$) holds identically throughout $\mathcal S$. In dense rearrangement tasks, the simultaneous enforcement of the global connectivity row and multiple tight pairwise contact rows at $\ds=1.000\ \mathrm m$ creates severe mutual conflict and geometric deadlocks.
+
+Over the one-hop directed communication graph $\mathcal G_{\mathrm c}(\bp_k)=(\mathcal V,\mathcal E_k)$ defined by sensing/communication radius $R_{\mathrm{sense}}=2.50\ \mathrm m$ (open neighborhood $\mathcal N_{i,k}=\{j:0<d_{ij,k}\le R_{\mathrm{sense}}\}$, closed neighborhood $\mathcal N_{i,k}^+=\{i\}\cup\mathcal N_{i,k}$), each robot maintains zero-sum quota variables $s_{ia,k}$ reconstructed from antisymmetric edge ledgers $\varpi_{e,a,k}$ on undirected edges $e=\{i,j\}$:
+\begin{equation}
+ s_{ia,k}=\sum_{e\ni i}\sigma_{i,e}\varpi_{e,a,k}\ \Longrightarrow\ \sum_{i\in\mathcal V_a}s_{ia,k}=0,
+ \label{eq:edge-ledger}
+\end{equation}
+where $\sigma_{i,e}=+1,\sigma_{j,e}=-1$ for $i<j$. The closed-neighborhood NPA safety filter $L$ executes two stages per control step:
+\begin{enumerate}
+ \item \textbf{Stage 1 (Link-loss revocation, single-robot safety refit, and one-hop local settlement):} Edges exceeding $R_{\mathrm{sense}}$ have their ledgers zeroed by both endpoints. Each robot $i\in\mathcal V$ then solves the local refit QP under inherited quotas $\boldsymbol s_{i,k-1}$ (with nonnegative KKT multiplier vector $\boldsymbol\mu_{i,k-1}$):
+ \begin{equation}
+ \begin{split}
+  \min_{\bu_i\in\mathcal U_i\cap\mathcal X_i}&\ \frac12\norm{\bu_i-\bu_{i,k}^{\mathrm{nom}}}_2^2\\
+  \text{s.t.}\quad&\ \boldsymbol a_{ia,k}^{\top}\bu_i+b_{ia,k}+s_{ia,k-1}\le 0,\ \forall a\ni i.
+ \end{split}\label{eq:refit-one}
+ \end{equation}
+ If \eqref{eq:refit-one} is infeasible for robot $i$, one-hop local settlement clears all incident edge ledgers of node $i$ ($s_{ia}=0$, restoring feasibility of $\bu_i=\boldsymbol 0$ since $b_{ia,k}\le 0$) and notifies one-hop neighbors to re-solve \eqref{eq:refit-one}, yielding a strictly feasible warm start $(\bu_k^{(0)},\boldsymbol s_k^{(0)})$.
+ \item \textbf{Stage 2 ($B$-round closed-neighborhood block proximal allocation):} In round $r\in\{1,\dots,B\}$, each closed-neighborhood induced subgraph $\mathcal G_i^+=(\mathcal N_{i,k}^+,E_i)$ solves in parallel:
+ \begin{equation}
+ \begin{split}
+  \min_{\tilde\bu_q,w_q,t_e}&\ \frac12\!\sum_{q\in\mathcal N_{i,k}^+}\!\norm{\tilde\bu_q-\bu_{q,k}^{\mathrm{nom}}}_2^2\\
+  &\quad+\frac{1}{2\eta}\!\sum_{q\in\mathcal N_{i,k}^+}\!w_q^2+\frac{1}{\eta}\!\sum_{e\in E_i}\!t_e^2\\
+  \text{s.t.}\ &\ \boldsymbol a_{q0,k}^{\top}\tilde\bu_q+b_{q0,k}+s_{q0,k}^{(r-1)}+w_q\le 0,\\
+  &\ \boldsymbol a_{qa,k}^{\top}\tilde\bu_q+b_{qa,k}+s_{qa,k}^{(r-1)}+\!\sum_{e\in E_{i,a}}\!\sigma_{q,e}t_e\le 0,\\
+  &\ \sum_{q\in\mathcal N_{i,k}^+}w_q=0,\quad \tilde\bu_q\in\mathcal U_q\cap\mathcal X_q,
+ \end{split}\label{eq:block-qp}
+ \end{equation}
+ where $\eta=2.0$ is the proximal parameter, $w_q$ is the block spectral quota increment, and $t_e$ is the pairwise collision quota transfer on edge $e\in E_{i,a}=\{e\in E_i:a(e)=a\}$. Block solutions are committed via convex combination weights $\vartheta_i=(\max_{q\in\mathcal N_{i,k}^+}|\mathcal N_{q,k}^+|)^{-1}$:
+ \begin{equation}
+  \bu_q^{(r)}=\Big(1-\sum_{i:q\in\mathcal N_{i,k}^+}\vartheta_i\Big)\bu_q^{(r-1)}+\sum_{i:q\in\mathcal N_{i,k}^+}\vartheta_i\tilde\bu_q^{(i)}.
+  \label{eq:convex-commit}
+ \end{equation}
+\end{enumerate}

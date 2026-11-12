@@ -1,0 +1,100 @@
+{
+  "kkt_witness": {
+    "stationarity_exact": true,
+    "feasible": true,
+    "complementarity": true,
+    "scaled_objective": "1545/496",
+    "physical_normalized_objective": "515/496",
+    "scope": "Checks the stated rational QP witness only; not the entire finite-radius or reachability proof"
+  },
+  "graph_separation": {
+    "positions": [
+      [
+        -3.0,
+        0.0
+      ],
+      [
+        -1.9,
+        0.0
+      ],
+      [
+        1.9,
+        0.0
+      ],
+      [
+        3.0,
+        0.0
+      ]
+    ],
+    "physical_lambda2": 2.1824291060920897,
+    "communication_lambda2": 0.0,
+    "implication": "Maintaining the 10 m physical graph need not maintain the 2.5 m coordination graph"
+  },
+  "zero_speed_feasibility": {
+    "two_positions": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "lambda2": "1152/625",
+    "lambda_required": "4583/2500",
+    "margin": "1/50",
+    "paper_spectral_b_per_agent": "1/100",
+    "code_spectral_b_per_agent": "0",
+    "implication": "A state strictly inside the stated spectral safe set need not satisfy the un-clipped positive-margin zero-input condition"
+  },
+  "scalar_vs_matrix": {
+    "position": [
+      [
+        -0.9834294157066719,
+        1.5610791443391223
+      ],
+      [
+        1.8806594906944225,
+        1.3282534507700903
+      ],
+      [
+        0.8090561896962067,
+        -1.9116460739785803
+      ]
+    ],
+    "velocity": [
+      [
+        -0.3137424288670463,
+        0.030172860543196685
+      ],
+      [
+        0.4899370130029085,
+        -0.007856417108828822
+      ],
+      [
+        -0.07915493538451368,
+        0.1962706677753039
+      ]
+    ],
+    "threshold": 2.2319774542557975,
+    "scalar_fiedler_residual_with_clipped_margin": 4.885417886207888e-07,
+    "full_matrix_cbf_min_eigenvalue": -0.004365228365049683,
+    "minimum_collision_cbf_residual": 19.135753268126678,
+    "max_speed": 0.49,
+    "lambda2": 2.2329774542557974,
+    "eigengap": 0.21444293464972608,
+    "attempt": 5
+  },
+  "kernel_cutoff": {
+    "radius": 10,
+    "second_derivative_inside_limit": 0.08,
+    "second_derivative_outside": 0,
+    "smoothness": "C1 and locally Lipschitz gradient, but not C2 at the cutoff"
+  },
+  "envelope_counterexample": {
+    "dynamics": "e_dot=-e+2e=e",
+    "residual": "r(e)=2e=O(|e|)",
+    "implication": "First-order vanishing and equilibrium restoration alone do not imply asymptotic stability"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "training": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_\u671f\u520a\u8bba\u6587_\u5b89\u5168\u5f3a\u5316\u5b66\u4e60\u534f\u540c\u8131\u56f0\\comparison_revision_20261109\\official_dgppo_h500_margin_s2",
+  "model_sha256": {
+    "actor.pkl": "b549a43e9d266b83786a81a2cc413e102822e9ce0f180d3958942918b17fb9b1",
+    "Vh.pkl": "d7101c30fbe8cc38dab98c0cd209381b5e28a9ad81d9251b866df5144ff842c1",
+    "Vl.pkl": "f81c5b458ed231e29bea41ab66c91532a302a1f9ca483d75b0df3b642658805b"
+  },
+  "training_protocol": {
+    "identity": "Official DGPPO update, adapted single-integrator lattice environment",
+    "upstream_commit": "bf9ff80ebc7f135121b9fe1658800bdb106b8c20",
+    "mode": "adaptation_training",
+    "seed": 20261108,
+    "requested_budget": 480000,
+    "horizon_steps": 500,
+    "environments": 4,
+    "transitions_per_update": 4000,
+    "updates": 120,
+    "budget_counting": "Both stochastic collection and deterministic collection inside DGPPO.update",
+    "training_agents": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "training_distribution": "Finite banks sampled from frozen original train_scene; mixed-size updates",
+    "observations": "6D nodes and 5D edges; includes exact spectral margin and workspace clearance",
+    "reward": "Normalized progress minus 0.001 per step; not the EGP-NPA dual-dependent reward",
+    "physical_model": "p_next=p+0.05*u; radial speed bound 0.5; no state clipping",
+    "limitations": "Task adaptation; bank sampling and size-homogeneous batches differ from online scene generation. Native policy architecture and objectives are retained and disclosed.",
+    "devices": [
+      "TFRT_CPU_0"
+    ]
+  },
+  "selection": "Pre-specified final budget model; no selection on the new test",
+  "physical_horizon": 60.0,
+  "hold_seconds": 1.0,
+  "independent_audit": "performed separately"
+}

@@ -1,0 +1,88 @@
+\documentclass[journal]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools,bm}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx,multirow,array,makecell}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{cite}
+\usepackage[colorlinks=true,linkcolor=blue!70!black,citecolor=blue!70!black,urlcolor=blue!70!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{assumption}{Assumption}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\setlist[enumerate]{leftmargin=1.6em,itemsep=1pt,topsep=2pt,parsep=0pt}
+\setlist[itemize]{leftmargin=1.4em,itemsep=1pt,topsep=2pt,parsep=0pt}
+
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bg}{\boldsymbol{g}}
+\newcommand{\be}{\boldsymbol{e}}
+\newcommand{\br}{\boldsymbol{r}}
+\newcommand{\bL}{\boldsymbol{L}_{\mathrm{p}}}
+\newcommand{\bQ}{\boldsymbol{Q}_\perp}
+\newcommand{\bH}{\boldsymbol{H}}
+\newcommand{\bJ}{\boldsymbol{J}}
+\newcommand{\I}{\boldsymbol{I}}
+\newcommand{\lr}{\lambda_{\mathrm{req}}}
+\newcommand{\ds}{d_{\mathrm{safe}}}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\col}{\operatorname{col}}
+\newcommand{\clip}{\operatorname{clip}}
+\newcommand{\tr}{\operatorname{tr}}
+
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.90}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\textfraction}{0.04}
+\renewcommand{\floatpagefraction}{0.88}
+\renewcommand{\dblfloatpagefraction}{0.88}
+\setlength{\dblfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{10pt plus 2pt minus 2pt}
+\setcounter{topnumber}{3}
+\setcounter{dbltopnumber}{3}
+\setcounter{totalnumber}{4}
+
+\allowdisplaybreaks[1]
+
+\begin{document}
+
+\title{Envelope Equivariant Graph Reinforcement Learning and Neighborhood Proximal Allocation for Cooperative Deadlock Resolution of Multi-Robot Systems Under Coupled Safety Constraints}
+
+\author{Wei~Tan and Xin~Chen,~\IEEEmembership{Member,~IEEE}%
+\thanks{Manuscript received November 9, 2026. This work was supported by the National Natural Science Foundation of China. \textit{(Corresponding author: Xin Chen.)}}%
+\thanks{The authors are with the School of Artificial Intelligence and Automation, China University of Geosciences, Wuhan 430074, China, and also with the Hubei Key Laboratory of Advanced Control and Intelligent Automation for Complex Systems, Wuhan 430074, China (e-mail: tanwei@cug.edu.cn; chenxin@cug.edu.cn).}%
+}
+
+\markboth{IEEE TRANSACTIONS ON ROBOTICS / AUTOMATIC CONTROL (MANUSCRIPT)}{TAN AND CHEN: ENVELOPE EQUIVARIANT GRAPH RL AND NEIGHBORHOOD PROXIMAL ALLOCATION FOR DEADLOCK RESOLUTION}
+
+\maketitle
+
+\begin{abstract}
+Multi-robot systems operating under coupled inter-robot collision avoidance and global algebraic connectivity maintenance constraints frequently suffer from non-target geometric deadlocks in dense symmetric encounters, channel blockage by outer stationary target-holding neighbors, and terminal steady-state hovering induced by learned zero-order repulsive residuals. This paper proposes an Envelope Equivariant Graph Policy with Neighborhood Proximal Allocation (EGP-NPA) cooperative control framework. First, we construct an exact rational second-order Karush--Kuhn--Tucker (KKT) certificate on a seven-robot symmetric contact configuration, proving algebraically that even when all robots are freely mobile and an explicit collision-free, spectrally connected path exists, any myopic Control Barrier Function (CBF) safety filter enforcing monotone task-error descent ($\dot{W}\le 0$) is trapped by a positive-definite Lagrangian Hessian over the entire critical cone and a finite-radius quadratic energy barrier. This certificate identifies two necessary and sufficient physical conditions for deadlock resolution: lateral symmetry-breaking nominal drive from swapping robots and dynamic quota-driven yielding from outer stationary neighbors. Second, we construct a planar $\mathrm{SO}(2)$ rotation-, translation-, and permutation-equivariant one-hop message-passing Graph Neural Network (GNN) residual nominal policy, proving the structural necessity of chiral rotational bias over full $\mathrm{O}(2)$ reflection equivariance. Coupled with a closed-neighborhood block NPA safety shield with antisymmetric edge-ledger local settlement, we derive the explicit positive closed-form solution for pairwise quota transfer and stationary neighbor yielding velocity on contact boundaries, and prove why penalizing normal filter intervention suppresses cooperative yielding. Furthermore, a stateless one-hop closed-neighborhood completion envelope is proposed to suppress zero-order pairwise repulsive biases to $\mathcal{O}(\lVert\boldsymbol{e}_k\rVert_2)$ near the goal and restore the zero-velocity target equilibrium. Finally, trained via Multi-Agent Proximal Policy Optimization (MAPPO) on small teams ($N\in\{6,\dots,10\}, B=2$) and deployed zero-shot to larger teams ($N\in\{12,20,25\}, B=8$), EGP-NPA achieves $100\%$ safe arrival and zero safety violations across $96$ dense triangular-lattice swap/permutation benchmarks and $48$ independent holdout instances, outperforming shield-consistent safe MARL ($53.1\%$), decentralized static-CBF shielded GNN ($3.1\%$), primal-dual MAPPO-Lagrangian ($0\%$ violation-free arrival), tangential circulation heuristics ($40.6\%$), and myopic CBF filtering ($15.6\%$). Controlled fixed-weight ablations and second-order \texttt{MuJoCo} virtual-physical simulations with online division-free spectral estimation further validate each module and characterize the safety-margin versus channel-passability trade-off.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Multi-robot systems, control barrier functions, algebraic connectivity, safe reinforcement learning, equivariant graph neural networks, geometric deadlock, neighborhood proximal allocation.
+\end{IEEEkeywords}
+
+\input{sections_en/01_introduction}
+\input{sections_en/02_preliminaries}
+\input{sections_en/03_obstruction}
+\input{sections_en/04_method}
+\input{sections_en/05_experiments}
+\input{sections_en/06_conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

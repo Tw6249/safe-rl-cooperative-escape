@@ -1,0 +1,11 @@
+{
+  "matched_certificate_outputs": 12,
+  "scales": [
+    8,
+    12,
+    20,
+    25
+  ],
+  "arithmetic": "Identical exact rational values; same frozen certificate algorithm; GMP arithmetic backend",
+  "elapsed_seconds": 3.259737699991092
+}

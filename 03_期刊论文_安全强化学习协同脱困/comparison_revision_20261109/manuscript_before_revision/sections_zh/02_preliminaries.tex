@@ -1,0 +1,128 @@
+\section{问题建模与闭邻域近端分配安全滤波}\label{sec:model}
+
+\subsection{平面多机器人固定标签目标模型与有理数闭合信道}
+考虑分布在二维欧氏平面 $\mathbb R^2$ 上的 $N$ 台移动机器人系统（节点集合记为 $\mathcal V=\{1,\dots,N\}$），每台机器人 $i\in\mathcal V$ 的运动学由速度受限的一阶积分器描述：
+\begin{equation}
+ \dot\bp_i(t)=\bu_i(t),\qquad \bu_i(t)\in\mathcal U_i:=\big\{\boldsymbol v\in\mathbb R^2:\norm{\boldsymbol v}_2\le U\big\},
+ \label{eq:kinematics}
+\end{equation}
+其中 $\bp_i\in\mathbb R^2$ 与 $\bu_i\in\mathbb R^2$ 分别为机器人 $i$ 的二维位置与速度控制输入，$U>0$ 为单机最大允许速度幅值（本文统一取 $U=0.50\ \mathrm{m/s}$）。给定互异且静态的固定标签目标位置 $\bg_i\in\mathbb R^2$（满足 $\norm{\bg_i-\bg_j}_2\ge\ds,\ \forall i\ne j$），将全体机器人的位置、控制输入与目标堆叠为全网状态向量 $\bp=\col(\bp_1,\dots,\bp_N)\in\mathbb R^{2N}$、联合控制向量 $\bu=\col(\bu_1,\dots,\bu_N)\in\mathbb R^{2N}$ 与目标构型向量 $\bg=\col(\bg_1,\dots,\bg_N)\in\mathbb R^{2N}$。记单机位置误差为 $\be_i=\bp_i-\bg_i$，全网总误差向量为 $\be=\bp-\bg$，成对相对位置为 $\bp_{ij}=\bp_i-\bp_j$，机间欧氏距离为 $d_{ij}=\norm{\bp_{ij}}_2$。原始导航任务评价函数定义为全网总欧氏距离平方和的一半：
+\begin{equation}
+ W(\bp)=\frac12\norm{\be}_2^2=\frac12\sum_{i=1}^N\norm{\bp_i-\bg_i}_2^2.
+ \label{eq:W-def}
+\end{equation}
+
+为在分析非目标死锁平衡构型与执行采样保持段安全核验时彻底隔离浮点求解器舍入误差与数学模型固有的几何阻塞，物理通信图采用在有理数域 $\mathbb Q$ 上代数闭合的多项式平方截断信道核：
+\begin{equation}
+ \omega(d)=\left(1-\frac{d^2}{R_c^2}\right)_+^2,\qquad R_c=10.0\ \mathrm m.
+ \label{eq:poly-channel}
+\end{equation}
+在有效通信支撑域 $d<R_c$ 内，边权函数 $w_{ij}(\bp)=\omega(d_{ij})$ 是距离平方 $d_{ij}^2=\norm{\bp_i-\bp_j}_2^2$ 的二次多项式，在截断边界 $d=R_c$ 处一阶导数连续且梯度局部 Lipschitz。记图关联向量为 $\boldsymbol b_{ij}=\boldsymbol\varepsilon_i-\boldsymbol\varepsilon_j\in\mathbb R^N$，则状态相关无向加权物理图的拉普拉斯矩阵定义为
+\begin{equation}
+ \bL(\bp)=\sum_{1\le i<j\le N}\omega(d_{ij})\boldsymbol b_{ij}\boldsymbol b_{ij}^{\top}\in\mathbb S_+^N.
+ \label{eq:laplacian}
+\end{equation}
+当机器人坐标 $\bp\in\mathbb Q^{2N}$ 取有理数时，$\bL(\bp)$ 及其关于位置的各阶方向导数均为精确有理数矩阵，从而支持采用精确分数算术零误差地检验 KKT 最优性条件与采样保持段内的实对称矩阵正定性。
+
+\subsection{复合安全配置集与零阶保持整段安全条件}
+将拉普拉斯矩阵 $\bL(\bp)$ 的特征值按升序排列为 $0=\lambda_1(\bL(\bp))\le\lambda_2(\bL(\bp))\le\cdots\le\lambda_N(\bL(\bp))$，其中第二小特征值 $\lambda_2(\bL(\bp))$ 即为网络的代数连通度（Algebraic Connectivity）。全网复合安全配置集定义为 $\mathcal S:=\mathcal X\cap\mathcal C$，其中 $\mathcal X=[-B_{\mathrm{ws}},B_{\mathrm{ws}}]^{2N}$ 为有界矩形工作区，
+\begin{equation}
+ \mathcal C=\big\{\bp\in\mathbb R^{2N}:\ d_{ij}\ge\ds\ (\forall i<j),\ \lambda_2(\bL(\bp))\ge\lr\big\}
+ \label{eq:safe-set}
+\end{equation}
+为同时满足成对机间避碰距离下界 $\ds>0$ 与全局代数连通度下界 $\lr>0$ 的安全配置集。
+
+选取满足 $\bQ^{\top}\bQ=\I_{N-1}$ 与 $\bQ^{\top}\boldsymbol 1_N=\boldsymbol 0$ 的固定正交补基矩阵 $\bQ\in\mathbb R^{N\times(N-1)}$，定义零均值子空间上的压缩谱裕度矩阵：
+\begin{equation}
+\begin{split}
+ \bH(\bp)&=\bQ^{\top}\bL(\bp)\bQ-\lr\I_{N-1},\\
+ \bH(\bp)&\succeq\boldsymbol 0\ \Longleftrightarrow\ \lambda_2(\bL(\bp))\ge\lr.
+\end{split}
+ \label{eq:H-matrix}
+\end{equation}
+沿联合速度向量 $\bu=\col(\bu_1,\dots,\bu_N)$，矩阵 $\bH(\bp)$ 的方向导数为 $D\bH(\bp)[\bu]=\bQ^{\top}\sum_{i<j}[\nabla_{\bp_i}w_{ij}^{\top}(\bu_i-\bu_j)]\boldsymbol b_{ij}\boldsymbol b_{ij}^{\top}\bQ$。以 $h_{ij}^{\mathrm{col}}(\bp)=d_{ij}^2-\ds^2$ 表示成对避碰控制障碍函数，连续时间复合安全输入集定义为
+\begin{equation}
+\begin{split}
+ \mathcal K_0(\bp)&=\Big\{\bu\in\mathbb R^{2N}:\ 2\bp_{ij}^{\top}(\bu_i-\bu_j)+\alpha_c h_{ij}^{\mathrm{col}}(\bp)\ge 0,\\
+ &\quad D\bH(\bp)[\bu]+\alpha_s\bH(\bp)\succeq\boldsymbol 0,\\
+ &\quad \bu_i\in\mathcal U_i,\ |p_{i,a}+\alpha_x^{-1}u_{i,a}|\le B_{\mathrm{ws}}\ (\forall i<j,\,a)\Big\},
+\end{split}\label{eq:K0-def}
+\end{equation}
+式中 $\alpha_c,\alpha_s,\alpha_x>0$ 为障碍函数衰减率系数（单位 $\mathrm s^{-1}$）。在式\eqref{eq:K0-def}中，第一项为成对机间避碰 CBF 约束，第二项为全局代数连通度保持约束，后两项为单机速度球与工作区边界约束。对任意安全构型 $\bp\in\mathcal S$，由于 $h_{ij}^{\mathrm{col}}(\bp)\ge 0$ 且 $\bH(\bp)\succeq\boldsymbol 0$，集合 $\mathcal K_0(\bp)$ 非空、闭且凸，且零速度向量恒为其内禀可行解（$\boldsymbol 0\in\mathcal K_0(\bp)$）。给定任意标称参考速度 $\bu^{\mathrm{nom}}\in\mathbb R^{2N}$，集中式最小修正安全投影定义为
+\begin{equation}
+ \Pi_{\mathcal K_0(\bp)}(\bu^{\mathrm{nom}})=\arg\min_{\bu\in\mathcal K_0(\bp)}\frac12\norm{\bu-\bu^{\mathrm{nom}}}_2^2.
+ \label{eq:central-proj}
+\end{equation}
+
+在数字采样控制实现中，第 $k$ 个采样时刻 $t_k=k\Delta t$ 求得的执行速度 $\bu_k$ 在采样区间 $[t_k,t_k+h]$（标称步长 $h=\Delta t=0.05\ \mathrm s$）内通过零阶保持器（Zero-Order Hold, ZOH）维持常值，机器人沿直线段 $\bp(s)=\bp_k+s\bu_k$（$s\in[0,h]$）运动。利用多项式信道核式\eqref{eq:poly-channel}的二阶导数下界 $\frac{\mathrm d^2}{\mathrm ds^2}\bH(\bp_k+s\bu_k)\succeq -c_L\norm{\bu_k}_2^2\I_{N-1}$（其中显式二阶曲率常数为 $c_L=8N/R_c^2$），可建立如下采样整段连续时间安全保证。
+
+\begin{theorem}[零阶保持执行段的连续时间安全性]\label{thm:zoh-safe}
+设采样起点满足 $\bp_k\in\mathcal S$，步长参数满足 $\alpha_c h\le 1,\alpha_s h\le 1,\alpha_x h\le 1$。若执行速度 $\bu_k$ 满足输入球与工作区约束、式\eqref{eq:K0-def}的成对避碰线性 CBF 约束以及曲率收紧谱条件
+\begin{equation}
+ D\bH(\bp_k)[\bu_k]+\alpha_s\bH(\bp_k)\succeq\frac{c_L h}{2}\norm{\bu_k}_2^2\I_{N-1},
+ \label{eq:zoh-tightened}
+\end{equation}
+则在整段连续采样区间 $s\in[0,h]$ 上，轨迹 $\bp(s)=\bp_k+s\bu_k$ 恒满足机间避碰 $d_{ij}(s)\ge\ds\ (\forall i<j)$、全局代数连通度下界 $\lambda_2(\bL(\bp(s)))\ge\lr$ 及工作区约束 $\bp(s)\in\mathcal X$。
+\end{theorem}
+\begin{proof}
+对任意机器人对 $1\le i<j\le N$，零阶保持直线段 $\bp(s)=\bp_k+s\bu_k$ 上距离平方障碍函数 $h_{ij}^{\mathrm{col}}(\bp(s))=\norm{\bp_{ij,k}+s(\bu_{i,k}-\bu_{j,k})}_2^2-\ds^2$ 是关于 $s$ 的凸二次函数，其精确二次展开结合式\eqref{eq:K0-def}第一项及 $\alpha_c s\le\alpha_c h\le 1$ 给出
+\begin{equation}
+\begin{split}
+ h_{ij}^{\mathrm{col}}(\bp_k+s\bu_k)&=h_{ij}^{\mathrm{col}}(\bp_k)+2s\bp_{ij,k}^{\top}(\bu_{i,k}-\bu_{j,k})\\
+ &\quad+s^2\norm{\bu_{i,k}-\bu_{j,k}}_2^2\\
+ &\ge(1-\alpha_c s)h_{ij}^{\mathrm{col}}(\bp_k)\ge 0.
+\end{split}
+\end{equation}
+对于压缩谱裕度矩阵 $\bH(\bp_k+s\bu_k)$，由带积分余项的二阶 Taylor 展开及二阶方向导数下界 $\frac{\mathrm d^2}{\mathrm d\tau^2}\bH(\bp_k+\tau\bu_k)\succeq -c_L\norm{\bu_k}_2^2\I_{N-1}$ 可得，对任意 $s\in[0,h]$，
+\begin{equation}
+\begin{split}
+ \bH(\bp_k+s\bu_k)&\succeq\bH(\bp_k)+sD\bH(\bp_k)[\bu_k]\\
+ &\quad-\tfrac12 c_L s^2\norm{\bu_k}_2^2\I_{N-1}\\
+ &\succeq(1-\alpha_s s)\bH(\bp_k)\\
+ &\quad+\tfrac12 c_L s(h-s)\norm{\bu_k}_2^2\I_{N-1}\succeq\boldsymbol 0,
+\end{split}
+\end{equation}
+其中第二步代入了式\eqref{eq:zoh-tightened}，最后一步由 $\bH(\bp_k)\succeq\boldsymbol 0$、$1-\alpha_s s\ge 0$ 及 $s(h-s)\ge 0$ 成立。工作区线性边界约束由端点凸组合性质在整段保持。
+\end{proof}
+
+\subsection{闭邻域近端分配（NPA）与反对称边记录本地结清预备知识}\label{subsec:npa-prelim}
+在分布式执行中，第 $k$ 拍的耦合安全约束统一表示为 $M_k=1+P_k$ 行线性化不等式组：
+\begin{equation}
+ \sum_{i\in\mathcal V_a}\big(\boldsymbol a_{ia,k}^{\top}\bu_i+b_{ia,k}\big)\le 0,\qquad a\in\{0,1,\dots,P_k\},
+ \label{eq:coupled-rows}
+\end{equation}
+其中第 $a=0$ 行对应全网参与（$\mathcal V_0=\mathcal V$）的代数连通度保持约束：记单位归一化 Fiedler 特征向量为 $\boldsymbol\phi_k\in\mathbb R^N$（满足 $\boldsymbol 1_N^{\top}\boldsymbol\phi_k=0,\norm{\boldsymbol\phi_k}_2=1$），附加离散化安全裕度为 $\delta_\lambda>0$（有效阈值 $\lambda_{\mathrm{eff}}=\lr+\delta_\lambda$），则 $\boldsymbol a_{i0,k}=-\sum_{j\ne i}(\phi_{i,k}-\phi_{j,k})^2\nabla_{\bp_i}w_{ij}(\bp_k)$，$b_{i0,k}=-\frac{\alpha_s}{N}(\lambda_2(\bL(\bp_k))-\lambda_{\mathrm{eff}})$；第 $a\in\{1,\dots,P_k\}$ 行对应两端点 $\mathcal V_a=\{i,j\}$ 参与的成对避碰约束：$\boldsymbol a_{ia,k}=-2\bp_{ij,k},\boldsymbol a_{ja,k}=2\bp_{ij,k},b_{ia,k}=b_{ja,k}=-\frac{\alpha_c}{2}(d_{ij,k}^2-\ds^2)$。注意在安全配置集内恒有零速可行初值条件 $b_{ia,k}\le 0$。需要说明的是，在本文重点研究的紧密正六边形三角晶格内部互换任务中，尽管初始对称晶格具有二重拉普拉斯特征值 $\lambda_2=\lambda_3$，但由于各机器人仅在紧凑晶格内部进行局部错位穿插而未发生整体大幅外扩，全程代数连通度始终远高于安全阈值 $\lr\in[0.55,0.90]\lambda_2(\bp_0)$（例如第\ref{sec:experiments}节中 $\lambda_2(\bL(\bp(t)))\approx 15.3\gg\lr=9.69$），谱约束在内部互换死锁阶段处于非激活状态，真正的几何瓶颈完全来自紧贴 $\ds=1.000\ \mathrm m$ 接触边界的多重成对避碰约束耦合。
+
+为在仅允许一跳通信图 $\mathcal G_{\mathrm c}(\bp_k)=(\mathcal V,\mathcal E_k)$（有向边 $(i,j)\in\mathcal E_k\Longleftrightarrow 0<d_{ij,k}\le R_{\mathrm{sense}}$，开邻域 $\mathcal N_{i,k}=\{j:(i,j)\in\mathcal E_k\}$，闭邻域 $\mathcal N_{i,k}^+=\{i\}\cup\mathcal N_{i,k}$）局部交互的前提下无违约地求解式\eqref{eq:coupled-rows}，引入零和配额（份额）变量 $s_{ia,k}\in\mathbb R$，使节点 $i$ 的本地解耦约束写为 $\boldsymbol a_{ia,k}^{\top}\bu_i+b_{ia,k}+s_{ia,k}\le 0$。每个节点 $i$ 的配额由驻留于无向通信边 $e=\{i,j\}$ 上的反对称边记录（Edge Ledger）$\varpi_{e,a,k}$ 精确重构为
+\begin{equation}
+ s_{ia,k}=\sum_{e\ni i}\sigma_{i,e}\varpi_{e,a,k}\quad\Longrightarrow\quad \sum_{i\in\mathcal V_a}s_{ia,k}=0,
+ \label{eq:edge-ledger}
+\end{equation}
+其中 $\sigma_{i,e}\in\{+1,-1\}$ 为边 $e=\{i,j\}$ 的端点定向符号（对 $i<j$ 规定 $\sigma_{i,e}=+1,\sigma_{j,e}=-1$）。由于每条边的两端点符号相反，对边记录 $\varpi_{e,a,k}$ 的任何局部对称更新均在代数上恒等保持全局零和性质 $\sum_{i\in\mathcal V_a}s_{ia,k}=0$，从而只要各节点满足本地约束 $\boldsymbol a_{ia,k}^{\top}\bu_i+b_{ia,k}+s_{ia,k}\le 0$，对其求和即无条件保证全局耦合约束式\eqref{eq:coupled-rows}成立。每拍闭邻域近端分配（NPA）滤波器 $L$ 按序执行两个阶段：
+\begin{enumerate}
+ \item \textbf{阶段一（拍首断边撤销、单机安全重拟合与一跳本地结清）：} 在采样时刻 $t_k$ 初，若通信边 $e=\{i,j\}$ 因距离超出 $R_{\mathrm{sense}}$ 而断开，两端点同步清零该边记录 $\varpi_{e,a,k-1}\leftarrow 0$；随后每个机器人 $i\in\mathcal V$ 在继承配额 $\boldsymbol s_{i,k-1}$ 下独立求解单机安全重拟合二次规划（记其对应的非负拉格朗日对偶乘子向量为 $\boldsymbol\mu_{i,k-1}$）：
+ \begin{equation}
+\begin{split}
+  \min_{\bu_i\in\mathcal U_i\cap\mathcal X_i}&\ \frac12\norm{\bu_i-\bu_{i,k}^{\mathrm{nom}}}_2^2\\
+  \text{s.t.}\quad&\ \boldsymbol a_{ia,k}^{\top}\bu_i+b_{ia,k}+s_{ia,k-1}\le 0,\ \forall a\ni i,
+\end{split}
+  \label{eq:refit-one}
+ \end{equation}
+ 其中 $\mathcal X_i=\{\boldsymbol v\in\mathbb R^2:|p_{i,a,k}+\alpha_x^{-1}v_a|\le B_{\mathrm{ws}},\,a\in\{1,2\}\}$。若机器人 $i$ 的单机重拟合式\eqref{eq:refit-one}不可行，则触发一跳本地结清（One-Hop Local Settlement）：节点 $i$ 将其关联的全部通信边记录清零（使 $s_{ia}=0$，由于零速可行初值条件 $b_{ia,k}\le 0$ 成立，清零后零速度 $\bu_i=\boldsymbol 0$ 必为严格可行解），并仅通知受影响的一跳邻居重新求解式\eqref{eq:refit-one}，从而在单跳通信内恢复全网严格可行的热启动初值 $(\bu_k^{(0)},\boldsymbol s_k^{(0)})$。
+ \item \textbf{阶段二（$B$ 轮闭邻域块近端分配迭代）：} 在第 $r\in\{1,\dots,B\}$ 轮，以每个节点 $i\in\mathcal V$ 为中心的闭邻域诱导子图 $\mathcal G_i^+=(\mathcal N_{i,k}^+,E_i)$（其中 $E_i=\{\{q,m\}\in\mathcal E_k:q,m\in\mathcal N_{i,k}^+\}$ 为闭邻域块内部边集）并行求解闭邻域块二次规划：
+ \begin{equation}
+ \begin{split}
+  \min_{\tilde\bu_q,w_q,t_e}&\ \frac12\!\sum_{q\in\mathcal N_{i,k}^+}\!\norm{\tilde\bu_q-\bu_{q,k}^{\mathrm{nom}}}_2^2\\
+  &\quad+\frac{1}{2\eta}\!\sum_{q\in\mathcal N_{i,k}^+}\!w_q^2+\frac{1}{\eta}\!\sum_{e\in E_i}\!t_e^2\\
+  \text{s.t.}\ &\ \boldsymbol a_{q0,k}^{\top}\tilde\bu_q+b_{q0,k}+s_{q0,k}^{(r-1)}+w_q\le 0,\\
+  &\ \boldsymbol a_{qa,k}^{\top}\tilde\bu_q+b_{qa,k}+s_{qa,k}^{(r-1)}+\!\sum_{e\in E_{i,a}}\!\sigma_{q,e}t_e\le 0,\\
+  &\ \sum_{q\in\mathcal N_{i,k}^+}w_q=0,\quad \tilde\bu_q\in\mathcal U_q\cap\mathcal X_q,
+ \end{split}\label{eq:block-qp}
+ \end{equation}
+ 式中 $\eta>0$ 为近端正则步长参数（本文取 $\eta=2.0$），$w_q$ 为块内谱配额增量，$E_{i,a}=\{e\in E_i:a(e)=a\}$，$t_e$ 为块内接触边 $e=\{q,m\}\in E_i$ 上的成对避碰配额转移量。各闭邻域块求得局部最优解 $(\{\tilde\bu_q^{(i)}\},\{w_q^{(i)}\},\{t_e^{(i)}\})$ 后，按中心凸组合权重 $\vartheta_i=(\max_{q\in\mathcal N_{i,k}^+}|\mathcal N_{q,k}^+|)^{-1}$（满足 $\sum_{i:q\in\mathcal N_{i,k}^+}\vartheta_i\le 1$）同步提交更新：
+ \begin{equation}
+  \bu_q^{(r)}=\Big(1-\sum_{i:q\in\mathcal N_{i,k}^+}\vartheta_i\Big)\bu_q^{(r-1)}+\sum_{i:q\in\mathcal N_{i,k}^+}\vartheta_i\tilde\bu_q^{(i)}.
+  \label{eq:convex-commit}
+ \end{equation}
+\end{enumerate}
+由于式\eqref{eq:convex-commit}是多个局部可行解的凸组合，无论内层协商轮数 $B\ge 0$ 取何有限值，任意截断轮数下的输出 $(\bu_k^{(B)},\boldsymbol s_k^{(B)})$ 均严格满足全部耦合安全约束式\eqref{eq:coupled-rows}且单调降低与标称速度 $\bu_k^{\mathrm{nom}}$ 的二次跟踪偏差。

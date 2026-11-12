@@ -1,0 +1,367 @@
+{
+  "rows": [
+    {
+      "label": "clocal_p0_s1",
+      "split": "E1n",
+      "seed": 20261107,
+      "critic": "local",
+      "projection_weight": 0.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 484737,
+      "selected_iteration": 39,
+      "selected_steps": 359999,
+      "count": 32,
+      "safe_arrivals": 32,
+      "median_arrival": 11.500000000000028,
+      "statuses": {
+        "arrived": 32
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 11.36093750000003
+    },
+    {
+      "label": "clocal_p0_s1",
+      "split": "E2n",
+      "seed": 20261107,
+      "critic": "local",
+      "projection_weight": 0.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 484737,
+      "selected_iteration": 39,
+      "selected_steps": 359999,
+      "count": 16,
+      "safe_arrivals": 4,
+      "median_arrival": 15.875000000000092,
+      "statuses": {
+        "horizon_reached": 12,
+        "arrived": 4
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 50.41562499999998
+    },
+    {
+      "label": "clocal_p0_s2",
+      "split": "E1n",
+      "seed": 20261108,
+      "critic": "local",
+      "projection_weight": 0.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 484935,
+      "selected_iteration": 47,
+      "selected_steps": 419597,
+      "count": 32,
+      "safe_arrivals": 32,
+      "median_arrival": 11.225000000000025,
+      "statuses": {
+        "arrived": 32
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 11.42343750000003
+    },
+    {
+      "label": "clocal_p0_s2",
+      "split": "E2n",
+      "seed": 20261108,
+      "critic": "local",
+      "projection_weight": 0.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 484935,
+      "selected_iteration": 47,
+      "selected_steps": 419597,
+      "count": 16,
+      "safe_arrivals": 9,
+      "median_arrival": 15.200000000000081,
+      "statuses": {
+        "arrived": 9,
+        "horizon_reached": 7
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 35.106250000000024
+    },
+    {
+      "label": "clocal_p1_s1",
+      "split": "E1n",
+      "seed": 20261107,
+      "critic": "local",
+      "projection_weight": 1.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 486646,
+      "selected_iteration": 15,
+      "selected_steps": 139786,
+      "count": 32,
+      "safe_arrivals": 31,
+      "median_arrival": 16.200000000000095,
+      "statuses": {
+        "arrived": 31,
+        "horizon_reached": 1
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 19.973437500000085
+    },
+    {
+      "label": "clocal_p1_s1",
+      "split": "E2n",
+      "seed": 20261107,
+      "critic": "local",
+      "projection_weight": 1.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 486646,
+      "selected_iteration": 15,
+      "selected_steps": 139786,
+      "count": 16,
+      "safe_arrivals": 8,
+      "median_arrival": 13.425000000000056,
+      "statuses": {
+        "horizon_reached": 8,
+        "arrived": 8
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 39.32187500000002
+    },
+    {
+      "label": "clocal_p1_s2",
+      "split": "E1n",
+      "seed": 20261108,
+      "critic": "local",
+      "projection_weight": 1.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 487089,
+      "selected_iteration": 15,
+      "selected_steps": 128734,
+      "count": 32,
+      "safe_arrivals": 32,
+      "median_arrival": 11.350000000000026,
+      "statuses": {
+        "arrived": 32
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 13.146875000000051
+    },
+    {
+      "label": "clocal_p1_s2",
+      "split": "E2n",
+      "seed": 20261108,
+      "critic": "local",
+      "projection_weight": 1.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 487089,
+      "selected_iteration": 15,
+      "selected_steps": 128734,
+      "count": 16,
+      "safe_arrivals": 14,
+      "median_arrival": 13.72500000000006,
+      "statuses": {
+        "arrived": 14,
+        "horizon_reached": 2
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 22.878125000000008
+    },
+    {
+      "label": "cteam_p0_s1",
+      "split": "E1n",
+      "seed": 20261107,
+      "critic": "team",
+      "projection_weight": 0.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 481990,
+      "selected_iteration": 23,
+      "selected_steps": 215688,
+      "count": 32,
+      "safe_arrivals": 32,
+      "median_arrival": 12.700000000000045,
+      "statuses": {
+        "arrived": 32
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 12.09531250000004
+    },
+    {
+      "label": "cteam_p0_s1",
+      "split": "E2n",
+      "seed": 20261107,
+      "critic": "team",
+      "projection_weight": 0.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 481990,
+      "selected_iteration": 23,
+      "selected_steps": 215688,
+      "count": 16,
+      "safe_arrivals": 12,
+      "median_arrival": 11.350000000000026,
+      "statuses": {
+        "arrived": 12,
+        "horizon_reached": 4
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 28.23125000000001
+    },
+    {
+      "label": "cteam_p0_s2",
+      "split": "E1n",
+      "seed": 20261108,
+      "critic": "team",
+      "projection_weight": 0.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 484821,
+      "selected_iteration": 47,
+      "selected_steps": 400571,
+      "count": 32,
+      "safe_arrivals": 32,
+      "median_arrival": 9.424999999999999,
+      "statuses": {
+        "arrived": 32
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 9.792187500000011
+    },
+    {
+      "label": "cteam_p0_s2",
+      "split": "E2n",
+      "seed": 20261108,
+      "critic": "team",
+      "projection_weight": 0.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 484821,
+      "selected_iteration": 47,
+      "selected_steps": 400571,
+      "count": 16,
+      "safe_arrivals": 14,
+      "median_arrival": 9.600000000000001,
+      "statuses": {
+        "arrived": 14,
+        "horizon_reached": 2
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 20.490625000000037
+    },
+    {
+      "label": "cteam_p1_s1",
+      "split": "E1n",
+      "seed": 20261107,
+      "critic": "team",
+      "projection_weight": 1.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 481274,
+      "selected_iteration": 7,
+      "selected_steps": 71056,
+      "count": 32,
+      "safe_arrivals": 32,
+      "median_arrival": 12.550000000000043,
+      "statuses": {
+        "arrived": 32
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 12.99375000000005
+    },
+    {
+      "label": "cteam_p1_s1",
+      "split": "E2n",
+      "seed": 20261107,
+      "critic": "team",
+      "projection_weight": 1.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 481274,
+      "selected_iteration": 7,
+      "selected_steps": 71056,
+      "count": 16,
+      "safe_arrivals": 9,
+      "median_arrival": 11.400000000000027,
+      "statuses": {
+        "arrived": 9,
+        "horizon_reached": 7
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 34.103125000000034
+    },
+    {
+      "label": "cteam_p1_s2",
+      "split": "E1n",
+      "seed": 20261108,
+      "critic": "team",
+      "projection_weight": 1.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 486021,
+      "selected_iteration": 7,
+      "selected_steps": 73301,
+      "count": 32,
+      "safe_arrivals": 32,
+      "median_arrival": 11.125000000000023,
+      "statuses": {
+        "arrived": 32
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 12.735937500000045
+    },
+    {
+      "label": "cteam_p1_s2",
+      "split": "E2n",
+      "seed": 20261108,
+      "critic": "team",
+      "projection_weight": 1.0,
+      "allocated_steps": 480000,
+      "actual_training_steps": 486021,
+      "selected_iteration": 7,
+      "selected_steps": 73301,
+      "count": 16,
+      "safe_arrivals": 11,
+      "median_arrival": 12.800000000000047,
+      "statuses": {
+        "arrived": 11,
+        "horizon_reached": 5
+      },
+      "audit_failed": 0,
+      "cuts": 0,
+      "restricted_completion_time": 29.34375000000005
+    }
+  ],
+  "pairs": [
+    {
+      "critic": "team",
+      "seed_index": 1,
+      "baseline_only": 3,
+      "regularized_only": 0,
+      "common": 41,
+      "median_regularized_minus_baseline": 0.0
+    },
+    {
+      "critic": "team",
+      "seed_index": 2,
+      "baseline_only": 3,
+      "regularized_only": 0,
+      "common": 43,
+      "median_regularized_minus_baseline": 1.6000000000000227
+    },
+    {
+      "critic": "local",
+      "seed_index": 1,
+      "baseline_only": 1,
+      "regularized_only": 4,
+      "common": 35,
+      "median_regularized_minus_baseline": 4.350000000000062
+    },
+    {
+      "critic": "local",
+      "seed_index": 2,
+      "baseline_only": 0,
+      "regularized_only": 5,
+      "common": 41,
+      "median_regularized_minus_baseline": 1.6000000000000032
+    }
+  ]
+}
