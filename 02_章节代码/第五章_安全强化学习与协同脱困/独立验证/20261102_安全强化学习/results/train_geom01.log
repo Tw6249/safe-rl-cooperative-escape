@@ -1,0 +1,2 @@
+it  -1 initial policy | VAL 0.194 t=13.60714285714286 {'0.6': 0.19444444444444445}
+it   0 steps    8352 succ 0.75 ret +1.218 reasons {'success': 18, 'truncated': 6} kl 0.0021 std [0.3989344835281372, 0.3985193073749542] gate 1.00 roll 105s it 106s

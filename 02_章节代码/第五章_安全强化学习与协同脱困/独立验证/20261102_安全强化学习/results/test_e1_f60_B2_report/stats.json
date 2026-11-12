@@ -1,0 +1,105 @@
+{
+ "groups": {
+  "heur_B2|0.6": {
+   "n": 32,
+   "arrived": 16,
+   "audit_failed": 0
+  },
+  "myopic_B2|0.6": {
+   "n": 32,
+   "arrived": 16,
+   "audit_failed": 0
+  },
+  "rl_full_B2|0.6": {
+   "n": 32,
+   "arrived": 32,
+   "audit_failed": 0
+  }
+ },
+ "pairs": {
+  "rl_full_B2:myopic_B2": {
+   "0.6": {
+    "pairs": 32,
+    "a_arrived": 32,
+    "b_arrived": 16,
+    "a_only": 16,
+    "b_only": 0,
+    "exact_binomial_p": 3.0517578125e-05,
+    "both": 16,
+    "dt_median": -24.625000000000135,
+    "dt_mean": -20.937499999999897,
+    "a_faster": 16,
+    "a_slower": 0
+   },
+   "all": {
+    "pairs": 32,
+    "a_arrived": 32,
+    "b_arrived": 16,
+    "a_only": 16,
+    "b_only": 0,
+    "exact_binomial_p": 3.0517578125e-05,
+    "both": 16,
+    "dt_median": -24.625000000000135,
+    "dt_mean": -20.937499999999897,
+    "a_faster": 16,
+    "a_slower": 0
+   }
+  },
+  "rl_full_B2:heur_B2": {
+   "0.6": {
+    "pairs": 32,
+    "a_arrived": 32,
+    "b_arrived": 16,
+    "a_only": 16,
+    "b_only": 0,
+    "exact_binomial_p": 3.0517578125e-05,
+    "both": 16,
+    "dt_median": -23.950000000000014,
+    "dt_mean": -22.409374999999894,
+    "a_faster": 16,
+    "a_slower": 0
+   },
+   "all": {
+    "pairs": 32,
+    "a_arrived": 32,
+    "b_arrived": 16,
+    "a_only": 16,
+    "b_only": 0,
+    "exact_binomial_p": 3.0517578125e-05,
+    "both": 16,
+    "dt_median": -23.950000000000014,
+    "dt_mean": -22.409374999999894,
+    "a_faster": 16,
+    "a_slower": 0
+   }
+  },
+  "heur_B2:myopic_B2": {
+   "0.6": {
+    "pairs": 32,
+    "a_arrived": 16,
+    "b_arrived": 16,
+    "a_only": 6,
+    "b_only": 6,
+    "exact_binomial_p": 1.0,
+    "both": 10,
+    "dt_median": 11.52499999999957,
+    "dt_mean": 6.864999999999978,
+    "a_faster": 3,
+    "a_slower": 7
+   },
+   "all": {
+    "pairs": 32,
+    "a_arrived": 16,
+    "b_arrived": 16,
+    "a_only": 6,
+    "b_only": 6,
+    "exact_binomial_p": 1.0,
+    "both": 10,
+    "dt_median": 11.52499999999957,
+    "dt_mean": 6.864999999999978,
+    "a_faster": 3,
+    "a_slower": 7
+   }
+  }
+ }
+}

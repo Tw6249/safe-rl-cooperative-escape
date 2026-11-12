@@ -1,0 +1,521 @@
+{
+ "seed": 20261105,
+ "groups": {
+  "wfull_gint": {
+   "variant": "full",
+   "gate": "int"
+  },
+  "wfull_gone": {
+   "variant": "full",
+   "gate": "one"
+  },
+  "wfullint_gmu": {
+   "variant": "full_int",
+   "gate": "mu"
+  },
+  "wgeom_gmu": {
+   "variant": "geom",
+   "gate": "mu"
+  },
+  "rl_full_env": {
+   "variant": "full",
+   "gate": "mu"
+  },
+  "rl_full_int_env": {
+   "variant": "full_int",
+   "gate": "int"
+  }
+ },
+ "repro_scene": "H12_local2_s20261105",
+ "ckpt": {
+  "full": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt",
+  "geom": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_geom02\\best.pt",
+  "full_int": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_fullint02\\best.pt"
+ },
+ "eps_g": 0.05,
+ "rounds": 8,
+ "horizon": 60.0,
+ "jobs": [
+  {
+   "seed": 20261105,
+   "scene": "H25_local0_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local1_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local2_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local3_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local0_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local1_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local2_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local3_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local0_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local1_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local2_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local3_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local0_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local1_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local2_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H25_local3_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 25
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local0_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local1_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local2_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local3_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_perm0_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_perm1_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local0_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local1_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local2_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local3_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_perm0_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_perm1_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local0_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local1_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local2_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local3_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_perm0_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_perm1_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local0_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local1_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local2_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_local3_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_perm0_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H20_perm1_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 20
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local0_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local1_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local2_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local3_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_perm0_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_perm1_s20261105",
+   "group": "wfull_gint",
+   "tag": "wfull_gint_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local0_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local1_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local2_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local3_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_perm0_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_perm1_s20261105",
+   "group": "wfull_gone",
+   "tag": "wfull_gone_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local0_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local1_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local2_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local3_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_perm0_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_perm1_s20261105",
+   "group": "wfullint_gmu",
+   "tag": "wfullint_gmu_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local0_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local1_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local2_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local3_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_perm0_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_perm1_s20261105",
+   "group": "wgeom_gmu",
+   "tag": "wgeom_gmu_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local2_s20261105",
+   "group": "rl_full_env",
+   "tag": "rl_full_env_B8",
+   "n": 12
+  },
+  {
+   "seed": 20261105,
+   "scene": "H12_local2_s20261105",
+   "group": "rl_full_int_env",
+   "tag": "rl_full_int_env_B8",
+   "n": 12
+  }
+ ],
+ "source_sha256": {
+  "gate_swap.py": "1f539e25d708b3f1cea580a4caab6e916029fc948c988f0af5c42c47a6d1eeda",
+  "eval_env.py": "65752a8c644dd4b1ea6a7cd655384b0aab19977276108614808a93bf434fe467",
+  "evaluate.py": "15ff76dd8122ebf1ad642a701d2414ecac910e9ea05317c67488289c276e149a",
+  "sarl_env.py": "694b7670f3a274a61a5682976d59b19c09c9416c1759dd3bfea92509f3f42c29",
+  "sarl_policy.py": "660eb8d421f8a1acc7471315db7b2e18afdc90dd0f10c1c98e586a6cf7d755db",
+  "sysperf.py": "34f2c8eb60114594dc28a7be6cbe486377589273530f908ec1b781e7d68a57d7",
+  "ckpt/full": "cf5758465402370fdf61b9840f1afa1f2ff9a4f2880f6f9115bf7a329a6bdb72",
+  "ckpt/geom": "3020e217b75b5c6b786446e028fc3068ec09dcc682bd56df45d70f94418c90b1",
+  "ckpt/full_int": "3d83fba4bf59e5ac6b4a9e2aae3cc39d844d388d6357f865da42be1fb0ad779a"
+ },
+ "python": "3.13.5 | packaged by Anaconda, Inc. | (main, Jun 12 2025, 16:37:03) [MSC v.1929 64 bit (AMD64)]",
+ "platform": "Windows-11-10.0.26200-SP0",
+ "numpy": "2.3.5",
+ "process_settings": {
+  "throttling_disabled": true,
+  "below_normal": true
+ },
+ "started": "2026-11-03 07:27:39"
+}

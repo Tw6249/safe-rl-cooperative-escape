@@ -1,0 +1,178 @@
+{
+  "scope": "Exact reachable strict task local minimum; not a deadlock-escape controller",
+  "scaled_positions": [
+    [
+      "-1",
+      "0"
+    ],
+    [
+      "-1/2",
+      "1/2"
+    ],
+    [
+      "-1/2",
+      "-1/2"
+    ],
+    [
+      "0",
+      "0"
+    ],
+    [
+      "1/2",
+      "1/2"
+    ],
+    [
+      "1/2",
+      "-1/2"
+    ],
+    [
+      "1",
+      "0"
+    ]
+  ],
+  "physical_y": "sqrt(3) times scaled y",
+  "exchanged_indices": [
+    3,
+    6
+  ],
+  "collision_distance": "1",
+  "goal_is_safe": true,
+  "task_at_initial": "1",
+  "zero_control_KKT_multiplier": "1/2 on the exchanged pair; all others zero",
+  "critical_cone": "G*v>=0, vx_center=vx_right",
+  "normalized_transverse_difference": "physical vy_center-vy_right=sqrt(3)",
+  "contact_edges": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      5,
+      6
+    ]
+  ],
+  "scaled_primal": [
+    "-15/496",
+    "15/496",
+    "-33/124",
+    "33/124",
+    "-105/496",
+    "-15/496",
+    "45/248",
+    "103/248",
+    "177/496",
+    "177/496",
+    "-105/496",
+    "-225/496",
+    "45/248",
+    "-145/248"
+  ],
+  "exact_dual": [
+    "0",
+    "15/248",
+    "0",
+    "33/62",
+    "0",
+    "0",
+    "15/62",
+    "177/248",
+    "0",
+    "0",
+    "0",
+    "225/248"
+  ],
+  "equality_dual": [
+    "135/496",
+    "1545/496"
+  ],
+  "exact_KKT_and_reflection": true,
+  "minimum_norm_sq": "1545/496",
+  "minimum_norm_sq_per_physical_transverse_sq": "515/496",
+  "lagrangian_coercivity": "19/515",
+  "finite_local_growth": {
+    "radius": "1/200",
+    "coefficient": "1/100",
+    "bound": "W(p+delta)-1 >= coefficient*||delta||^2",
+    "conservative_error_barrier": "1/4000000"
+  },
+  "strictly_interior_trap": {
+    "initial": "(1+epsilon)*p_initial",
+    "goal": "(1+tau)*p_exchanged",
+    "epsilon": "1/100000000",
+    "tau": "1/1000000",
+    "initial_minimum_collision_h": "200000001/10000000000000000",
+    "goal_minimum_collision_h": "2000001/1000000000000",
+    "sphere_task_increase_lower_bound": "19/80000000",
+    "initial_task_increase": "99999503/10000000000000000",
+    "initial_inside_ball": true,
+    "goal_outside_ball": true,
+    "strictly_below_exit_barrier": true,
+    "reachable_with_same_expand_exchange_contract_witness": true,
+    "scope": "Every continuous safe trajectory with nonincreasing perturbed task stays in the ball; not a sampled-QP claim",
+    "certified_open_initial_ball_radius": "1/400000000",
+    "open_initial_set": "Every start in this ball is strictly safe, below the exit barrier, and can first travel safely to the center of the ball"
+  },
+  "reachable_witness": {
+    "stages": [
+      "uniformly expand by 3",
+      "half-circle exchange of two labels",
+      "uniformly contract"
+    ],
+    "note": "Witness only; never used as input to any proposed controller",
+    "circle_to_stationary_center_distances_sq": [
+      "81/4",
+      "63/4",
+      "63/4",
+      "27/4",
+      "27/4"
+    ],
+    "all_path_collisions_safe": true,
+    "communication_radius": "10",
+    "weight": "(1-distance_squared/100)^2",
+    "all_path_spectral_lower_bound": "1792/625",
+    "required_spectrum": "5/2",
+    "bounded_input": "arbitrary positive bound by slowing the path",
+    "CBF_note": "Contraction may approach contact goals asymptotically; no finite-time CBF boundary arrival asserted"
+  },
+  "source_sha256": "aeeb8cddd9bf7db8bc8b8e9803ff9713cf4c7933b67e3005dfc9732b971d0502"
+}

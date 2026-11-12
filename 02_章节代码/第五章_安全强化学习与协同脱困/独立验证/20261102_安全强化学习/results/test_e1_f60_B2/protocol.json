@@ -1,0 +1,2437 @@
+{
+ "set": "e1",
+ "seed": 20261103,
+ "redrawn": 2,
+ "groups": [
+  "myopic",
+  "heur",
+  "rl_full"
+ ],
+ "rounds": 2,
+ "horizon": 60.0,
+ "ckpt": {
+  "full": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+ },
+ "jobs": [
+  {
+   "set": "e1",
+   "scene": "H8_local0_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local10_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local11_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local12_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local13_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local14_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local15_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local16_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local17_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local18_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local19_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local1_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local2_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local3_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local4_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local5_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local6_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local7_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local8_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local9_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm0_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm10_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm11_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm1_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm2_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm3_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm4_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm5_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm6_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm7_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm8_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm9_f60_s20261103",
+   "group": "myopic",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "myopic_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local0_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local10_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local11_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local12_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local13_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local14_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local15_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local16_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local17_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local18_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local19_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local1_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local2_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local3_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local4_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local5_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local6_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local7_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local8_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local9_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm0_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm10_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm11_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm1_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm2_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm3_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm4_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm5_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm6_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm7_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm8_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm9_f60_s20261103",
+   "group": "heur",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "heur_B2",
+   "ckpt": null
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local0_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local10_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local11_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local12_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local13_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local14_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local15_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local16_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local17_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local18_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local19_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local1_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local2_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local3_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local4_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local5_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local6_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local7_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local8_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_local9_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm0_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm10_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm11_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm1_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm2_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm3_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm4_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm5_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm6_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm7_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm8_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  },
+  {
+   "set": "e1",
+   "scene": "H8_perm9_f60_s20261103",
+   "group": "rl_full",
+   "rounds": 2,
+   "horizon": 60.0,
+   "tag": "rl_full_B2",
+   "ckpt": "C:\\Users\\TanWei\\Desktop\\phd-thesis\\03_第五章研究\\独立验证\\20261102_安全强化学习\\results\\train_full02\\best.pt"
+  }
+ ],
+ "source_sha256": {
+  "evaluate.py": "15ff76dd8122ebf1ad642a701d2414ecac910e9ea05317c67488289c276e149a",
+  "sarl_env.py": "694b7670f3a274a61a5682976d59b19c09c9416c1759dd3bfea92509f3f42c29",
+  "sarl_policy.py": "660eb8d421f8a1acc7471315db7b2e18afdc90dd0f10c1c98e586a6cf7d755db",
+  "sysperf.py": "34f2c8eb60114594dc28a7be6cbe486377589273530f908ec1b781e7d68a57d7",
+  "ckpt/full": "cf5758465402370fdf61b9840f1afa1f2ff9a4f2880f6f9115bf7a329a6bdb72"
+ },
+ "scenes": {
+  "H8_local0_f60_s20261103": {
+   "goal": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    5,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local1_f60_s20261103": {
+   "goal": [
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    6,
+    2,
+    1,
+    3,
+    4,
+    5,
+    0,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local2_f60_s20261103": {
+   "goal": [
+    [
+     1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    3,
+    1,
+    2,
+    0,
+    4,
+    5,
+    7,
+    6
+   ],
+   "frac": 0.6
+  },
+  "H8_local3_f60_s20261103": {
+   "goal": [
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    3,
+    2,
+    1,
+    0,
+    4,
+    6,
+    5,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local4_f60_s20261103": {
+   "goal": [
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    6,
+    2,
+    1,
+    4,
+    3,
+    5,
+    0,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local5_f60_s20261103": {
+   "goal": [
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    2,
+    6,
+    0,
+    4,
+    3,
+    5,
+    1,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local6_f60_s20261103": {
+   "goal": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    0,
+    6,
+    3,
+    2,
+    4,
+    5,
+    1,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local7_f60_s20261103": {
+   "goal": [
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    2,
+    1,
+    0,
+    3,
+    4,
+    6,
+    5,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local8_f60_s20261103": {
+   "goal": [
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    4,
+    2,
+    1,
+    3,
+    0,
+    5,
+    7,
+    6
+   ],
+   "frac": 0.6
+  },
+  "H8_local9_f60_s20261103": {
+   "goal": [
+    [
+     1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    3,
+    1,
+    2,
+    0,
+    4,
+    5,
+    6,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local10_f60_s20261103": {
+   "goal": [
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    4,
+    6,
+    2,
+    3,
+    0,
+    5,
+    1,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local11_f60_s20261103": {
+   "goal": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    0,
+    1,
+    2,
+    4,
+    3,
+    6,
+    5,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local12_f60_s20261103": {
+   "goal": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    6
+   ],
+   "frac": 0.6
+  },
+  "H8_local13_f60_s20261103": {
+   "goal": [
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    5,
+    6,
+    2,
+    4,
+    3,
+    0,
+    1,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local14_f60_s20261103": {
+   "goal": [
+    [
+     1.001,
+     0.0
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    3,
+    6,
+    2,
+    0,
+    4,
+    5,
+    1,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local15_f60_s20261103": {
+   "goal": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    0,
+    1,
+    3,
+    2,
+    5,
+    4,
+    6,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local16_f60_s20261103": {
+   "goal": [
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    1,
+    0,
+    3,
+    2,
+    4,
+    5,
+    6,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_local17_f60_s20261103": {
+   "goal": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    0,
+    7,
+    2,
+    3,
+    4,
+    6,
+    5,
+    1
+   ],
+   "frac": 0.6
+  },
+  "H8_local18_f60_s20261103": {
+   "goal": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    0,
+    7,
+    2,
+    3,
+    5,
+    4,
+    6,
+    1
+   ],
+   "frac": 0.6
+  },
+  "H8_local19_f60_s20261103": {
+   "goal": [
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    4,
+    2,
+    1,
+    3,
+    0,
+    6,
+    5,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_perm0_f60_s20261103": {
+   "goal": [
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    7,
+    5,
+    6,
+    1,
+    3,
+    2,
+    0,
+    4
+   ],
+   "frac": 0.6
+  },
+  "H8_perm1_f60_s20261103": {
+   "goal": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    0,
+    2,
+    5,
+    3,
+    4,
+    1,
+    6,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_perm2_f60_s20261103": {
+   "goal": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    0,
+    5,
+    1,
+    3,
+    6,
+    7,
+    2,
+    4
+   ],
+   "frac": 0.6
+  },
+  "H8_perm3_f60_s20261103": {
+   "goal": [
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    2,
+    1,
+    4,
+    0,
+    3,
+    6,
+    7,
+    5
+   ],
+   "frac": 0.6
+  },
+  "H8_perm4_f60_s20261103": {
+   "goal": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    0,
+    7,
+    5,
+    4,
+    6,
+    3,
+    2,
+    1
+   ],
+   "frac": 0.6
+  },
+  "H8_perm5_f60_s20261103": {
+   "goal": [
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    2,
+    0,
+    3,
+    4,
+    7,
+    6,
+    5,
+    1
+   ],
+   "frac": 0.6
+  },
+  "H8_perm6_f60_s20261103": {
+   "goal": [
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    2,
+    4,
+    0,
+    3,
+    5,
+    1,
+    6,
+    7
+   ],
+   "frac": 0.6
+  },
+  "H8_perm7_f60_s20261103": {
+   "goal": [
+    [
+     1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    3,
+    5,
+    7,
+    6,
+    4,
+    2,
+    1,
+    0
+   ],
+   "frac": 0.6
+  },
+  "H8_perm8_f60_s20261103": {
+   "goal": [
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    6,
+    5,
+    0,
+    2,
+    7,
+    4,
+    1,
+    3
+   ],
+   "frac": 0.6
+  },
+  "H8_perm9_f60_s20261103": {
+   "goal": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    0,
+    7,
+    1,
+    6,
+    4,
+    5,
+    2,
+    3
+   ],
+   "frac": 0.6
+  },
+  "H8_perm10_f60_s20261103": {
+   "goal": [
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    5,
+    6,
+    2,
+    7,
+    4,
+    0,
+    3,
+    1
+   ],
+   "frac": 0.6
+  },
+  "H8_perm11_f60_s20261103": {
+   "goal": [
+    [
+     -1.5014999999999998,
+     -0.8668914291882229
+    ],
+    [
+     -1.001,
+     0.0
+    ],
+    [
+     -0.5005,
+     0.8668914291882229
+    ],
+    [
+     -0.5005,
+     -0.8668914291882229
+    ],
+    [
+     1.001,
+     0.0
+    ],
+    [
+     0.5005,
+     0.8668914291882229
+    ],
+    [
+     0.5005,
+     -0.8668914291882229
+    ],
+    [
+     0.0,
+     0.0
+    ]
+   ],
+   "lam": 4.396,
+   "perm": [
+    7,
+    6,
+    5,
+    1,
+    3,
+    4,
+    2,
+    0
+   ],
+   "frac": 0.6
+  }
+ },
+ "python": "3.13.5 | packaged by Anaconda, Inc. | (main, Jun 12 2025, 16:37:03) [MSC v.1929 64 bit (AMD64)]",
+ "platform": "Windows-11-10.0.26200-SP0",
+ "numpy": "2.3.5",
+ "scipy": "1.17.1",
+ "cvxpy": "1.8.1",
+ "torch": "2.10.0+cu126",
+ "process_settings": {
+  "throttling_disabled": true,
+  "below_normal": true
+ },
+ "started": "2026-11-02 12:38:12"
+}

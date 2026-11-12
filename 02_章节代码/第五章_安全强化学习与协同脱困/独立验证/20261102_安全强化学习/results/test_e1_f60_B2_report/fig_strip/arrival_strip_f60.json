@@ -1,0 +1,17 @@
+{
+ "myopic_B2": {
+  "arrived": 16,
+  "total": 32,
+  "median": 35.02500000000015
+ },
+ "heur_B2": {
+  "arrived": 16,
+  "total": 32,
+  "median": 32.600000000000286
+ },
+ "rl_full_B2": {
+  "arrived": 32,
+  "total": 32,
+  "median": 8.074999999999982
+ }
+}

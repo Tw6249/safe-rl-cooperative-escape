@@ -1,0 +1,31 @@
+{
+ "heur_st_B0": {
+  "arrived": 2,
+  "total": 32,
+  "median": 25.10000000000022
+ },
+ "myopic_B8": {
+  "arrived": 17,
+  "total": 32,
+  "median": 36.35000000000007
+ },
+ "heur_B8": {
+  "arrived": 21,
+  "total": 32,
+  "median": 32.50000000000029
+ },
+ "rl_full_B8": {
+  "arrived": 32,
+  "total": 32,
+  "median": 7.424999999999981
+ },
+ "rl_geom_B8": {
+  "arrived": 32,
+  "total": 32,
+  "median": 6.649999999999984
+ },
+  "arrived": 32,
+  "total": 32,
+  "median": 7.549999999999981
+ }
+}

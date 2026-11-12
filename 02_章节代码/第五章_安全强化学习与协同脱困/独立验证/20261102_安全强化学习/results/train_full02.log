@@ -1,0 +1,170 @@
+it  -1 initial policy | VAL 0.194 t=13.60714285714286 {'0.6': 0.19444444444444445}
+it   0 steps    9581 succ 0.62 ret +1.026 reasons {'success': 15, 'truncated': 9} kl 0.0026 std [0.3979394733905792, 0.396996408700943] gate 1.00 roll 112s it 113s
+it   1 steps   20651 succ 0.42 ret +0.764 reasons {'success': 10, 'truncated': 14} kl 0.0010 std [0.3946065604686737, 0.39420557022094727] gate 1.00 roll 139s it 140s
+it   2 steps   30085 succ 0.62 ret +1.041 reasons {'success': 15, 'truncated': 9} kl 0.0033 std [0.3913402557373047, 0.3931143283843994] gate 0.99 roll 120s it 121s
+it   3 steps   39802 succ 0.42 ret +0.793 reasons {'success': 10, 'truncated': 14} kl 0.0030 std [0.38934704661369324, 0.3928375542163849] gate 1.00 roll 123s it 124s
+it   4 steps   48864 succ 0.50 ret +0.861 reasons {'success': 12, 'truncated': 12} kl 0.0023 std [0.38672807812690735, 0.4007074236869812] gate 0.99 roll 109s it 110s
+it   5 steps   58934 succ 0.46 ret +0.683 reasons {'success': 11, 'truncated': 13} kl 0.0028 std [0.38614699244499207, 0.3989143669605255] gate 1.00 roll 121s it 122s
+it   6 steps   67728 succ 0.67 ret +1.178 reasons {'success': 16, 'truncated': 8} kl 0.0024 std [0.3788907825946808, 0.39572709798812866] gate 0.99 roll 119s it 120s
+it   7 steps   77258 succ 0.54 ret +0.843 reasons {'success': 13, 'truncated': 11} kl 0.0034 std [0.3730323016643524, 0.395234614610672] gate 0.99 roll 127s it 128s | VAL 0.417 t=14.280000000000001 {'0.6': 0.4166666666666667}
+it   8 steps   87217 succ 0.38 ret +0.666 reasons {'success': 9, 'truncated': 15} kl 0.0027 std [0.37096142768859863, 0.39472246170043945] gate 1.00 roll 126s it 127s
+it   9 steps   96704 succ 0.46 ret +0.854 reasons {'success': 11, 'truncated': 13} kl 0.0025 std [0.36755213141441345, 0.39111068844795227] gate 0.99 roll 131s it 132s
+it  10 steps  106600 succ 0.50 ret +0.782 reasons {'success': 12, 'truncated': 12} kl 0.0022 std [0.36816781759262085, 0.3909298777580261] gate 1.00 roll 131s it 132s
+it  11 steps  116378 succ 0.50 ret +0.834 reasons {'success': 12, 'truncated': 12} kl 0.0027 std [0.36178678274154663, 0.38902807235717773] gate 1.00 roll 135s it 136s
+it  12 steps  125292 succ 0.62 ret +1.134 reasons {'success': 15, 'truncated': 9} kl 0.0035 std [0.3608437180519104, 0.3871040642261505] gate 0.99 roll 111s it 112s
+it  13 steps  135140 succ 0.46 ret +0.834 reasons {'success': 11, 'truncated': 13} kl 0.0028 std [0.3567808270454407, 0.3883172273635864] gate 1.00 roll 140s it 141s
+it  14 steps  143710 succ 0.67 ret +1.180 reasons {'success': 16, 'truncated': 8} kl 0.0032 std [0.35392722487449646, 0.3865111172199249] gate 0.99 roll 105s it 106s
+it  15 steps  152708 succ 0.71 ret +1.141 reasons {'success': 17, 'truncated': 7} kl 0.0029 std [0.3535054326057434, 0.3849177658557892] gate 0.99 roll 114s it 115s | VAL 0.500 t=12.255555555555555 {'0.6': 0.5}
+it  16 steps  160732 succ 0.71 ret +1.182 reasons {'success': 17, 'truncated': 7} kl 0.0036 std [0.349309504032135, 0.3839784860610962] gate 0.99 roll 107s it 108s
+it  17 steps  169615 succ 0.58 ret +0.970 reasons {'success': 14, 'truncated': 10} kl 0.0032 std [0.34718483686447144, 0.38546061515808105] gate 0.99 roll 137s it 139s
+it  18 steps  178892 succ 0.42 ret +0.812 reasons {'success': 10, 'truncated': 14} kl 0.0036 std [0.34065166115760803, 0.38065287470817566] gate 0.99 roll 155s it 157s
+it  19 steps  187703 succ 0.62 ret +1.214 reasons {'success': 15, 'truncated': 9} kl 0.0041 std [0.33639827370643616, 0.3791866600513458] gate 0.99 roll 139s it 140s
+it  20 steps  195443 succ 0.75 ret +1.397 reasons {'success': 18, 'truncated': 6} kl 0.0034 std [0.33429402112960815, 0.3745235800743103] gate 0.99 roll 139s it 141s
+it  21 steps  204243 succ 0.71 ret +1.268 reasons {'success': 17, 'truncated': 7} kl 0.0033 std [0.33068135380744934, 0.3723195791244507] gate 0.99 roll 144s it 146s
+it  22 steps  212273 succ 0.75 ret +1.342 reasons {'success': 18, 'truncated': 6} kl 0.0031 std [0.3262585997581482, 0.36582744121551514] gate 0.99 roll 127s it 128s
+it  23 steps  220823 succ 0.62 ret +1.233 reasons {'success': 15, 'truncated': 9} kl 0.0034 std [0.3246277868747711, 0.3591456711292267] gate 0.99 roll 126s it 128s | VAL 0.972 t=12.765714285714287 {'0.6': 0.9722222222222222}
+it  24 steps  229048 succ 0.71 ret +1.331 reasons {'success': 17, 'truncated': 7} kl 0.0037 std [0.3237392008304596, 0.35987162590026855] gate 0.99 roll 140s it 141s
+it  25 steps  237717 succ 0.58 ret +1.174 reasons {'success': 14, 'truncated': 10} kl 0.0037 std [0.32057636976242065, 0.3607580065727234] gate 0.99 roll 155s it 156s
+it  26 steps  247364 succ 0.42 ret +0.944 reasons {'success': 10, 'truncated': 14} kl 0.0033 std [0.31973081827163696, 0.3584617078304291] gate 1.00 roll 176s it 176s
+it  27 steps  256089 succ 0.50 ret +1.102 reasons {'success': 12, 'truncated': 12} kl 0.0040 std [0.3179362714290619, 0.35889074206352234] gate 0.99 roll 142s it 144s
+it  28 steps  263274 succ 0.83 ret +1.506 reasons {'success': 20, 'truncated': 4} kl 0.0043 std [0.31212007999420166, 0.35960260033607483] gate 0.99 roll 111s it 113s
+it  29 steps  271299 succ 0.71 ret +1.340 reasons {'success': 17, 'truncated': 7} kl 0.0045 std [0.3094945549964905, 0.36048924922943115] gate 0.99 roll 134s it 136s
+it  30 steps  279089 succ 0.67 ret +1.305 reasons {'success': 16, 'truncated': 8} kl 0.0048 std [0.30804115533828735, 0.3631030321121216] gate 0.99 roll 121s it 123s
+it  31 steps  288321 succ 0.46 ret +1.031 reasons {'success': 11, 'truncated': 13} kl 0.0032 std [0.30847129225730896, 0.3579847812652588] gate 0.99 roll 141s it 143s | VAL 0.778 t=12.891071428571431 {'0.6': 0.7777777777777778}
+it  32 steps  297519 succ 0.58 ret +1.160 reasons {'success': 14, 'truncated': 10} kl 0.0042 std [0.3076460659503937, 0.35681065917015076] gate 0.99 roll 150s it 152s
+it  33 steps  305185 succ 0.67 ret +1.315 reasons {'success': 16, 'truncated': 8} kl 0.0038 std [0.3092206120491028, 0.35317206382751465] gate 0.99 roll 128s it 130s
+it  34 steps  312660 succ 0.71 ret +1.360 reasons {'success': 17, 'truncated': 7} kl 0.0061 std [0.3050327003002167, 0.34900808334350586] gate 0.99 roll 120s it 121s
+it  35 steps  321962 succ 0.67 ret +1.240 reasons {'success': 16, 'truncated': 8} kl 0.0042 std [0.3032093346118927, 0.34990373253822327] gate 0.99 roll 166s it 168s
+it  36 steps  329672 succ 0.79 ret +1.441 reasons {'success': 19, 'truncated': 5} kl 0.0038 std [0.302066445350647, 0.34771794080734253] gate 0.99 roll 127s it 128s
+it  37 steps  337045 succ 0.79 ret +1.457 reasons {'success': 19, 'truncated': 5} kl 0.0045 std [0.29955995082855225, 0.34568554162979126] gate 0.99 roll 143s it 144s
+it  38 steps  344118 succ 0.75 ret +1.425 reasons {'success': 18, 'truncated': 6} kl 0.0044 std [0.29393941164016724, 0.343323290348053] gate 0.99 roll 119s it 120s
+it  39 steps  351855 succ 0.79 ret +1.434 reasons {'success': 19, 'truncated': 5} kl 0.0034 std [0.2902733385562897, 0.3442474603652954] gate 0.99 roll 124s it 125s | VAL 0.861 t=12.130645161290323 {'0.6': 0.8611111111111112}
+it  40 steps  361226 succ 0.54 ret +1.114 reasons {'success': 13, 'truncated': 11} kl 0.0039 std [0.2874307334423065, 0.34319278597831726] gate 0.99 roll 151s it 152s
+it  41 steps  369632 succ 0.67 ret +1.261 reasons {'success': 16, 'truncated': 8} kl 0.0053 std [0.28375089168548584, 0.3397560715675354] gate 0.99 roll 132s it 134s
+it  42 steps  376848 succ 0.83 ret +1.498 reasons {'success': 20, 'truncated': 4} kl 0.0045 std [0.28239765763282776, 0.33792179822921753] gate 0.99 roll 112s it 113s
+it  43 steps  384246 succ 0.79 ret +1.450 reasons {'success': 19, 'truncated': 5} kl 0.0035 std [0.2794746458530426, 0.3403499722480774] gate 0.99 roll 141s it 142s
+it  44 steps  391136 succ 0.75 ret +1.438 reasons {'success': 18, 'truncated': 6} kl 0.0047 std [0.2805170714855194, 0.3385442793369293] gate 0.99 roll 127s it 129s
+it  45 steps  399523 succ 0.58 ret +1.197 reasons {'success': 14, 'truncated': 10} kl 0.0037 std [0.27941787242889404, 0.33440831303596497] gate 0.99 roll 174s it 176s
+it  46 steps  406440 succ 0.71 ret +1.396 reasons {'success': 17, 'truncated': 7} kl 0.0037 std [0.2833843529224396, 0.332531213760376] gate 0.99 roll 125s it 127s
+it  47 steps  413543 succ 0.75 ret +1.425 reasons {'success': 18, 'truncated': 6} kl 0.0045 std [0.28229430317878723, 0.3307628333568573] gate 0.99 roll 126s it 128s | VAL 0.944 t=11.72205882352941 {'0.6': 0.9444444444444444}
+it  48 steps  420498 succ 0.79 ret +1.473 reasons {'success': 19, 'truncated': 5} kl 0.0043 std [0.2803281545639038, 0.3264748156070709] gate 0.99 roll 125s it 126s
+it  49 steps  427445 succ 0.83 ret +1.520 reasons {'success': 20, 'truncated': 4} kl 0.0045 std [0.27807021141052246, 0.3229399025440216] gate 0.99 roll 123s it 124s
+it  50 steps  433552 succ 0.88 ret +1.592 reasons {'success': 21, 'truncated': 3} kl 0.0052 std [0.27492254972457886, 0.3239077031612396] gate 0.99 roll 105s it 106s
+it  51 steps  441024 succ 0.79 ret +1.450 reasons {'success': 19, 'truncated': 5} kl 0.0047 std [0.27281489968299866, 0.3181171417236328] gate 0.99 roll 150s it 152s
+it  52 steps  447977 succ 0.71 ret +1.386 reasons {'success': 17, 'truncated': 7} kl 0.0040 std [0.2694057524204254, 0.318780779838562] gate 0.99 roll 135s it 135s
+it  53 steps  454154 succ 0.88 ret +1.599 reasons {'success': 21, 'truncated': 3} kl 0.0060 std [0.27064937353134155, 0.3158499002456665] gate 0.99 roll 105s it 106s
+it  54 steps  461083 succ 0.75 ret +1.424 reasons {'success': 18, 'truncated': 6} kl 0.0050 std [0.2699145972728729, 0.31709152460098267] gate 0.99 roll 115s it 116s
+it  55 steps  467548 succ 0.83 ret +1.542 reasons {'success': 20, 'truncated': 4} kl 0.0044 std [0.26930370926856995, 0.3169739842414856] gate 0.99 roll 106s it 107s | VAL 0.972 t=11.812857142857142 {'0.6': 0.9722222222222222}
+it  56 steps  474918 succ 0.75 ret +1.411 reasons {'success': 18, 'truncated': 6} kl 0.0045 std [0.2699694037437439, 0.3145804703235626] gate 0.99 roll 114s it 116s
+it  57 steps  481329 succ 0.79 ret +1.499 reasons {'success': 19, 'truncated': 5} kl 0.0049 std [0.26919305324554443, 0.31439393758773804] gate 0.99 roll 122s it 123s
+it  58 steps  487321 succ 0.88 ret +1.601 reasons {'success': 21, 'truncated': 3} kl 0.0057 std [0.2671141028404236, 0.3132178485393524] gate 0.99 roll 111s it 113s
+it  59 steps  493649 succ 0.79 ret +1.503 reasons {'success': 19, 'truncated': 5} kl 0.0050 std [0.2661292850971222, 0.3105637729167938] gate 0.99 roll 117s it 117s
+it  60 steps  500293 succ 0.83 ret +1.533 reasons {'success': 20, 'truncated': 4} kl 0.0058 std [0.26506492495536804, 0.3112926483154297] gate 0.99 roll 119s it 120s
+it  61 steps  506896 succ 0.79 ret +1.485 reasons {'success': 19, 'truncated': 5} kl 0.0043 std [0.2639973759651184, 0.3086807429790497] gate 0.99 roll 104s it 106s
+it  62 steps  514283 succ 0.75 ret +1.411 reasons {'success': 18, 'truncated': 6} kl 0.0045 std [0.26273801922798157, 0.30813267827033997] gate 0.99 roll 130s it 131s
+it  63 steps  521529 succ 0.79 ret +1.453 reasons {'success': 19, 'truncated': 5} kl 0.0056 std [0.2607637047767639, 0.30786964297294617] gate 0.99 roll 136s it 137s | VAL 1.000 t=11.936111111111112 {'0.6': 1.0}
+it  64 steps  528633 succ 0.83 ret +1.509 reasons {'success': 20, 'truncated': 4} kl 0.0049 std [0.26167502999305725, 0.30760952830314636] gate 0.99 roll 130s it 131s
+it  65 steps  535424 succ 0.96 ret +1.652 reasons {'success': 23, 'truncated': 1} kl 0.0057 std [0.2615506649017334, 0.30449414253234863] gate 0.99 roll 111s it 113s
+it  66 steps  541447 succ 0.92 ret +1.644 reasons {'success': 22, 'truncated': 2} kl 0.0058 std [0.26115354895591736, 0.30373772978782654] gate 0.99 roll 107s it 108s
+it  67 steps  548039 succ 0.79 ret +1.489 reasons {'success': 19, 'truncated': 5} kl 0.0046 std [0.2616668939590454, 0.3009154796600342] gate 0.99 roll 125s it 125s
+it  68 steps  554870 succ 0.96 ret +1.647 reasons {'success': 23, 'truncated': 1} kl 0.0051 std [0.2615587115287781, 0.29927343130111694] gate 0.99 roll 144s it 145s
+it  69 steps  562187 succ 0.75 ret +1.414 reasons {'success': 18, 'truncated': 6} kl 0.0045 std [0.2585466802120209, 0.29631584882736206] gate 0.99 roll 130s it 131s
+it  70 steps  568670 succ 0.92 ret +1.617 reasons {'success': 22, 'truncated': 2} kl 0.0056 std [0.2557268440723419, 0.29434844851493835] gate 0.99 roll 112s it 113s
+it  71 steps  576508 succ 0.75 ret +1.386 reasons {'success': 18, 'truncated': 6} kl 0.0048 std [0.2549538314342499, 0.29267364740371704] gate 0.99 roll 135s it 136s | VAL 1.000 t=11.875 {'0.6': 1.0}
+it  72 steps  582564 succ 0.88 ret +1.600 reasons {'success': 21, 'truncated': 3} kl 0.0047 std [0.2556290030479431, 0.29047390818595886] gate 0.99 roll 114s it 116s
+it  73 steps  588617 succ 0.92 ret +1.640 reasons {'success': 22, 'truncated': 2} kl 0.0055 std [0.25704869627952576, 0.2908986508846283] gate 0.99 roll 99s it 100s
+it  74 steps  594533 succ 0.96 ret +1.694 reasons {'success': 23, 'truncated': 1} kl 0.0056 std [0.25620415806770325, 0.2894703149795532] gate 0.99 roll 93s it 94s
+it  75 steps  601149 succ 0.83 ret +1.530 reasons {'success': 20, 'truncated': 4} kl 0.0053 std [0.2566244304180145, 0.29058772325515747] gate 0.99 roll 117s it 118s
+it  76 steps  607343 succ 0.88 ret +1.584 reasons {'success': 21, 'truncated': 3} kl 0.0046 std [0.2570645213127136, 0.2897006571292877] gate 0.99 roll 108s it 109s
+it  77 steps  614108 succ 0.83 ret +1.529 reasons {'success': 20, 'truncated': 4} kl 0.0054 std [0.25693362951278687, 0.29263409972190857] gate 0.99 roll 107s it 108s
+it  78 steps  619029 succ 1.00 ret +1.773 reasons {'success': 24} kl 0.0064 std [0.2545233368873596, 0.2914850115776062] gate 0.99 roll 84s it 85s
+it  79 steps  624526 succ 0.88 ret +1.624 reasons {'success': 21, 'truncated': 3} kl 0.0056 std [0.25591033697128296, 0.28877803683280945] gate 0.99 roll 90s it 91s | VAL 1.000 t=11.297222222222222 {'0.6': 1.0}
+it  80 steps  630692 succ 0.96 ret +1.674 reasons {'success': 23, 'truncated': 1} kl 0.0053 std [0.2537742257118225, 0.28614646196365356] gate 0.99 roll 123s it 124s
+it  81 steps  637170 succ 0.88 ret +1.581 reasons {'success': 21, 'truncated': 3} kl 0.0049 std [0.2511516213417053, 0.28203973174095154] gate 0.99 roll 115s it 116s
+it  82 steps  641905 succ 0.96 ret +1.740 reasons {'success': 23, 'truncated': 1} kl 0.0064 std [0.2502105236053467, 0.28039467334747314] gate 0.99 roll 95s it 96s
+it  83 steps  647089 succ 1.00 ret +1.767 reasons {'success': 24} kl 0.0071 std [0.24858766794204712, 0.28098323941230774] gate 0.99 roll 99s it 100s
+it  84 steps  652739 succ 0.92 ret +1.659 reasons {'success': 22, 'truncated': 2} kl 0.0053 std [0.24580134451389313, 0.28012335300445557] gate 0.99 roll 106s it 107s
+it  85 steps  658428 succ 0.92 ret +1.653 reasons {'success': 22, 'truncated': 2} kl 0.0064 std [0.24650736153125763, 0.2811763286590576] gate 0.99 roll 116s it 116s
+it  86 steps  662996 succ 0.96 ret +1.748 reasons {'success': 23, 'truncated': 1} kl 0.0057 std [0.24416734278202057, 0.2796340584754944] gate 0.99 roll 88s it 89s
+it  87 steps  668344 succ 0.96 ret +1.711 reasons {'success': 23, 'truncated': 1} kl 0.0055 std [0.24211810529232025, 0.2796471416950226] gate 0.99 roll 108s it 110s | VAL 1.000 t=10.822222222222225 {'0.6': 1.0}
+it  88 steps  673252 succ 1.00 ret +1.774 reasons {'success': 24} kl 0.0078 std [0.24216219782829285, 0.2768377959728241] gate 0.99 roll 92s it 94s
+it  89 steps  677583 succ 0.96 ret +1.754 reasons {'success': 23, 'truncated': 1} kl 0.0069 std [0.2418714016675949, 0.2741389274597168] gate 0.99 roll 100s it 101s
+it  90 steps  681963 succ 1.00 ret +1.799 reasons {'success': 24} kl 0.0084 std [0.23938769102096558, 0.27476179599761963] gate 0.99 roll 98s it 100s
+it  91 steps  687371 succ 0.92 ret +1.668 reasons {'success': 22, 'truncated': 2} kl 0.0060 std [0.23468957841396332, 0.2735862731933594] gate 0.99 roll 112s it 114s
+it  92 steps  692803 succ 1.00 ret +1.752 reasons {'success': 24} kl 0.0060 std [0.2353932112455368, 0.270332932472229] gate 0.99 roll 107s it 109s
+it  93 steps  699078 succ 0.88 ret +1.584 reasons {'success': 21, 'truncated': 3} kl 0.0066 std [0.23351913690567017, 0.2686428427696228] gate 0.99 roll 124s it 125s
+it  94 steps  704202 succ 0.96 ret +1.727 reasons {'success': 23, 'truncated': 1} kl 0.0069 std [0.2307567447423935, 0.26645374298095703] gate 0.99 roll 102s it 104s
+it  95 steps  708956 succ 0.96 ret +1.736 reasons {'success': 23, 'truncated': 1} kl 0.0080 std [0.230844646692276, 0.26569005846977234] gate 0.99 roll 83s it 85s | VAL 1.000 t=10.033333333333335 {'0.6': 1.0}
+it  96 steps  714786 succ 0.79 ret +1.513 reasons {'success': 19, 'truncated': 5} kl 0.0060 std [0.22998932003974915, 0.26435181498527527] gate 0.99 roll 119s it 120s
+it  97 steps  719673 succ 0.96 ret +1.735 reasons {'success': 23, 'truncated': 1} kl 0.0077 std [0.2295752614736557, 0.26256248354911804] gate 0.99 roll 84s it 86s
+it  98 steps  725539 succ 0.88 ret +1.600 reasons {'success': 21, 'truncated': 3} kl 0.0069 std [0.22840802371501923, 0.2616294026374817] gate 0.99 roll 144s it 144s
+it  99 steps  729781 succ 0.96 ret +1.755 reasons {'success': 23, 'truncated': 1} kl 0.0082 std [0.22718818485736847, 0.25823062658309937] gate 0.99 roll 79s it 81s
+it 100 steps  733817 succ 1.00 ret +1.813 reasons {'success': 24} kl 0.0086 std [0.22735393047332764, 0.2574107050895691] gate 0.99 roll 70s it 71s
+it 101 steps  737509 succ 1.00 ret +1.828 reasons {'success': 24} kl 0.0089 std [0.22752749919891357, 0.25753113627433777] gate 0.99 roll 70s it 71s
+it 102 steps  741625 succ 1.00 ret +1.802 reasons {'success': 24} kl 0.0093 std [0.22801443934440613, 0.25513431429862976] gate 0.99 roll 89s it 90s
+it 103 steps  745768 succ 1.00 ret +1.811 reasons {'success': 24} kl 0.0099 std [0.22728684544563293, 0.252443790435791] gate 0.99 roll 86s it 87s | VAL 0.972 t=9.860000000000003 {'0.6': 0.9722222222222222}
+it 104 steps  749539 succ 1.00 ret +1.826 reasons {'success': 24} kl 0.0100 std [0.22743776440620422, 0.25345268845558167] gate 0.99 roll 65s it 66s
+it 105 steps  753487 succ 1.00 ret +1.818 reasons {'success': 24} kl 0.0083 std [0.22791174054145813, 0.25241270661354065] gate 0.99 roll 72s it 73s
+it 106 steps  757671 succ 1.00 ret +1.807 reasons {'success': 24} kl 0.0112 std [0.22582802176475525, 0.25209224224090576] gate 0.99 roll 81s it 82s
+it 107 steps  761733 succ 1.00 ret +1.811 reasons {'success': 24} kl 0.0079 std [0.2230542153120041, 0.25006601214408875] gate 0.99 roll 80s it 81s
+it 108 steps  764897 succ 1.00 ret +1.851 reasons {'success': 24} kl 0.0100 std [0.22347240149974823, 0.24864648282527924] gate 0.99 roll 56s it 57s
+it 109 steps  768923 succ 1.00 ret +1.814 reasons {'success': 24} kl 0.0088 std [0.22047458589076996, 0.24667759239673615] gate 0.99 roll 74s it 75s
+it 110 steps  772822 succ 1.00 ret +1.814 reasons {'success': 24} kl 0.0087 std [0.21980224549770355, 0.24839648604393005] gate 0.99 roll 95s it 96s
+it 111 steps  776894 succ 1.00 ret +1.811 reasons {'success': 24} kl 0.0097 std [0.21890896558761597, 0.24751326441764832] gate 0.99 roll 103s it 104s | VAL 1.000 t=10.697222222222223 {'0.6': 1.0}
+it 112 steps  780512 succ 1.00 ret +1.834 reasons {'success': 24} kl 0.0102 std [0.21800071001052856, 0.2456408441066742] gate 0.99 roll 81s it 82s
+it 113 steps  784583 succ 1.00 ret +1.808 reasons {'success': 24} kl 0.0087 std [0.21701207756996155, 0.24584032595157623] gate 0.99 roll 80s it 81s
+it 114 steps  788620 succ 1.00 ret +1.815 reasons {'success': 24} kl 0.0092 std [0.21489040553569794, 0.24650077521800995] gate 0.99 roll 72s it 73s
+it 115 steps  792183 succ 1.00 ret +1.835 reasons {'success': 24} kl 0.0106 std [0.21223339438438416, 0.24494564533233643] gate 0.99 roll 65s it 66s
+it 116 steps  796144 succ 1.00 ret +1.809 reasons {'success': 24} kl 0.0101 std [0.2100854068994522, 0.2452380508184433] gate 0.99 roll 80s it 81s
+it 117 steps  799522 succ 1.00 ret +1.842 reasons {'success': 24} kl 0.0091 std [0.2080247849225998, 0.2429477423429489] gate 0.99 roll 64s it 65s
+it 118 steps  803070 succ 1.00 ret +1.833 reasons {'success': 24} kl 0.0098 std [0.2084767073392868, 0.24176421761512756] gate 0.99 roll 71s it 72s
+it 119 steps  806146 succ 1.00 ret +1.856 reasons {'success': 24} kl 0.0120 std [0.2070673704147339, 0.24193042516708374] gate 0.98 roll 72s it 74s | VAL 1.000 t=10.055555555555555 {'0.6': 1.0}
+it 120 steps  809346 succ 1.00 ret +1.849 reasons {'success': 24} kl 0.0112 std [0.2079530954360962, 0.2425662875175476] gate 0.98 roll 64s it 65s
+it 121 steps  812737 succ 1.00 ret +1.842 reasons {'success': 24} kl 0.0120 std [0.20631547272205353, 0.24319814145565033] gate 0.99 roll 60s it 62s
+it 122 steps  816038 succ 1.00 ret +1.844 reasons {'success': 24} kl 0.0094 std [0.2048494517803192, 0.24191179871559143] gate 0.99 roll 65s it 66s
+it 123 steps  819124 succ 1.00 ret +1.851 reasons {'success': 24} kl 0.0107 std [0.20399314165115356, 0.2404322773218155] gate 0.98 roll 74s it 76s
+it 124 steps  822649 succ 1.00 ret +1.835 reasons {'success': 24} kl 0.0098 std [0.20290158689022064, 0.24023672938346863] gate 0.99 roll 74s it 74s
+it 125 steps  826750 succ 0.96 ret +1.764 reasons {'success': 23, 'truncated': 1} kl 0.0101 std [0.20185497403144836, 0.2389562427997589] gate 0.99 roll 76s it 77s
+it 126 steps  829936 succ 1.00 ret +1.850 reasons {'success': 24} kl 0.0102 std [0.20273245871067047, 0.23924128711223602] gate 0.98 roll 59s it 60s
+it 127 steps  833644 succ 1.00 ret +1.828 reasons {'success': 24} kl 0.0101 std [0.20142671465873718, 0.23678913712501526] gate 0.99 roll 101s it 102s | VAL 1.000 t=10.311111111111112 {'0.6': 1.0}
+it 128 steps  836664 succ 1.00 ret +1.859 reasons {'success': 24} kl 0.0120 std [0.20065847039222717, 0.23699648678302765] gate 0.98 roll 53s it 55s
+it 129 steps  840181 succ 1.00 ret +1.836 reasons {'success': 24} kl 0.0110 std [0.2020697444677353, 0.23815986514091492] gate 0.99 roll 74s it 75s
+it 130 steps  843214 succ 1.00 ret +1.852 reasons {'success': 24} kl 0.0128 std [0.20107801258563995, 0.235984206199646] gate 0.98 roll 54s it 55s
+it 131 steps  846981 succ 1.00 ret +1.824 reasons {'success': 24} kl 0.0114 std [0.1992485225200653, 0.23532968759536743] gate 0.99 roll 92s it 93s
+it 132 steps  850492 succ 1.00 ret +1.836 reasons {'success': 24} kl 0.0136 std [0.19844190776348114, 0.2348252534866333] gate 0.99 roll 65s it 66s
+it 133 steps  853540 succ 1.00 ret +1.857 reasons {'success': 24} kl 0.0120 std [0.19856345653533936, 0.23654669523239136] gate 0.98 roll 46s it 47s
+it 134 steps  857393 succ 1.00 ret +1.822 reasons {'success': 24} kl 0.0099 std [0.19834275543689728, 0.23635198175907135] gate 0.99 roll 93s it 95s
+it 135 steps  860763 succ 1.00 ret +1.841 reasons {'success': 24} kl 0.0109 std [0.19566765427589417, 0.23590241372585297] gate 0.99 roll 57s it 58s | VAL 1.000 t=9.57638888888889 {'0.6': 1.0}
+it 136 steps  863707 succ 1.00 ret +1.862 reasons {'success': 24} kl 0.0148 std [0.1948358565568924, 0.2340865433216095] gate 0.98 roll 52s it 53s
+it 137 steps  867003 succ 1.00 ret +1.845 reasons {'success': 24} kl 0.0130 std [0.19347545504570007, 0.2347402125597] gate 0.99 roll 79s it 80s
+it 138 steps  870506 succ 1.00 ret +1.836 reasons {'success': 24} kl 0.0129 std [0.19237419962882996, 0.23473812639713287] gate 0.99 roll 83s it 84s
+it 139 steps  873809 succ 1.00 ret +1.845 reasons {'success': 24} kl 0.0142 std [0.19163933396339417, 0.23343123495578766] gate 0.99 roll 58s it 59s
+it 140 steps  877130 succ 1.00 ret +1.846 reasons {'success': 24} kl 0.0111 std [0.19108712673187256, 0.23328173160552979] gate 0.99 roll 63s it 64s
+it 141 steps  880302 succ 1.00 ret +1.850 reasons {'success': 24} kl 0.0122 std [0.19117240607738495, 0.23303256928920746] gate 0.99 roll 69s it 70s
+it 142 steps  883640 succ 1.00 ret +1.845 reasons {'success': 24} kl 0.0131 std [0.1905631572008133, 0.23091407120227814] gate 0.99 roll 61s it 63s
+it 143 steps  886774 succ 1.00 ret +1.853 reasons {'success': 24} kl 0.0148 std [0.18994025886058807, 0.22984181344509125] gate 0.98 roll 67s it 69s | VAL 1.000 t=9.344444444444445 {'0.6': 1.0}
+it 144 steps  890382 succ 1.00 ret +1.831 reasons {'success': 24} kl 0.0126 std [0.18858224153518677, 0.23086249828338623] gate 0.99 roll 80s it 81s
+it 145 steps  893631 succ 1.00 ret +1.844 reasons {'success': 24} kl 0.0146 std [0.18823066353797913, 0.23170505464076996] gate 0.99 roll 61s it 63s
+it 146 steps  896508 succ 1.00 ret +1.861 reasons {'success': 24} kl 0.0194 std [0.18731561303138733, 0.23368847370147705] gate 0.98 roll 45s it 46s
+it 147 steps  899592 succ 1.00 ret +1.855 reasons {'success': 24} kl 0.0149 std [0.18843726813793182, 0.23149409890174866] gate 0.98 roll 64s it 65s
+it 148 steps  902541 succ 1.00 ret +1.861 reasons {'success': 24} kl 0.0149 std [0.18847417831420898, 0.2316630780696869] gate 0.98 roll 51s it 53s
+it 149 steps  906167 succ 1.00 ret +1.830 reasons {'success': 24} kl 0.0141 std [0.18775157630443573, 0.23127180337905884] gate 0.99 roll 99s it 100s
+it 150 steps  908960 succ 1.00 ret +1.866 reasons {'success': 24} kl 0.0159 std [0.1861112266778946, 0.23101148009300232] gate 0.98 roll 60s it 61s
+it 151 steps  912220 succ 1.00 ret +1.847 reasons {'success': 24} kl 0.0151 std [0.18509896099567413, 0.2311631292104721] gate 0.99 roll 72s it 73s | VAL 1.000 t=9.461111111111112 {'0.6': 1.0}
+it 152 steps  914982 succ 1.00 ret +1.870 reasons {'success': 24} kl 0.0191 std [0.1831059604883194, 0.2310734987258911] gate 0.98 roll 57s it 58s
+it 153 steps  918358 succ 1.00 ret +1.841 reasons {'success': 24} kl 0.0159 std [0.1834772676229477, 0.23023921251296997] gate 0.99 roll 59s it 60s
+it 154 steps  921171 succ 1.00 ret +1.863 reasons {'success': 24} kl 0.0181 std [0.18303817510604858, 0.22950857877731323] gate 0.98 roll 57s it 58s
+it 155 steps  924474 succ 1.00 ret +1.844 reasons {'success': 24} kl 0.0167 std [0.18297569453716278, 0.2290491908788681] gate 0.99 roll 70s it 72s
+it 156 steps  927932 succ 1.00 ret +1.833 reasons {'success': 24} kl 0.0181 std [0.1841283142566681, 0.22866784036159515] gate 0.99 roll 77s it 78s
+it 157 steps  931595 succ 1.00 ret +1.825 reasons {'success': 24} kl 0.0151 std [0.1831504851579666, 0.22709888219833374] gate 0.99 roll 96s it 98s
+it 158 steps  934757 succ 1.00 ret +1.849 reasons {'success': 24} kl 0.0164 std [0.18255580961704254, 0.22620615363121033] gate 0.98 roll 75s it 76s
+it 159 steps  937714 succ 1.00 ret +1.860 reasons {'success': 24} kl 0.0175 std [0.18226900696754456, 0.2261851578950882] gate 0.98 roll 55s it 56s | VAL 1.000 t=9.215277777777777 {'0.6': 1.0}
+it 160 steps  940817 succ 1.00 ret +1.852 reasons {'success': 24} kl 0.0201 std [0.18230099976062775, 0.2259702980518341] gate 0.98 roll 64s it 66s
+it 161 steps  943754 succ 1.00 ret +1.861 reasons {'success': 24} kl 0.0174 std [0.1810384839773178, 0.22480809688568115] gate 0.98 roll 48s it 49s
+it 162 steps  946736 succ 1.00 ret +1.859 reasons {'success': 24} kl 0.0222 std [0.18063879013061523, 0.2241845279932022] gate 0.98 roll 58s it 59s
+it 163 steps  950103 succ 1.00 ret +1.844 reasons {'success': 24} kl 0.0195 std [0.18102633953094482, 0.2239651381969452] gate 0.99 roll 68s it 69s
+it 164 steps  953319 succ 1.00 ret +1.851 reasons {'success': 24} kl 0.0182 std [0.18025539815425873, 0.2229956090450287] gate 0.98 roll 55s it 56s
+it 165 steps  956889 succ 1.00 ret +1.834 reasons {'success': 24} kl 0.0179 std [0.18002155423164368, 0.22140254080295563] gate 0.99 roll 75s it 75s
+it 166 steps  959919 succ 1.00 ret +1.856 reasons {'success': 24} kl 0.0185 std [0.17824356257915497, 0.2206946760416031] gate 0.98 roll 63s it 64s
+it 167 steps  962732 succ 1.00 ret +1.866 reasons {'success': 24} kl 0.0184 std [0.17755989730358124, 0.22234880924224854] gate 0.98 roll 55s it 56s | VAL 1.000 t=8.96388888888889 {'0.6': 1.0}
+DONE 168 962732 (0.9910361111111111, 167)

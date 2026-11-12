@@ -1,0 +1,28 @@
+{
+ "rl_full_int_B8|0.6": {
+  "n": 32,
+  "arrived": 32,
+  "t_5cm": 6.374999999999986,
+  "t_5cm_n": 32,
+  "t_1cm": 7.124999999999982,
+  "t_1cm_n": 32,
+  "approach": 0.8000000000000105,
+  "approach_n": 32,
+  "gate_last2s": 0.39602852389216425,
+  "gate_last2s_n": 32,
+  "residual_rms_last2s": 0.02408488176026731,
+  "residual_rms_last2s_n": 32,
+  "intervention_rms_last2s": 0.016786032421269637,
+  "intervention_rms_last2s_n": 32,
+  "u_diff_last2s": 0.0029196257900803158,
+  "u_diff_last2s_n": 32,
+  "gate_all": 0.8035401410978065,
+  "gate_all_n": 32,
+  "gate_all_open_frac": 0.7840090268429805,
+  "gate_all_open_frac_n": 32,
+  "intervention_rms_all": 0.236804903001207,
+  "intervention_rms_all_n": 32,
+  "u_diff_all": 0.024222088258827032,
+  "u_diff_all_n": 32
+ }
+}

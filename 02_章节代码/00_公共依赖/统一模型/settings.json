@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "status": "博士论文公共定义及新实验基准；不追溯改写旧结果",
+  "channel": {
+    "model": "gaussian_quintic_c2",
+    "parameters": {"sigma_w": 1.5, "r_tap": 1.0, "r_com": 1.8, "w_max": 1.0},
+    "source": "与当前Capacity Reserve默认参数一致，仅作为新实验的共同起点",
+    "distance_unit": "m",
+    "weight_unit": "dimensionless",
+    "meaning": "确定性通信质量代理；不代表bit/s、丢包率或实测RSSI"
+  },
+  "conventions": {
+    "dynamics": "single_integrator: dot(p_i)=u_i; other dynamics require an explicit extension",
+    "time_unit": "s",
+    "vector_storage": "positions and velocities (N,d); columns in mathematics; 0-based Python indices",
+    "candidate_graph_default": "all unordered pairs; explicit sparse candidates must be recorded",
+    "active_edges": "positive physical weight; no silent hard threshold",
+    "communication_graph": "declared separately; equality with physical graph is an experiment assumption",
+    "cbf_safe_set": "h>=0",
+    "local_inequality": "a_i.T u_i+b_i+s_i<=0; sum_i s_i=0",
+    "input_set": "must explicitly choose ball_l2, box_linf or unbounded; no common numeric default"
+  },
+  "required_per_experiment": [
+    "N", "dimension", "initial_positions", "nominal_task", "candidate_edges",
+    "communication_policy", "lambda_req_if_spectral", "lambda_des_if_used",
+    "input_set_and_bounds", "collision_distance_if_used", "link_radius_strictly_inside_cutoff_if_used", "cbf_gains",
+    "sample_period", "integration_method", "estimator_information",
+    "allocation_and_communication_budget", "initial_certificate", "random_seed",
+    "solver_and_tolerances", "channel_parameters", "settings_sha256", "output_directory"
+  ]
+}

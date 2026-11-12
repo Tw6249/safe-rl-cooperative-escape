@@ -1,0 +1,15 @@
+it  -1 initial policy | VAL 0.194 t=13.60714285714286 {'0.6': 0.19444444444444445}
+it   0 steps    9581 succ 0.62 ret +1.026 reasons {'success': 15, 'truncated': 9} kl 0.0024 std [0.399302214384079, 0.39932194352149963] gate 1.00 roll 85s it 86s
+it   1 steps   20849 succ 0.42 ret +0.719 reasons {'success': 10, 'truncated': 14} kl 0.0023 std [0.3980879485607147, 0.3980591595172882] gate 1.00 roll 105s it 106s
+it   2 steps   29566 succ 0.58 ret +1.039 reasons {'success': 14, 'truncated': 10} kl 0.0012 std [0.3985599875450134, 0.3980346918106079] gate 0.99 roll 79s it 80s
+it   3 steps   39216 succ 0.54 ret +0.963 reasons {'success': 13, 'truncated': 11} kl 0.0029 std [0.39609989523887634, 0.3966485261917114] gate 1.00 roll 96s it 97s
+it   4 steps   48748 succ 0.50 ret +0.802 reasons {'success': 12, 'truncated': 12} kl 0.0022 std [0.39538025856018066, 0.3959258794784546] gate 0.99 roll 92s it 93s
+it   5 steps   59200 succ 0.38 ret +0.603 reasons {'success': 9, 'truncated': 15} kl 0.0018 std [0.39471328258514404, 0.39465469121932983] gate 1.00 roll 97s it 97s
+it   6 steps   68369 succ 0.58 ret +1.068 reasons {'success': 14, 'truncated': 10} kl 0.0023 std [0.39215147495269775, 0.3944814205169678] gate 0.99 roll 96s it 96s
+it   7 steps   77316 succ 0.50 ret +0.867 reasons {'success': 12, 'truncated': 12} kl 0.0022 std [0.3893359303474426, 0.39489543437957764] gate 0.99 roll 89s it 89s | VAL 0.528 t=17.273684210526312 {'0.6': 0.5277777777777778}
+it   8 steps   87665 succ 0.29 ret +0.552 reasons {'success': 7, 'truncated': 17} kl 0.0028 std [0.38728803396224976, 0.39424455165863037] gate 1.00 roll 101s it 102s
+it   9 steps   97236 succ 0.50 ret +0.853 reasons {'success': 12, 'truncated': 12} kl 0.0025 std [0.3868667185306549, 0.3929489850997925] gate 1.00 roll 98s it 99s
+it  10 steps  107407 succ 0.50 ret +0.881 reasons {'success': 12, 'truncated': 12} kl 0.0019 std [0.38627299666404724, 0.38981717824935913] gate 1.00 roll 105s it 106s
+it  11 steps  117345 succ 0.50 ret +0.917 reasons {'success': 12, 'truncated': 12} kl 0.0023 std [0.38415366411209106, 0.38950061798095703] gate 1.00 roll 106s it 107s
+it  12 steps  126067 succ 0.67 ret +1.219 reasons {'success': 16, 'truncated': 8} kl 0.0026 std [0.3822512626647949, 0.3880976438522339] gate 0.99 roll 97s it 98s
+it  13 steps  135745 succ 0.46 ret +0.901 reasons {'success': 11, 'truncated': 13} kl 0.0028 std [0.3790534436702728, 0.3861534297466278] gate 1.00 roll 130s it 131s

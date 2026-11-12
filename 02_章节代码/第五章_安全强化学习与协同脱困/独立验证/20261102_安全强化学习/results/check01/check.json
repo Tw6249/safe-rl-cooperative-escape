@@ -1,0 +1,28 @@
+{
+ "samples": 41,
+ "states_identical": true,
+ "times_identical": true,
+ "max_state_diff": 0.0,
+ "trace_fields_identical": {
+  "seed_kind": true,
+  "pa_cost": true,
+  "cost_gap": true,
+  "accepted": true,
+  "rejected": true,
+  "nodes_settled": true,
+  "cascade_depth": true,
+  "broken_settled": true,
+  "member_rejects": true,
+  "u_norm": true,
+  "V": true
+ },
+ "trace_len": [
+  40,
+  40
+ ],
+ "status": "horizon_reached",
+ "process_settings": {
+  "throttling_disabled": true,
+  "below_normal": true
+ }
+}
